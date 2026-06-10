@@ -1,0 +1,68 @@
+{
+  "personal": {
+    "name": "Mujeeb",
+    "role": "Creative Designer & Developer",
+    "bio": "Crafting premium, ultra-modern digital experiences.",
+    "availabilityStatus": "Available for freelance work",
+    "location": "Silicon Valley, CA"
+  },
+  "socials": [
+    { "name": "GitHub", "url": "https://github.com", "icon": "github" },
+    { "name": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" },
+    { "name": "Twitter", "url": "https://twitter.com", "icon": "twitter" },
+    { "name": "Dribbble", "url": "https://dribbble.com", "icon": "dribbble" }
+  ],
+  "skills": [
+    { "category": "Frontend", "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
+    { "category": "Animation", "items": ["Framer Motion", "GSAP", "Three.js", "Lenis"] },
+    { "category": "Design", "items": ["Figma", "UI/UX Design", "Wireframing", "Prototyping"] }
+  ],
+  "services": [
+    { "title": "Web Development", "description": "Building high-performance, accessible, and responsive web applications." },
+    { "title": "Creative Coding", "description": "Implementing immersive 3D experiences and complex animations." },
+    { "title": "UI/UX Design", "description": "Designing intuitive and visually stunning interfaces." }
+  ],
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Aura eCommerce",
+      "category": "Web Development",
+      "description": "A futuristic headless eCommerce platform built with Next.js and Shopify.",
+      "image": "/images/projects/aura.jpg",
+      "link": "https://example.com",
+      "techStack": ["Next.js", "Tailwind", "Framer Motion", "Shopify API"]
+    },
+    {
+      "id": "project-2",
+      "title": "Lumina Dashboard",
+      "category": "UI/UX Design",
+      "description": "A dark-mode analytics dashboard with glassmorphism and animated charts.",
+      "image": "/images/projects/lumina.jpg",
+      "link": "https://example.com",
+      "techStack": ["React", "Recharts", "Framer Motion", "Tailwind CSS"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Senior Frontend Developer",
+      "company": "TechNova",
+      "period": "2023 - Present",
+      "description": "Leading the frontend team to build highly interactive web applications."
+    },
+    {
+      "role": "UI/UX Designer",
+      "company": "Creative Studio",
+      "period": "2021 - 2023",
+      "description": "Designed award-winning websites and mobile applications."
+    }
+  ],
+  "clientLogos": [
+    { "name": "Apple", "logo": "/images/clients/apple.svg" },
+    { "name": "Tesla", "logo": "/images/clients/tesla.svg" },
+    { "name": "SpaceX", "logo": "/images/clients/spacex.svg" }
+  ],
+  "faq": [
+    { "question": "What is your typical process?", "answer": "I start with research and wireframing, followed by high-fidelity design, and finally development with performance optimization." },
+    { "question": "Do you work with startups?", "answer": "Yes! I love working with innovative startups to bring their vision to life." }
+  ]
+}
