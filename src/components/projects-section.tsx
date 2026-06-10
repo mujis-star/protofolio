@@ -43,11 +43,12 @@ export function ProjectsSection() {
               className="group relative flex flex-col gap-6"
             >
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-400/20 mix-blend-overlay group-hover:scale-105 transition-transform duration-700 ease-in-out" />
-                <div className="absolute inset-0 flex items-center justify-center text-neutral-400 dark:text-neutral-500 font-medium tracking-widest uppercase">
-                  {project.title} Image
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-cyan-400/10 mix-blend-overlay" />
               </div>
               
               <div>

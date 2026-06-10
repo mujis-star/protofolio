@@ -28,7 +28,7 @@
       "title": "Aura eCommerce",
       "category": "Web Development",
       "description": "A futuristic headless eCommerce platform built with Next.js and Shopify.",
-      "image": "/images/projects/aura.jpg",
+      "image": "/images/projects/aura.png",
       "link": "https://example.com",
       "techStack": ["Next.js", "Tailwind", "Framer Motion", "Shopify API"]
     },
@@ -37,7 +37,7 @@
       "title": "Lumina Dashboard",
       "category": "UI/UX Design",
       "description": "A dark-mode analytics dashboard with glassmorphism and animated charts.",
-      "image": "/images/projects/lumina.jpg",
+      "image": "/images/projects/lumina.png",
       "link": "https://example.com",
       "techStack": ["React", "Recharts", "Framer Motion", "Tailwind CSS"]
     }
