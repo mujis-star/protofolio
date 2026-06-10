@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { LoadingScreen } from "@/components/loading-screen";
 import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { ServicesSection } from "@/components/services-section";
+import { TechStack } from "@/components/tech-stack";
+import { ProjectsSection } from "@/components/projects-section";
+import { ExperienceSection } from "@/components/experience-section";
+import { FAQSection } from "@/components/faq-section";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,11 +24,12 @@ export default function Home() {
         }`}
       >
         <HeroSection />
-        
-        {/* Placeholder for future sections */}
-        <div className="h-[100vh] flex items-center justify-center border-t border-neutral-200 dark:border-neutral-800">
-          <p className="text-neutral-500">More sections coming soon...</p>
-        </div>
+        <AboutSection />
+        <ServicesSection />
+        <TechStack />
+        <ProjectsSection />
+        <ExperienceSection />
+        <FAQSection />
       </div>
     </>
   );
