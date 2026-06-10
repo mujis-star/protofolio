@@ -1,4 +1,4 @@
-import { NextResponse } from "next";
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 // Initialize Resend with the API key from environment variables

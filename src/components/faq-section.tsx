@@ -9,10 +9,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden bg-neutral-50/50 dark:bg-neutral-900/30">
-      <div className="absolute inset-0 z-[-1] opacity-[0.15] mix-blend-screen">
-        <img src="/images/bg/bg-2.png" alt="Background" className="w-full h-full object-cover" />
-      </div>
+    <section className="py-24 md:py-32 relative overflow-hidden bg-transparent">
       <div className="container mx-auto px-6 max-w-3xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

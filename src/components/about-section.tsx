@@ -27,11 +27,8 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 z-[-1] opacity-20 mix-blend-screen">
-        <img src="/images/bg/bg-1.png" alt="Background" className="w-full h-full object-cover" />
-      </div>
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 md:py-32 relative overflow-hidden bg-transparent">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

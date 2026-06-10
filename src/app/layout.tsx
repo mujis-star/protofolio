@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { AnimatedBackground } from "@/components/animated-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,6 +58,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScroll>
+            <AnimatedBackground />
             <CustomCursor />
             <Navigation />
             <main className="flex-1 pt-20">
