@@ -9,6 +9,7 @@ import { TechStack } from "@/components/tech-stack";
 import { ProjectsSection } from "@/components/projects-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { FAQSection } from "@/components/faq-section";
+import { ContactSection } from "@/components/contact-section";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,6 +51,7 @@ export default function Home() {
         <ProjectsSection />
         <ExperienceSection />
         <FAQSection />
+        <ContactSection />
       </div>
     </>
   );
