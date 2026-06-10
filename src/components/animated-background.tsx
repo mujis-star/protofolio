@@ -1,71 +1,91 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import type { Engine } from "@tsparticles/engine";
 
 export function AnimatedBackground() {
-  const [mounted, setMounted] = useState(false);
+  const [init, setInit] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    initParticlesEngine(async (engine: Engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  if (!mounted) return null;
+  if (!init) return <div className="fixed inset-0 z-[-2] bg-black" />;
 
   return (
-    <div className="fixed inset-0 z-[-2] overflow-hidden bg-black pointer-events-none">
-      {/* Dark overlay to ensure text readability */}
-      <div className="absolute inset-0 z-10 bg-black/40 backdrop-blur-[100px]" />
-      
-      {/* Animated Orbs */}
-      <motion.div
-        animate={{
-          x: [0, 100, -50, 0],
-          y: [0, -100, 50, 0],
-          scale: [1, 1.2, 0.8, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-blue-600/30 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-70"
-      />
-      
-      <motion.div
-        animate={{
-          x: [0, -150, 50, 0],
-          y: [0, 100, -100, 0],
-          scale: [1, 0.9, 1.3, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute bottom-1/4 right-1/4 w-[50vw] h-[50vw] bg-purple-600/30 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-70"
-      />
-
-      <motion.div
-        animate={{
-          x: [0, 50, -150, 0],
-          y: [0, 150, 50, 0],
-          scale: [1, 1.5, 0.9, 1],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute top-1/2 left-1/2 w-[35vw] h-[35vw] bg-cyan-600/20 rounded-full mix-blend-screen filter blur-[80px] md:blur-[120px] opacity-70"
-      />
-      
-      {/* Static Starry particles (using simple CSS background for performance) */}
-      <div 
-        className="absolute inset-0 z-0 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle at center, white 1px, transparent 1px)`,
-          backgroundSize: '40px 40px',
+    <div className="fixed inset-0 z-[-2] pointer-events-none">
+      <Particles
+        id="tsparticles"
+        className="absolute inset-0"
+        options={{
+          background: {
+            color: {
+              value: "#000000",
+            },
+          },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "grab",
+              },
+            },
+            modes: {
+              grab: {
+                distance: 140,
+                links: {
+                  opacity: 0.5,
+                },
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: ["#3b82f6", "#8b5cf6", "#06b6d4"], // Blue, Purple, Cyan
+            },
+            links: {
+              color: "#4b5563",
+              distance: 150,
+              enable: true,
+              opacity: 0.2,
+              width: 1,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outModes: {
+                default: "bounce",
+              },
+              random: false,
+              speed: 1.5,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                width: 800,
+                height: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 3 },
+            },
+          },
+          detectRetina: true,
         }}
       />
     </div>
