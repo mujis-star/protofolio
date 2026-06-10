@@ -59,12 +59,12 @@ export function ExperienceSection() {
           className="pt-16 border-t border-neutral-200 dark:border-neutral-800"
         >
           <p className="text-center text-sm font-medium text-neutral-500 uppercase tracking-widest mb-8">
-            Trusted By
+            Core Capabilities
           </p>
-          <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
-            {data.clientLogos.map((client) => (
-              <div key={client.name} className="text-xl font-bold font-serif tracking-tighter">
-                {client.name}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-80">
+            {data.coreCapabilities.map((capability) => (
+              <div key={capability.name} className="text-lg md:text-xl font-bold font-sans tracking-tight px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black/50 text-neutral-600 dark:text-neutral-400">
+                {capability.name}
               </div>
             ))}
           </div>

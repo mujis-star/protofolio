@@ -56,10 +56,12 @@
       "description": "Designed award-winning websites and mobile applications."
     }
   ],
-  "clientLogos": [
-    { "name": "Apple", "logo": "/images/clients/apple.svg" },
-    { "name": "Tesla", "logo": "/images/clients/tesla.svg" },
-    { "name": "SpaceX", "logo": "/images/clients/spacex.svg" }
+  "coreCapabilities": [
+    { "name": "Frontend Architecture" },
+    { "name": "Interactive Design" },
+    { "name": "Creative Coding" },
+    { "name": "Performance Optimization" },
+    { "name": "Digital Branding" }
   ],
   "faq": [
     { "question": "What is your typical process?", "answer": "I start with research and wireframing, followed by high-fidelity design, and finally development with performance optimization." },
