@@ -52,11 +52,13 @@ export function AboutSection() {
           </div>
           
           <div ref={imageRef} className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
-            {/* Placeholder for an image or 3D element */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 mix-blend-overlay" />
-            <span className="text-neutral-400 dark:text-neutral-600 font-medium tracking-widest uppercase">
-              Profile Image
-            </span>
+            <img 
+              src="/profile.jpg" 
+              alt="Mujeeb Profile" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Overlay to ensure it blends nicely with the theme */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 mix-blend-overlay" />
           </div>
         </motion.div>
       </div>
