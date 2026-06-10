@@ -1,11 +1,33 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/content.json";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function AboutSection() {
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (imageRef.current) {
+      gsap.to(imageRef.current, {
+        yPercent: 20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+  }, []);
+
   return (
-    <section id="about" className="py-24 md:py-32 relative">
+    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -29,7 +51,7 @@ export function AboutSection() {
             </p>
           </div>
           
-          <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
+          <div ref={imageRef} className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
             {/* Placeholder for an image or 3D element */}
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 mix-blend-overlay" />
             <span className="text-neutral-400 dark:text-neutral-600 font-medium tracking-widest uppercase">

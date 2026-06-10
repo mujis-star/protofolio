@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,12 +40,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CustomCursor />
-          <Navigation />
-          <main className="flex-1 pt-20">
-            {children}
-          </main>
-          <Footer />
+          <SmoothScroll>
+            <CustomCursor />
+            <Navigation />
+            <main className="flex-1 pt-20">
+              {children}
+            </main>
+            <Footer />
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
