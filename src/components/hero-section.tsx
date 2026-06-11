@@ -109,7 +109,7 @@ function TypingCodeWidget() {
   let charsLeft = displayedChars;
 
   return (
-    <pre className="text-[9px] sm:text-[10px] font-mono text-blue-400 leading-relaxed text-left whitespace-pre-wrap">
+    <pre className="text-xs sm:text-sm font-mono text-blue-400 leading-relaxed text-left whitespace-pre-wrap">
       <code>
         {codeTokens.map((token, i) => {
           if (charsLeft <= 0) return null;
@@ -225,27 +225,27 @@ export function HeroSection() {
             </div>
 
             {/* Floating Cyber Terminal Widget */}
-            <div className="absolute top-24 left-6 rounded-xl bg-black/40 backdrop-blur-xl border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.3)] opacity-90 transition-all duration-500 w-[280px] sm:w-[320px] overflow-hidden flex flex-col group/terminal hover:opacity-100 hover:shadow-[0_0_60px_rgba(59,130,246,0.5)] z-20">
+            <div className="absolute top-12 sm:top-24 left-4 sm:left-6 rounded-xl bg-black/40 backdrop-blur-xl border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.3)] opacity-90 transition-all duration-500 w-[300px] sm:w-[380px] lg:w-[420px] overflow-hidden flex flex-col group/terminal hover:opacity-100 hover:shadow-[0_0_60px_rgba(59,130,246,0.5)] z-20">
               
               {/* Terminal Header */}
-              <div className="flex items-center justify-between px-4 py-2 border-b border-blue-500/30 bg-blue-900/20 backdrop-blur-md">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
-                  <span className="text-[9px] font-mono text-blue-300 tracking-widest uppercase [text-shadow:0_0_8px_rgba(147,197,253,0.5)]">sys.terminal_exec</span>
+              <div className="flex items-center justify-between px-4 py-3 border-b border-blue-500/30 bg-blue-900/20 backdrop-blur-md">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
+                  <span className="text-[10px] sm:text-xs font-mono text-blue-300 tracking-widest uppercase [text-shadow:0_0_8px_rgba(147,197,253,0.5)]">sys.terminal_exec</span>
                 </div>
-                <div className="flex gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                <div className="flex gap-2">
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
                 </div>
               </div>
               
               {/* Terminal Body with Effects */}
-              <div className="relative p-4 sm:p-5 min-h-[220px]">
+              <div className="relative p-5 sm:p-6 min-h-[260px] sm:min-h-[300px]">
                 {/* Animated Laser Scanline */}
                 <motion.div 
                   animate={{ top: ["0%", "100%", "0%"] }}
                   transition={{ duration: 5, ease: "linear", repeat: Infinity }}
-                  className="absolute left-0 right-0 h-[1px] bg-blue-400/50 shadow-[0_0_15px_rgba(96,165,250,0.8)] z-10 pointer-events-none"
+                  className="absolute left-0 right-0 h-[2px] bg-blue-400/50 shadow-[0_0_15px_rgba(96,165,250,0.8)] z-10 pointer-events-none"
                 />
                 
                 {/* CRT Screen Scanlines Overlay */}
