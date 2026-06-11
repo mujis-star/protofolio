@@ -6,17 +6,73 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import data from "@/data/content.json";
 
 const codeTokens = [
-  { text: "const", color: "text-pink-500" },
-  { text: " engineer", color: "text-white" },
-  { text: " = {\n", color: "text-white" },
-  { text: '  stack: [', color: "text-white" },
-  { text: '"React"', color: "text-green-400" },
-  { text: ', ', color: "text-white" },
-  { text: '"Next.js"', color: "text-green-400" },
-  { text: '],\n', color: "text-white" },
-  { text: '  status: ', color: "text-white" },
-  { text: '"Deploying..."', color: "text-green-400" },
-  { text: '\n};', color: "text-white" }
+  { text: "import ", color: "text-pink-500" },
+  { text: "{ Core } ", color: "text-blue-300" },
+  { text: "from ", color: "text-pink-500" },
+  { text: '"@sys/core"', color: "text-green-400" },
+  { text: ";\n", color: "text-white" },
+  
+  { text: "import ", color: "text-pink-500" },
+  { text: "{ NeuralNet } ", color: "text-blue-300" },
+  { text: "from ", color: "text-pink-500" },
+  { text: '"@ai/engine"', color: "text-green-400" },
+  { text: ";\n\n", color: "text-white" },
+
+  { text: "async function ", color: "text-pink-500" },
+  { text: "initSequence", color: "text-yellow-300" },
+  { text: "() {\n", color: "text-white" },
+
+  { text: "  console.", color: "text-white" },
+  { text: "log", color: "text-yellow-300" },
+  { text: "(", color: "text-white" },
+  { text: '"Booting core systems..."', color: "text-green-400" },
+  { text: ");\n", color: "text-white" },
+
+  { text: "  const ", color: "text-pink-500" },
+  { text: "sys ", color: "text-blue-300" },
+  { text: "= ", color: "text-white" },
+  { text: "new ", color: "text-pink-500" },
+  { text: "Core", color: "text-yellow-300" },
+  { text: "({\n", color: "text-white" },
+  
+  { text: "    mode: ", color: "text-white" },
+  { text: '"overdrive"', color: "text-green-400" },
+  { text: ",\n", color: "text-white" },
+  
+  { text: "    threads: ", color: "text-white" },
+  { text: "128", color: "text-orange-400" },
+  { text: ",\n", color: "text-white" },
+  
+  { text: "    encryption: ", color: "text-white" },
+  { text: "true", color: "text-orange-400" },
+  { text: "\n  });\n\n", color: "text-white" },
+
+  { text: "  await ", color: "text-pink-500" },
+  { text: "sys.", color: "text-white" },
+  { text: "connect", color: "text-yellow-300" },
+  { text: "();\n", color: "text-white" },
+  
+  { text: "  if ", color: "text-pink-500" },
+  { text: "(sys.", color: "text-white" },
+  { text: "status ", color: "text-blue-300" },
+  { text: "=== ", color: "text-pink-500" },
+  { text: '"ACTIVE"', color: "text-green-400" },
+  { text: ") {\n", color: "text-white" },
+
+  { text: "    const ", color: "text-pink-500" },
+  { text: "net ", color: "text-blue-300" },
+  { text: "= ", color: "text-white" },
+  { text: "new ", color: "text-pink-500" },
+  { text: "NeuralNet", color: "text-yellow-300" },
+  { text: "();\n", color: "text-white" },
+  
+  { text: "    net.", color: "text-white" },
+  { text: "sync", color: "text-yellow-300" },
+  { text: "();\n", color: "text-white" },
+  
+  { text: "    return ", color: "text-pink-500" },
+  { text: '"Welcome, Engineer."', color: "text-green-400" },
+  { text: ";\n  }\n}", color: "text-white" }
 ];
 
 function TypingCodeWidget() {
@@ -32,14 +88,14 @@ function TypingCodeWidget() {
       if (!isDeleting && currentChars < totalChars) {
         currentChars++;
         setDisplayedChars(currentChars);
-        timeout = setTimeout(type, 30 + Math.random() * 50);
+        timeout = setTimeout(type, 10 + Math.random() * 20); // Faster typing for long scripts
       } else if (!isDeleting && currentChars === totalChars) {
         isDeleting = true;
-        timeout = setTimeout(type, 3000);
+        timeout = setTimeout(type, 4000); // Wait longer at the end
       } else if (isDeleting && currentChars > 0) {
         currentChars--;
         setDisplayedChars(currentChars);
-        timeout = setTimeout(type, 20);
+        timeout = setTimeout(type, 5); // Very fast delete
       } else if (isDeleting && currentChars === 0) {
         isDeleting = false;
         timeout = setTimeout(type, 500);
@@ -53,7 +109,7 @@ function TypingCodeWidget() {
   let charsLeft = displayedChars;
 
   return (
-    <pre className="text-[10px] sm:text-xs font-mono text-blue-400">
+    <pre className="text-[9px] sm:text-[10px] font-mono text-blue-400 leading-relaxed text-left">
       <code>
         {codeTokens.map((token, i) => {
           if (charsLeft <= 0) return null;
@@ -65,7 +121,7 @@ function TypingCodeWidget() {
             </span>
           );
         })}
-        <span className="inline-block w-[6px] h-[12px] bg-white/70 ml-0.5 animate-pulse align-middle" />
+        <span className="inline-block w-[5px] h-[10px] bg-white/70 ml-0.5 animate-pulse align-middle" />
       </code>
     </pre>
   );
@@ -169,7 +225,7 @@ export function HeroSection() {
             </div>
 
             {/* Floating Code Widget */}
-            <div className="absolute top-20 left-4 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0 min-h-[100px] min-w-[200px]">
+            <div className="absolute top-16 left-4 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0 w-[280px] sm:w-[320px] max-h-[250px] sm:max-h-[300px] overflow-hidden flex flex-col justify-end">
               <TypingCodeWidget />
             </div>
 
