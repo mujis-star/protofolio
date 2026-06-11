@@ -240,7 +240,7 @@ export function HeroSection() {
               </div>
               
               {/* Terminal Body with Effects */}
-              <div className="relative p-5 sm:p-6 min-h-[260px] sm:min-h-[300px]">
+              <div className="relative p-5 sm:p-6 h-[200px] sm:h-[250px] lg:h-[280px] overflow-hidden">
                 {/* Animated Laser Scanline */}
                 <motion.div 
                   animate={{ top: ["0%", "100%", "0%"] }}
