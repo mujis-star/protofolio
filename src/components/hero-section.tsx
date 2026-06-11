@@ -149,7 +149,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white"
             >
               I craft <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">digital</span>
               <br />
@@ -160,7 +160,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-xl mb-10 leading-relaxed"
+              className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-xl mb-10 leading-relaxed"
             >
               Hi, I'm <strong className="text-black dark:text-white font-semibold">{data.personal.name}</strong>. A {data.personal.role} based in {data.personal.location}.
               {data.personal.bio}
