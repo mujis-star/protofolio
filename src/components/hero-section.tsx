@@ -196,19 +196,8 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
             className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/5] xl:aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group"
           >
-            {/* The Video Element */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            >
-              <source src="/hero-video.mp4" type="video/mp4" />
-            </video>
-            
-            {/* Color Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-purple-900/40 mix-blend-overlay pointer-events-none" />
+            {/* Color Overlay to preserve glassmorphism readability */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none" />
 
             {/* Dashboard HUD Elements */}
             
