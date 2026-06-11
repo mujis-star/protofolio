@@ -1,8 +1,75 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import data from "@/data/content.json";
+
+const codeTokens = [
+  { text: "const", color: "text-pink-500" },
+  { text: " engineer", color: "text-white" },
+  { text: " = {\n", color: "text-white" },
+  { text: '  stack: [', color: "text-white" },
+  { text: '"React"', color: "text-green-400" },
+  { text: ', ', color: "text-white" },
+  { text: '"Next.js"', color: "text-green-400" },
+  { text: '],\n', color: "text-white" },
+  { text: '  status: ', color: "text-white" },
+  { text: '"Deploying..."', color: "text-green-400" },
+  { text: '\n};', color: "text-white" }
+];
+
+function TypingCodeWidget() {
+  const [displayedChars, setDisplayedChars] = useState(0);
+  const totalChars = codeTokens.reduce((acc, token) => acc + token.text.length, 0);
+
+  useEffect(() => {
+    let currentChars = 0;
+    let isDeleting = false;
+    let timeout: NodeJS.Timeout;
+
+    const type = () => {
+      if (!isDeleting && currentChars < totalChars) {
+        currentChars++;
+        setDisplayedChars(currentChars);
+        timeout = setTimeout(type, 30 + Math.random() * 50);
+      } else if (!isDeleting && currentChars === totalChars) {
+        isDeleting = true;
+        timeout = setTimeout(type, 3000);
+      } else if (isDeleting && currentChars > 0) {
+        currentChars--;
+        setDisplayedChars(currentChars);
+        timeout = setTimeout(type, 20);
+      } else if (isDeleting && currentChars === 0) {
+        isDeleting = false;
+        timeout = setTimeout(type, 500);
+      }
+    };
+
+    timeout = setTimeout(type, 1000);
+    return () => clearTimeout(timeout);
+  }, [totalChars]);
+
+  let charsLeft = displayedChars;
+
+  return (
+    <pre className="text-[10px] sm:text-xs font-mono text-blue-400">
+      <code>
+        {codeTokens.map((token, i) => {
+          if (charsLeft <= 0) return null;
+          const take = Math.min(charsLeft, token.text.length);
+          charsLeft -= take;
+          return (
+            <span key={i} className={token.color}>
+              {token.text.substring(0, take)}
+            </span>
+          );
+        })}
+        <span className="inline-block w-[6px] h-[12px] bg-white/70 ml-0.5 animate-pulse align-middle" />
+      </code>
+    </pre>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -102,18 +169,8 @@ export function HeroSection() {
             </div>
 
             {/* Floating Code Widget */}
-            <div className="absolute top-20 left-4 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0">
-              <pre className="text-[10px] sm:text-xs font-mono text-blue-400">
-                <code>
-                  <span className="text-pink-500">const</span> <span className="text-white">engineer</span> = {"{"}
-                  <br/>
-                  {"  "}stack: [<span className="text-green-400">"React"</span>, <span className="text-green-400">"Next.js"</span>],
-                  <br/>
-                  {"  "}status: <span className="text-green-400">"Deploying..."</span>
-                  <br/>
-                  {"}"};
-                </code>
-              </pre>
+            <div className="absolute top-20 left-4 p-4 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0 min-h-[100px] min-w-[200px]">
+              <TypingCodeWidget />
             </div>
 
             {/* Floating Performance Stats Widget */}
