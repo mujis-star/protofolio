@@ -109,7 +109,7 @@ function TypingCodeWidget() {
   let charsLeft = displayedChars;
 
   return (
-    <pre className="text-[9px] sm:text-[10px] font-mono text-blue-400 leading-relaxed text-left">
+    <pre className="text-[9px] sm:text-[10px] font-mono text-blue-400 leading-relaxed text-left whitespace-pre-wrap">
       <code>
         {codeTokens.map((token, i) => {
           if (charsLeft <= 0) return null;
@@ -225,12 +225,12 @@ export function HeroSection() {
             </div>
 
             {/* Floating Code Widget */}
-            <div className="absolute top-16 left-4 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0 w-[280px] sm:w-[320px] max-h-[250px] sm:max-h-[300px] overflow-hidden flex flex-col justify-end">
+            <div className="absolute top-24 left-6 p-5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0 w-[280px] sm:w-[320px] max-h-[300px] overflow-hidden">
               <TypingCodeWidget />
             </div>
 
             {/* Floating Performance Stats Widget */}
-            <div className="absolute top-32 right-4 p-3 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[10px] group-hover:translate-x-0 delay-100">
+            <div className="absolute top-32 right-6 p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[10px] group-hover:translate-x-0 delay-100">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
                 <span className="text-[10px] font-mono text-white/80">FPS: 144</span>
