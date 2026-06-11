@@ -53,7 +53,6 @@ export function Navigation() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <ThemeToggle />
           <Link
             href="#contact"
             className="hidden md:inline-flex h-10 items-center justify-center rounded-full border border-neutral-300 dark:border-white/20 bg-black/5 dark:bg-white/10 backdrop-blur-md px-6 text-sm font-bold text-black dark:text-white transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/20 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
