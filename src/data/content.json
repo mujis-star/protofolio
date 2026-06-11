@@ -46,7 +46,7 @@
       "title": "Nexus AI Interface",
       "category": "Creative Coding",
       "description": "An experimental conversational AI interface featuring real-time 3D audio visualizers.",
-      "image": "/images/projects/aura.png",
+      "image": "/images/projects/nexus.png",
       "link": "https://example.com",
       "techStack": ["Three.js", "React", "WebAudio API", "Tailwind"]
     },
@@ -55,7 +55,7 @@
       "title": "Stellar Web3",
       "category": "Web Development",
       "description": "A decentralized finance (DeFi) landing page with smooth scroll physics and glowing neon aesthetics.",
-      "image": "/images/projects/lumina.png",
+      "image": "/images/projects/stellar.png",
       "link": "https://example.com",
       "techStack": ["Next.js", "Lenis", "GSAP", "Tailwind CSS"]
     }
