@@ -196,25 +196,26 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
             className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/5] xl:aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group"
           >
-            {/* Color Overlay to preserve glassmorphism readability */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none" />
+            {/* Ambient Glow to replace video light and make glassmorphism pop */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,transparent_70%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 via-transparent to-purple-900/20 pointer-events-none" />
 
             {/* Dashboard HUD Elements */}
             
             {/* Top Bar (Console Header) */}
-            <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-gradient-to-b from-black/60 to-transparent">
+            <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-gradient-to-b from-black/40 to-transparent">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80 border border-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80 border border-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500/80 border border-green-500" />
               </div>
-              <div className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] font-mono text-cyan-300 uppercase tracking-widest shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+              <div className="px-3 py-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[10px] font-mono text-cyan-300 uppercase tracking-widest shadow-[0_0_15px_rgba(6,182,212,0.2)]">
                 Sys.Active // {new Date().getFullYear()}
               </div>
             </div>
 
             {/* Floating Cyber Terminal Widget */}
-            <div className="absolute top-12 sm:top-24 left-4 sm:left-6 rounded-xl bg-black/10 backdrop-blur-xl border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.3)] opacity-90 transition-all duration-500 w-[300px] sm:w-[380px] lg:w-[420px] overflow-hidden flex flex-col group/terminal hover:opacity-100 hover:shadow-[0_0_60px_rgba(59,130,246,0.5)] z-20">
+            <div className="absolute top-12 sm:top-24 left-4 sm:left-6 rounded-xl bg-[#0a1128]/60 backdrop-blur-xl border border-blue-500/40 shadow-[0_0_50px_rgba(59,130,246,0.2)] opacity-95 transition-all duration-500 w-[300px] sm:w-[380px] lg:w-[420px] overflow-hidden flex flex-col group/terminal hover:opacity-100 hover:shadow-[0_0_70px_rgba(59,130,246,0.4)] z-20">
               
               {/* Terminal Header */}
               <div className="flex items-center justify-between px-4 py-3 border-b border-blue-500/30 bg-blue-900/10 backdrop-blur-md">
@@ -247,7 +248,7 @@ export function HeroSection() {
             </div>
 
             {/* Floating Performance Stats Widget */}
-            <div className="absolute top-32 right-6 p-4 rounded-xl bg-black/10 backdrop-blur-xl border border-white/10 flex flex-col gap-3 opacity-90 transition-all duration-500 hover:opacity-100 z-20 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            <div className="absolute top-32 right-6 p-4 rounded-xl bg-[#0a1128]/60 backdrop-blur-xl border border-white/10 flex flex-col gap-3 opacity-95 transition-all duration-500 hover:opacity-100 z-20 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
                 <span className="text-[10px] font-mono text-white/90">FPS: 144</span>
@@ -262,7 +263,7 @@ export function HeroSection() {
             </div>
             
             {/* Bottom Glassmorphism Info Card */}
-            <div className="absolute bottom-6 left-6 right-6 p-5 sm:p-6 rounded-2xl bg-black/10 backdrop-blur-xl border border-white/20 opacity-95 transition-all duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:bg-black/20 z-20">
+            <div className="absolute bottom-6 left-6 right-6 p-5 sm:p-6 rounded-2xl bg-[#0a1128]/60 backdrop-blur-xl border border-white/20 opacity-95 transition-all duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:bg-[#0a1128]/80 z-20">
               <div className="flex justify-between items-end">
                 <div>
                   <h3 className="text-sm sm:text-base font-bold text-white mb-1 tracking-wide">Currently Building</h3>
