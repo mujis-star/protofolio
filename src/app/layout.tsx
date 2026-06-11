@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     description: "Crafting premium, ultra-modern digital experiences.",
     creator: "@mujeeb",
   },
+  verification: {
+    google: "r5HJUpVSFMw7h3xPvmNC0jywmwmb-mEemyxkogNMkac",
+  },
 };
 
 export default function RootLayout({
