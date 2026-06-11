@@ -8,9 +8,9 @@ import * as THREE from "three";
 function ScrollCamera() {
   useFrame((state) => {
     const scrollY = window.scrollY;
-    // Fly the camera forward through the Z axis and gently twist it as the user scrolls down
-    state.camera.position.z = THREE.MathUtils.lerp(state.camera.position.z, 10 - scrollY * 0.008, 0.05);
-    state.camera.rotation.z = THREE.MathUtils.lerp(state.camera.rotation.z, scrollY * 0.0005, 0.05);
+    // Subtle zoom in and out, rather than flying infinitely forward
+    state.camera.position.z = THREE.MathUtils.lerp(state.camera.position.z, 12 + Math.sin(scrollY * 0.001) * 5, 0.05);
+    state.camera.rotation.z = THREE.MathUtils.lerp(state.camera.rotation.z, scrollY * 0.0002, 0.05);
   });
   return null;
 }
@@ -18,23 +18,44 @@ function ScrollCamera() {
 function CyberCore() {
   const mesh1 = useRef<THREE.Mesh>(null);
   const mesh2 = useRef<THREE.Mesh>(null);
+  const mat1 = useRef<any>(null);
+  const mat2 = useRef<any>(null);
+  
+  const targetColor1 = new THREE.Color();
+  const targetColor2 = new THREE.Color();
 
   useFrame((state) => {
     const scrollY = window.scrollY;
     const scrollFactor = scrollY * 0.002;
 
     if (mesh1.current) {
-      // Base rotation + scroll rotation
       mesh1.current.rotation.x = state.clock.getElapsedTime() * 0.05 + scrollFactor;
       mesh1.current.rotation.y = state.clock.getElapsedTime() * 0.1 + scrollFactor * 0.5;
-      // Parallax effect: mesh moves slightly up and rotates heavily based on scroll depth
-      mesh1.current.position.y = THREE.MathUtils.lerp(mesh1.current.position.y, scrollY * 0.015, 0.05);
+      // Keep on screen: oscillate Y and X based on scroll instead of linear movement
+      mesh1.current.position.y = THREE.MathUtils.lerp(mesh1.current.position.y, Math.sin(scrollY * 0.0015) * 8, 0.05);
+      mesh1.current.position.x = THREE.MathUtils.lerp(mesh1.current.position.x, 10 + Math.cos(scrollY * 0.001) * 4, 0.05);
     }
     
     if (mesh2.current) {
       mesh2.current.rotation.x = -state.clock.getElapsedTime() * 0.08 - scrollFactor;
       mesh2.current.rotation.z = state.clock.getElapsedTime() * 0.12 + scrollFactor * 0.8;
-      mesh2.current.position.y = THREE.MathUtils.lerp(mesh2.current.position.y, 10 + scrollY * 0.01, 0.05);
+      mesh2.current.position.y = THREE.MathUtils.lerp(mesh2.current.position.y, 5 + Math.cos(scrollY * 0.0015) * 8, 0.05);
+      mesh2.current.position.x = THREE.MathUtils.lerp(mesh2.current.position.x, -15 + Math.sin(scrollY * 0.001) * 4, 0.05);
+    }
+
+    // Dynamic Color Shifting based on scroll depth
+    if (mat1.current) {
+      const hue1 = (0.6 + scrollY * 0.0001) % 1; // Starts blueish, shifts across spectrum
+      targetColor1.setHSL(hue1, 0.9, 0.6);
+      mat1.current.color.lerp(targetColor1, 0.05);
+      mat1.current.emissive.lerp(targetColor1, 0.05);
+    }
+
+    if (mat2.current) {
+      const hue2 = (0.5 + scrollY * 0.00015) % 1; // Starts cyan, shifts slightly faster
+      targetColor2.setHSL(hue2, 0.9, 0.5);
+      mat2.current.color.lerp(targetColor2, 0.05);
+      mat2.current.emissive.lerp(targetColor2, 0.05);
     }
   });
 
@@ -42,9 +63,10 @@ function CyberCore() {
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
       <TorusKnot ref={mesh1} args={[9, 1.5, 256, 32]} position={[10, 0, -15]}>
         <MeshDistortMaterial
+          ref={mat1}
           color="#3b82f6"
           emissive="#8b5cf6"
-          emissiveIntensity={0.5}
+          emissiveIntensity={0.8}
           wireframe
           distort={0.4}
           speed={2}
@@ -55,9 +77,10 @@ function CyberCore() {
 
       <TorusKnot ref={mesh2} args={[12, 0.5, 128, 32]} position={[-15, 10, -20]}>
         <MeshDistortMaterial
+          ref={mat2}
           color="#06b6d4"
           emissive="#06b6d4"
-          emissiveIntensity={0.8}
+          emissiveIntensity={0.9}
           wireframe
           distort={0.2}
           speed={1.5}
