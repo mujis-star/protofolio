@@ -63,7 +63,7 @@ export function ExperienceSection() {
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-80">
             {data.coreCapabilities.map((capability) => (
-              <div key={capability.name} className="text-lg md:text-xl font-bold font-sans tracking-tight px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black/50 text-neutral-600 dark:text-neutral-400">
+              <div key={capability.name} className="text-lg md:text-xl font-bold font-sans tracking-tight px-6 py-3 rounded-full border border-neutral-200/20 dark:border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur-md text-neutral-800 dark:text-neutral-300 shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:bg-white/10 dark:hover:bg-white/10 transition-colors">
                 {capability.name}
               </div>
             ))}

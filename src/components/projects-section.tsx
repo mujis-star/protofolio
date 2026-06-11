@@ -25,7 +25,7 @@ export function ProjectsSection() {
           </div>
           <a
             href="#"
-            className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black px-8 text-sm font-medium transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900"
+            className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 dark:bg-white/5 backdrop-blur-md px-8 text-sm font-medium transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] text-neutral-800 dark:text-white"
           >
             View All Work
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

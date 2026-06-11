@@ -30,7 +30,7 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group p-8 rounded-3xl bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 hover:border-blue-500/50 transition-colors"
+              className="group p-8 rounded-3xl bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-neutral-200/20 dark:border-white/10 hover:border-blue-500/50 hover:bg-white/10 dark:hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
             >
               <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 text-blue-500 font-bold">
                 0{index + 1}
