@@ -224,9 +224,37 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Floating Code Widget */}
-            <div className="absolute top-24 left-6 p-5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500 translate-x-[-10px] group-hover:translate-x-0 w-[280px] sm:w-[320px] max-h-[300px] overflow-hidden">
-              <TypingCodeWidget />
+            {/* Floating Cyber Terminal Widget */}
+            <div className="absolute top-24 left-6 rounded-xl bg-black/40 backdrop-blur-xl border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.3)] opacity-80 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0 w-[280px] sm:w-[320px] overflow-hidden flex flex-col group/terminal">
+              
+              {/* Terminal Header */}
+              <div className="flex items-center justify-between px-4 py-2 border-b border-blue-500/30 bg-blue-900/20 backdrop-blur-md">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
+                  <span className="text-[9px] font-mono text-blue-300 tracking-widest uppercase [text-shadow:0_0_8px_rgba(147,197,253,0.5)]">sys.terminal_exec</span>
+                </div>
+                <div className="flex gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                </div>
+              </div>
+              
+              {/* Terminal Body with Effects */}
+              <div className="relative p-4 sm:p-5 min-h-[220px]">
+                {/* Animated Laser Scanline */}
+                <motion.div 
+                  animate={{ top: ["0%", "100%", "0%"] }}
+                  transition={{ duration: 5, ease: "linear", repeat: Infinity }}
+                  className="absolute left-0 right-0 h-[1px] bg-blue-400/50 shadow-[0_0_15px_rgba(96,165,250,0.8)] z-10 pointer-events-none"
+                />
+                
+                {/* CRT Screen Scanlines Overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.4)_50%)] bg-[length:100%_4px] pointer-events-none z-10 opacity-50 mix-blend-overlay" />
+                
+                <div className="relative z-20">
+                  <TypingCodeWidget />
+                </div>
+              </div>
             </div>
 
             {/* Floating Performance Stats Widget */}
