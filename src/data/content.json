@@ -40,28 +40,55 @@
       "image": "/images/projects/lumina.png",
       "link": "https://example.com",
       "techStack": ["React", "Recharts", "Framer Motion", "Tailwind CSS"]
+    },
+    {
+      "id": "project-3",
+      "title": "Nexus AI Interface",
+      "category": "Creative Coding",
+      "description": "An experimental conversational AI interface featuring real-time 3D audio visualizers.",
+      "image": "/images/projects/aura.png",
+      "link": "https://example.com",
+      "techStack": ["Three.js", "React", "WebAudio API", "Tailwind"]
+    },
+    {
+      "id": "project-4",
+      "title": "Stellar Web3",
+      "category": "Web Development",
+      "description": "A decentralized finance (DeFi) landing page with smooth scroll physics and glowing neon aesthetics.",
+      "image": "/images/projects/lumina.png",
+      "link": "https://example.com",
+      "techStack": ["Next.js", "Lenis", "GSAP", "Tailwind CSS"]
     }
   ],
   "experience": [
     {
+      "role": "Lead Creative Technologist",
+      "company": "Nexus Design Group",
+      "period": "2024 - Present",
+      "description": "Bridging the gap between cutting-edge design and engineering to deliver immersive brand experiences."
+    },
+    {
       "role": "Senior Frontend Developer",
       "company": "TechNova",
-      "period": "2023 - Present",
-      "description": "Leading the frontend team to build highly interactive web applications."
+      "period": "2022 - 2024",
+      "description": "Led the frontend team to build highly interactive, high-performance web applications using Next.js."
     },
     {
       "role": "UI/UX Designer",
       "company": "Creative Studio",
-      "period": "2021 - 2023",
-      "description": "Designed award-winning websites and mobile applications."
+      "period": "2020 - 2022",
+      "description": "Designed award-winning websites and mobile applications with a focus on dark-mode aesthetics."
     }
   ],
-  "coreCapabilities": [
-    { "name": "Frontend Architecture" },
-    { "name": "Interactive Design" },
-    { "name": "Creative Coding" },
-    { "name": "Performance Optimization" },
-    { "name": "Digital Branding" }
+  "clients": [
+    { "name": "Vercel" },
+    { "name": "Figma" },
+    { "name": "Stripe" },
+    { "name": "Linear" },
+    { "name": "Raycast" },
+    { "name": "Vercel" },
+    { "name": "Figma" },
+    { "name": "Stripe" }
   ],
   "faq": [
     { "question": "What is your typical process?", "answer": "I start with research and wireframing, followed by high-fidelity design, and finally development with performance optimization." },

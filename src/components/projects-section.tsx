@@ -40,27 +40,34 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group relative flex flex-col gap-6"
+              className="group relative flex flex-col gap-6 p-6 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all duration-500"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 group-hover:rotate-1 transition-transform duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-cyan-400/10 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-400/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Floating View Project Button on Hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-sm">
+                  <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    View Case Study <ArrowUpRight className="w-4 h-4" />
+                  </span>
+                </div>
               </div>
               
-              <div>
+              <div className="px-2">
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-sm font-medium text-blue-500">{project.category}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-400">{project.category}</span>
                   <div className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-                  <span className="text-sm text-neutral-500">{project.techStack.slice(0, 2).join(", ")}</span>
+                  <span className="text-xs text-neutral-500 font-mono uppercase tracking-wide">{project.techStack.slice(0, 3).join(" • ")}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-400">
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm">
                   {project.description}
                 </p>
               </div>

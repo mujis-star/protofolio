@@ -50,23 +50,35 @@ export function ExperienceSection() {
           ))}
         </div>
 
-        {/* Client Logos Placeholder */}
+        {/* Client Logos Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="pt-16 border-t border-neutral-200 dark:border-neutral-800"
+          className="pt-16 border-t border-neutral-200 dark:border-white/10 relative"
         >
-          <p className="text-center text-sm font-medium text-neutral-500 uppercase tracking-widest mb-8">
-            Core Capabilities
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30" />
+          
+          <p className="text-center text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-10">
+            Trusted by innovative teams
           </p>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-80">
-            {data.coreCapabilities.map((capability) => (
-              <div key={capability.name} className="text-lg md:text-xl font-bold font-sans tracking-tight px-6 py-3 rounded-full border border-neutral-200/20 dark:border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur-md text-neutral-800 dark:text-neutral-300 shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:bg-white/10 dark:hover:bg-white/10 transition-colors">
-                {capability.name}
-              </div>
-            ))}
+          
+          {/* Faux Infinite Marquee using overflow and flex */}
+          <div className="relative w-full overflow-hidden flex justify-center">
+            {/* Left/Right fading edges */}
+            <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-white dark:from-[#030712] to-transparent z-10" />
+            <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-white dark:from-[#030712] to-transparent z-10" />
+            
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 hover:opacity-100 transition-opacity duration-500">
+              {data.clients.slice(0, 5).map((client, i) => (
+                <div key={i} className="flex items-center justify-center grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300">
+                  <span className="text-2xl md:text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-neutral-800 to-neutral-500 dark:from-neutral-200 dark:to-neutral-600 hover:from-blue-500 hover:to-cyan-400">
+                    {client.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
