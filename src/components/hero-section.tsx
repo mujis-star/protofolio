@@ -194,7 +194,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
-            className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group"
+            className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/5] xl:aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group"
           >
             {/* The Video Element */}
             <video
@@ -225,7 +225,7 @@ export function HeroSection() {
             </div>
 
             {/* Floating Cyber Terminal Widget */}
-            <div className="absolute top-24 left-6 rounded-xl bg-black/40 backdrop-blur-xl border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.3)] opacity-80 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0 w-[280px] sm:w-[320px] overflow-hidden flex flex-col group/terminal">
+            <div className="absolute top-24 left-6 rounded-xl bg-black/40 backdrop-blur-xl border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.3)] opacity-90 transition-all duration-500 w-[280px] sm:w-[320px] overflow-hidden flex flex-col group/terminal hover:opacity-100 hover:shadow-[0_0_60px_rgba(59,130,246,0.5)] z-20">
               
               {/* Terminal Header */}
               <div className="flex items-center justify-between px-4 py-2 border-b border-blue-500/30 bg-blue-900/20 backdrop-blur-md">
@@ -258,26 +258,26 @@ export function HeroSection() {
             </div>
 
             {/* Floating Performance Stats Widget */}
-            <div className="absolute top-32 right-6 p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[10px] group-hover:translate-x-0 delay-100">
+            <div className="absolute top-32 right-6 p-4 rounded-xl bg-black/40 backdrop-blur-xl border border-white/10 flex flex-col gap-3 opacity-90 transition-all duration-500 hover:opacity-100 z-20 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
-                <span className="text-[10px] font-mono text-white/80">FPS: 144</span>
+                <span className="text-[10px] font-mono text-white/90">FPS: 144</span>
               </div>
               <div className="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
                 <div className="w-[85%] h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-blue-500" />
-                <span className="text-[10px] font-mono text-white/80">MEM: 32%</span>
+                <span className="text-[10px] font-mono text-white/90">MEM: 32%</span>
               </div>
             </div>
             
             {/* Bottom Glassmorphism Info Card */}
-            <div className="absolute bottom-6 left-6 right-6 p-5 sm:p-6 rounded-2xl bg-white/10 dark:bg-black/40 backdrop-blur-xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+            <div className="absolute bottom-6 left-6 right-6 p-5 sm:p-6 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/20 opacity-95 transition-all duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:bg-black/50 z-20">
               <div className="flex justify-between items-end">
                 <div>
-                  <h3 className="text-sm font-bold text-white mb-1 tracking-wide">Currently Building</h3>
-                  <p className="text-xs text-blue-300 font-mono">Next-Gen Web Experiences</p>
+                  <h3 className="text-sm sm:text-base font-bold text-white mb-1 tracking-wide">Currently Building</h3>
+                  <p className="text-xs sm:text-sm text-blue-300 font-mono">Next-Gen Web Experiences</p>
                 </div>
                 <div className="flex gap-1 h-6 items-end">
                   {/* Fake Audio/Data Visualizer */}
