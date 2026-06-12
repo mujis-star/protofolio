@@ -36,15 +36,17 @@ export function ExperienceSection() {
               {/* Timeline Dot */}
               <div className="absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-white dark:ring-black z-10" />
               
-              <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"}`}>
-                <span className="inline-block px-3 py-1 mb-3 text-xs font-medium text-blue-500 bg-blue-500/10 rounded-full">
-                  {exp.period}
-                </span>
-                <h3 className="text-xl font-bold mb-1">{exp.role}</h3>
-                <h4 className="text-lg text-neutral-500 dark:text-neutral-400 mb-4">{exp.company}</h4>
-                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  {exp.description}
-                </p>
+              <div className={`md:w-1/2 flex ${index % 2 === 0 ? "md:pr-12 md:justify-end" : "md:pl-12 md:justify-start md:ml-auto"}`}>
+                <div className="bg-white/5 dark:bg-[#030712]/80 backdrop-blur-md border border-neutral-200 dark:border-white/10 p-6 sm:p-8 rounded-2xl shadow-xl hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow duration-300 w-full text-left">
+                  <span className="inline-block px-3 py-1 mb-3 text-xs font-medium text-blue-500 bg-blue-500/10 rounded-full">
+                    {exp.period}
+                  </span>
+                  <h3 className="text-xl font-bold mb-1 text-neutral-900 dark:text-white">{exp.role}</h3>
+                  <h4 className="text-lg text-neutral-500 dark:text-cyan-400/80 mb-4">{exp.company}</h4>
+                  <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                    {exp.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
