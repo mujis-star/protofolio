@@ -31,8 +31,8 @@ export function Navigation() {
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className={`fixed top-6 left-0 right-0 mx-auto z-50 w-[95%] max-w-5xl transition-all duration-300 rounded-full border border-white/10 ${
         scrolled
-          ? "bg-[#030712]/90 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
-          : "bg-[#030712]/60 backdrop-blur-lg shadow-[0_5px_20px_rgba(0,0,0,0.5)]"
+          ? "bg-black/40 backdrop-blur-lg shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+          : "bg-black/20 backdrop-blur-md shadow-[0_5px_20px_rgba(0,0,0,0.5)]"
       }`}
     >
       <div className="px-6 md:px-8 h-16 flex items-center justify-between relative">
