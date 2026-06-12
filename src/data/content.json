@@ -1,124 +1,149 @@
 {
   "personal": {
-    "name": "Mujeeb",
-    "role": "Creative Developer & Tech Enthusiast",
-    "bio": "Crafting premium digital experiences. Web Developer, AI Explorer, CyberSec Enthusiast & Future Network Administrator.",
-    "availabilityStatus": "Available for freelance work",
-    "location": "Silicon Valley, CA"
+    "name": "Mujeeb P",
+    "role": "IT & Web Development Student",
+    "location": "Kannur, Kerala, India",
+    "bio": " Versatile IT and Web Development student with a powerful blend of technical hardware skills, front-end development, and professional multimedia editing expertise. Experienced in managing computer lab operations, deploying live web platforms, and utilizing the Adobe Creative Cloud suite for digital asset creation.",
+    "email": "mujisworld09@gmail.com",
+    "phone": "9746613860",
+    "github": "https://github.com/mujis-star",
+    "linkedin": "https://linkedin.com",
+    "availabilityStatus": "Available for freelance work"
   },
-  "socials": [
-    { "name": "GitHub", "url": "https://github.com", "icon": "github" },
-    { "name": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" },
-    { "name": "Twitter", "url": "https://twitter.com", "icon": "twitter" },
-    { "name": "Dribbble", "url": "https://dribbble.com", "icon": "dribbble" }
-  ],
-  "skills": [
-    { "category": "Frontend", "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
-    { "category": "Animation", "items": ["Framer Motion", "GSAP", "Three.js", "Lenis"] },
-    { "category": "Security & AI", "items": ["Network Administration", "Cybersecurity", "AI Prompting", "Python"] }
-  ],
-  "services": [
-    { "title": "Web Development", "description": "Building high-performance, accessible, and responsive web applications." },
-    { "title": "AI & Automation", "description": "Exploring artificial intelligence to automate workflows and enhance user experiences." },
-    { "title": "Network & Security", "description": "Designing secure architectures and administrating robust network systems." }
-  ],
-  "achievements": [
-    {
-      "title": "Hackathon Winner 2024",
-      "category": "Competition",
-      "description": "First place globally for building a revolutionary AI-powered accessibility tool.",
-      "date": "2024"
-    },
-    {
-      "title": "Certified Network Administrator",
-      "category": "Certification",
-      "description": "Completed advanced enterprise networking and security protocols certification.",
-      "date": "2023"
-    },
-    {
-      "title": "Top 1% Github Contributor",
-      "category": "Open Source",
-      "description": "Recognized for significant contributions to the open-source React ecosystem.",
-      "date": "2023"
-    }
-  ],
-  "gallery": [
-    { "id": 1, "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop", "title": "Speaking at Tech Summit", "span": "col-span-2 row-span-2" },
-    { "id": 2, "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", "title": "Hackathon Late Nights", "span": "col-span-1 row-span-1" },
-    { "id": 3, "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop", "title": "Global Developer Meetup", "span": "col-span-1 row-span-2" },
-    { "id": 4, "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop", "title": "Workshop Session", "span": "col-span-1 row-span-1" },
-    { "id": 5, "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop", "title": "Team Collaboration", "span": "col-span-2 row-span-1" }
-  ],
+  "about": {
+    "paragraphs": [
+      "I am an IT and Web Development student with a strong passion for blending code, hardware, and creative design. My journey spans from managing computer lab operations to deploying responsive web platforms.",
+      "Beyond code, I have professional multimedia editing expertise using the complete Adobe Creative Cloud suite. Whether it's diagnosing NVMe SSDs and Linux VMs, or creating motion graphics and web-ready visual assets, I love bridging the gap between deep technical infrastructure and polished creative output."
+    ],
+    "skills": [
+      {
+        "category": "Web Development",
+        "technologies": ["HTML5", "CSS3", "JavaScript", "Vercel", "GitHub"]
+      },
+      {
+        "category": "Multimedia & Design",
+        "technologies": ["Photoshop", "Premiere Pro", "Illustrator", "After Effects", "Lightroom"]
+      },
+      {
+        "category": "Systems & Hardware",
+        "technologies": ["Linux (Kali)", "VMware", "Windows Admin", "NVMe/SSD Diagnosis", "Network Scanning"]
+      }
+    ]
+  },
   "projects": [
     {
-      "id": "project-1",
-      "title": "Aura eCommerce",
-      "category": "Web Development",
-      "description": "A futuristic headless eCommerce platform built with Next.js and Shopify.",
+      "id": "itqan-friends",
+      "title": "ITQAN Friends Website",
+      "category": "Web Development & Design",
+      "description": "Developed the user interface using clean semantic HTML/CSS and exported web-ready visual assets using Adobe tools to enhance site aesthetics.",
       "image": "/images/projects/aura.png",
-      "link": "https://example.com",
-      "techStack": ["Next.js", "Tailwind", "Framer Motion", "Shopify API"]
+      "link": "#",
+      "tech": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
     },
     {
-      "id": "project-2",
-      "title": "Lumina Dashboard",
-      "category": "UI/UX Design",
-      "description": "A dark-mode analytics dashboard with glassmorphism and animated charts.",
+      "id": "personal-portfolio",
+      "title": "Professional Portfolio",
+      "category": "Frontend Development",
+      "description": "Designed and built a personalized digital portfolio to showcase technical capabilities and creative editing projects. Optimized frontend assets for quick loading.",
       "image": "/images/projects/lumina.png",
-      "link": "https://example.com",
-      "techStack": ["React", "Recharts", "Framer Motion", "Tailwind CSS"]
+      "link": "#",
+      "tech": ["React", "Tailwind CSS", "Framer Motion", "Three.js"]
     },
     {
-      "id": "project-3",
-      "title": "Nexus AI Interface",
-      "category": "Creative Coding",
-      "description": "An experimental conversational AI interface featuring real-time 3D audio visualizers.",
+      "id": "hardware-lab",
+      "title": "Hardware Lab Management",
+      "category": "Systems & Infrastructure",
+      "description": "Managed daily operations and hardware readiness. Diagnosed and resolved faults, recovering unreadable 3.5-inch 1TB external storage drives.",
       "image": "/images/projects/nexus.png",
-      "link": "https://example.com",
-      "techStack": ["Three.js", "React", "WebAudio API", "Tailwind"]
+      "link": "#",
+      "tech": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
     },
     {
-      "id": "project-4",
-      "title": "Stellar Web3",
-      "category": "Web Development",
-      "description": "A decentralized finance (DeFi) landing page with smooth scroll physics and glowing neon aesthetics.",
+      "id": "multimedia-production",
+      "title": "Multimedia Production",
+      "category": "Creative Design",
+      "description": "Experimenting with advanced video editing techniques, audio timing, color grading, and graphic trends to create polished digital solutions.",
       "image": "/images/projects/stellar.png",
-      "link": "https://example.com",
-      "techStack": ["Next.js", "Lenis", "GSAP", "Tailwind CSS"]
+      "link": "#",
+      "tech": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]
     }
   ],
   "experience": [
     {
-      "role": "Lead Creative Technologist",
-      "company": "Nexus Design Group",
-      "period": "2024 - Present",
-      "description": "Bridging the gap between cutting-edge design and engineering to deliver immersive brand experiences."
+      "role": "Computer Lab Assistant & Technical Support",
+      "company": "Academic Computer Lab",
+      "period": "Present",
+      "description": "Manage daily operations, hardware readiness, and software environments across lab workstations. Perform hardware diagnostics, NVMe SSD upgrades, and resolve complex OS anomalies."
     },
     {
-      "role": "Senior Frontend Developer",
-      "company": "TechNova",
-      "period": "2022 - 2024",
-      "description": "Led the frontend team to build highly interactive, high-performance web applications using Next.js."
+      "role": "Frontend Developer & Asset Designer",
+      "company": "ITQAN Friends Project",
+      "period": "Academic Project",
+      "description": "Developed and structured the user interface using semantic HTML and responsive CSS. Designed and optimized web-ready visual assets using Adobe tools."
     },
     {
-      "role": "UI/UX Designer",
-      "company": "Creative Studio",
-      "period": "2020 - 2022",
-      "description": "Designed award-winning websites and mobile applications with a focus on dark-mode aesthetics."
+      "role": "Independent Developer & Media Creator",
+      "company": "Personal Projects",
+      "period": "Ongoing",
+      "description": "Designing personalized digital portfolios and experimenting with advanced video editing techniques, audio timing, and color grading."
+    }
+  ],
+  "achievements": [
+    {
+      "title": "IT & Web Dev Student",
+      "description": "Information Technology / Computer Science track resident in Kannur, Kerala.",
+      "icon": "award"
+    },
+    {
+      "title": "Hardware Troubleshooting",
+      "description": "Successfully recovered unreadable 1TB storage drives and performed high-speed NVMe upgrades.",
+      "icon": "shield"
+    },
+    {
+      "title": "Multimedia Editor",
+      "description": "Mastery of the complete Adobe Creative Cloud suite for professional-grade asset creation.",
+      "icon": "trophy"
     }
   ],
   "clients": [
-    { "name": "Vercel" },
-    { "name": "Figma" },
-    { "name": "Stripe" },
-    { "name": "Linear" },
-    { "name": "Raycast" },
-    { "name": "Vercel" },
-    { "name": "Figma" },
-    { "name": "Stripe" }
+    { "name": "ADOBE CC" },
+    { "name": "LINUX" },
+    { "name": "VMWARE" },
+    { "name": "WINDOWS" },
+    { "name": "VERCEL" },
+    { "name": "GITHUB" },
+    { "name": "KALI LINUX" }
   ],
-  "faq": [
-    { "question": "What is your typical process?", "answer": "I start with research and wireframing, followed by high-fidelity design, and finally development with performance optimization." },
-    { "question": "Do you work with startups?", "answer": "Yes! I love working with innovative startups to bring their vision to life." }
+  "gallery": [
+    {
+      "id": "gal-1",
+      "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+      "caption": "Coding Late Nights",
+      "span": "col-span-1 row-span-1"
+    },
+    {
+      "id": "gal-2",
+      "url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
+      "caption": "Hardware Diagnostics & Upgrades",
+      "span": "col-span-1 row-span-2"
+    },
+    {
+      "id": "gal-3",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+      "caption": "Network Security Lab",
+      "span": "col-span-2 row-span-1"
+    },
+    {
+      "id": "gal-4",
+      "url": "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop",
+      "caption": "Creative Cloud Video Editing",
+      "span": "col-span-1 row-span-1"
+    },
+    {
+      "id": "gal-5",
+      "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+      "caption": "Linux Virtual Machines",
+      "span": "col-span-2 row-span-2"
+    }
   ]
 }
