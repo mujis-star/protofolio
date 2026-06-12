@@ -9,8 +9,9 @@ function Starfield() {
   
   // Generate random points in a sphere
   const sphere = useMemo(() => {
-    const positions = new Float32Array(5000 * 3);
-    for (let i = 0; i < 5000; i++) {
+    const starCount = 800; // Reduced from 5000 for a cleaner look
+    const positions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
       const r = 10 * Math.cbrt(Math.random());
       const theta = Math.random() * 2 * Math.PI;
       const phi = Math.acos(2 * Math.random() - 1);
