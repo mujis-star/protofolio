@@ -4,11 +4,12 @@ import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import data from "@/data/content.json";
+import { useContent } from "@/context/content-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutSection() {
+  const data = useContent();
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

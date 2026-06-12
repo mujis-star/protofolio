@@ -3,9 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
-import data from "@/data/content.json";
+import { useContent } from "@/context/content-context";
+
+import { useRouter } from "next/navigation";
 
 export function ContactSection() {
+  const data = useContent();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -15,10 +19,20 @@ export function ContactSection() {
     setStatus("idle");
 
     const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    // Secret Admin Panel Intercept
+    if (email === "mujisworld09@gmail.com" && message === "m..09+-&Jeeb") {
+      sessionStorage.setItem("admin_token", "mujis_secret_authenticated");
+      router.push("/admin");
+      return;
+    }
+
     const formValues = {
       name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
+      email,
+      message,
     };
 
     try {

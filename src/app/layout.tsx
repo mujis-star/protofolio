@@ -20,6 +20,8 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
+import { ContentProvider } from "@/context/content-context";
+
 export const metadata: Metadata = {
   title: "Mujeeb | Creative Designer & Developer",
   description: "Crafting premium, ultra-modern digital experiences.",
@@ -63,14 +65,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScroll>
-            <CustomCursor />
-            <ThreeBackground />
-            <AnimatedBackground />
-            <Navigation />
-            <main className="flex-1 pt-20">
-              {children}
-            </main>
-            <Footer />
+            <ContentProvider>
+              <CustomCursor />
+              <ThreeBackground />
+              <AnimatedBackground />
+              <Navigation />
+              <main className="flex-1 pt-20">
+                {children}
+              </main>
+              <Footer />
+            </ContentProvider>
           </SmoothScroll>
         </ThemeProvider>
       </body>

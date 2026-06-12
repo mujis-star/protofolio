@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-import data from "@/data/content.json";
+import { useContent } from "@/context/content-context";
 
 export function FAQSection() {
+  const data = useContent();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (

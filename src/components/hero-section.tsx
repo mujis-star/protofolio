@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import data from "@/data/content.json";
+import { useContent } from "@/context/content-context";
 
 const codeTokens = [
   { text: "import ", color: "text-pink-500" },
@@ -128,6 +128,7 @@ function TypingCodeWidget() {
 }
 
 export function HeroSection() {
+  const data = useContent();
   return (
     <section className="relative min-h-[calc(100vh-5rem)] flex items-center pt-20 md:pt-0 overflow-hidden">
       <div className="container relative z-10 px-6 mx-auto">

@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import data from "@/data/content.json";
+import { useContent } from "@/context/content-context";
 
 export function ServicesSection() {
+  const data = useContent();
   return (
     <section id="services" className="py-24 md:py-32 relative overflow-hidden bg-transparent">
       <div className="container mx-auto px-6 relative z-10">

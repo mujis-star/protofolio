@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import data from "@/data/content.json";
+import { useContent } from "@/context/content-context";
 import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
+  const data = useContent();
   return (
     <footer className="w-full border-t border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-black/50 backdrop-blur-md">
       <div className="container mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row justify-between items-center gap-6">
