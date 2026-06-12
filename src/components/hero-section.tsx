@@ -267,7 +267,7 @@ export function HeroSection() {
               <div className="flex justify-between items-end">
                 <div>
                   <h3 className="text-sm sm:text-base font-bold text-white mb-1 tracking-wide">Currently Building</h3>
-                  <p className="text-xs sm:text-sm text-blue-300 font-mono">Next-Gen Web Experiences</p>
+                  <p className="text-xs sm:text-sm text-blue-300 font-mono">AI & Secure Network Systems</p>
                 </div>
                 <div className="flex gap-1 h-6 items-end">
                   {/* Fake Audio/Data Visualizer */}

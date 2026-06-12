@@ -1,8 +1,8 @@
 {
   "personal": {
     "name": "Mujeeb",
-    "role": "Creative Designer & Developer",
-    "bio": "Crafting premium, ultra-modern digital experiences.",
+    "role": "Creative Developer & Tech Enthusiast",
+    "bio": "Crafting premium digital experiences. Web Developer, AI Explorer, CyberSec Enthusiast & Future Network Administrator.",
     "availabilityStatus": "Available for freelance work",
     "location": "Silicon Valley, CA"
   },
@@ -15,12 +15,39 @@
   "skills": [
     { "category": "Frontend", "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
     { "category": "Animation", "items": ["Framer Motion", "GSAP", "Three.js", "Lenis"] },
-    { "category": "Design", "items": ["Figma", "UI/UX Design", "Wireframing", "Prototyping"] }
+    { "category": "Security & AI", "items": ["Network Administration", "Cybersecurity", "AI Prompting", "Python"] }
   ],
   "services": [
     { "title": "Web Development", "description": "Building high-performance, accessible, and responsive web applications." },
-    { "title": "Creative Coding", "description": "Implementing immersive 3D experiences and complex animations." },
-    { "title": "UI/UX Design", "description": "Designing intuitive and visually stunning interfaces." }
+    { "title": "AI & Automation", "description": "Exploring artificial intelligence to automate workflows and enhance user experiences." },
+    { "title": "Network & Security", "description": "Designing secure architectures and administrating robust network systems." }
+  ],
+  "achievements": [
+    {
+      "title": "Hackathon Winner 2024",
+      "category": "Competition",
+      "description": "First place globally for building a revolutionary AI-powered accessibility tool.",
+      "date": "2024"
+    },
+    {
+      "title": "Certified Network Administrator",
+      "category": "Certification",
+      "description": "Completed advanced enterprise networking and security protocols certification.",
+      "date": "2023"
+    },
+    {
+      "title": "Top 1% Github Contributor",
+      "category": "Open Source",
+      "description": "Recognized for significant contributions to the open-source React ecosystem.",
+      "date": "2023"
+    }
+  ],
+  "gallery": [
+    { "id": 1, "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop", "title": "Speaking at Tech Summit", "span": "col-span-2 row-span-2" },
+    { "id": 2, "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", "title": "Hackathon Late Nights", "span": "col-span-1 row-span-1" },
+    { "id": 3, "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop", "title": "Global Developer Meetup", "span": "col-span-1 row-span-2" },
+    { "id": 4, "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop", "title": "Workshop Session", "span": "col-span-1 row-span-1" },
+    { "id": 5, "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop", "title": "Team Collaboration", "span": "col-span-2 row-span-1" }
   ],
   "projects": [
     {

@@ -8,6 +8,8 @@ import { ServicesSection } from "@/components/services-section";
 import { TechStack } from "@/components/tech-stack";
 import { ProjectsSection } from "@/components/projects-section";
 import { ExperienceSection } from "@/components/experience-section";
+import { AchievementsSection } from "@/components/achievements-section";
+import { GallerySection } from "@/components/gallery-section";
 import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 
@@ -20,7 +22,7 @@ export default function Home() {
     "mainEntity": {
       "@type": "Person",
       "name": "Mujeeb",
-      "jobTitle": "Creative Designer & Developer",
+      "jobTitle": "Creative Developer & Tech Enthusiast",
       "url": "https://mujeeb-portfolio.example.com",
       "sameAs": [
         "https://github.com",
@@ -48,8 +50,10 @@ export default function Home() {
         <AboutSection />
         <ServicesSection />
         <TechStack />
+        <AchievementsSection />
         <ProjectsSection />
         <ExperienceSection />
+        <GallerySection />
         <FAQSection />
         <ContactSection />
       </div>
