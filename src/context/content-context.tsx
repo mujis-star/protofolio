@@ -5,7 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import defaultData from "@/data/content.json";
 
-type ContentData = typeof defaultData;
+export type ContentData = typeof defaultData;
 
 interface ContentContextType {
   data: ContentData;
