@@ -14,22 +14,22 @@
     "paragraphs": [
       "I am an IT and Web Development student with a strong passion for blending code, hardware, and creative design. My journey spans from managing computer lab operations to deploying responsive web platforms.",
       "Beyond code, I have professional multimedia editing expertise using the complete Adobe Creative Cloud suite. Whether it's diagnosing NVMe SSDs and Linux VMs, or creating motion graphics and web-ready visual assets, I love bridging the gap between deep technical infrastructure and polished creative output."
-    ],
-    "skills": [
-      {
-        "category": "Web Development",
-        "technologies": ["HTML5", "CSS3", "JavaScript", "Vercel", "GitHub"]
-      },
-      {
-        "category": "Multimedia & Design",
-        "technologies": ["Photoshop", "Premiere Pro", "Illustrator", "After Effects", "Lightroom"]
-      },
-      {
-        "category": "Systems & Hardware",
-        "technologies": ["Linux (Kali)", "VMware", "Windows Admin", "NVMe/SSD Diagnosis", "Network Scanning"]
-      }
     ]
   },
+  "skills": [
+    {
+      "category": "Web Development",
+      "items": ["HTML5", "CSS3", "JavaScript", "Vercel", "GitHub"]
+    },
+    {
+      "category": "Multimedia & Design",
+      "items": ["Photoshop", "Premiere Pro", "Illustrator", "After Effects", "Lightroom"]
+    },
+    {
+      "category": "Systems & Hardware",
+      "items": ["Linux (Kali)", "VMware", "Windows Admin", "NVMe SSDs", "Hardware Diagnostics"]
+    }
+  ],
   "projects": [
     {
       "id": "itqan-friends",
@@ -38,7 +38,7 @@
       "description": "Developed the user interface using clean semantic HTML/CSS and exported web-ready visual assets using Adobe tools to enhance site aesthetics.",
       "image": "/images/projects/aura.png",
       "link": "#",
-      "tech": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
+      "techStack": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
     },
     {
       "id": "personal-portfolio",
@@ -47,7 +47,7 @@
       "description": "Designed and built a personalized digital portfolio to showcase technical capabilities and creative editing projects. Optimized frontend assets for quick loading.",
       "image": "/images/projects/lumina.png",
       "link": "#",
-      "tech": ["React", "Tailwind CSS", "Framer Motion", "Three.js"]
+      "techStack": ["React", "Tailwind CSS", "Framer Motion", "Three.js"]
     },
     {
       "id": "hardware-lab",
@@ -56,7 +56,7 @@
       "description": "Managed daily operations and hardware readiness. Diagnosed and resolved faults, recovering unreadable 3.5-inch 1TB external storage drives.",
       "image": "/images/projects/nexus.png",
       "link": "#",
-      "tech": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
+      "techStack": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
     },
     {
       "id": "multimedia-production",
@@ -65,7 +65,7 @@
       "description": "Experimenting with advanced video editing techniques, audio timing, color grading, and graphic trends to create polished digital solutions.",
       "image": "/images/projects/stellar.png",
       "link": "#",
-      "tech": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]
+      "techStack": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]
     }
   ],
   "experience": [
@@ -91,16 +91,22 @@
   "achievements": [
     {
       "title": "IT & Web Dev Student",
+      "category": "Education",
+      "date": "Present",
       "description": "Information Technology / Computer Science track resident in Kannur, Kerala.",
       "icon": "award"
     },
     {
       "title": "Hardware Troubleshooting",
+      "category": "Technical",
+      "date": "2024",
       "description": "Successfully recovered unreadable 1TB storage drives and performed high-speed NVMe upgrades.",
       "icon": "shield"
     },
     {
       "title": "Multimedia Editor",
+      "category": "Creative",
+      "date": "2023",
       "description": "Mastery of the complete Adobe Creative Cloud suite for professional-grade asset creation.",
       "icon": "trophy"
     }
@@ -114,36 +120,61 @@
     { "name": "GITHUB" },
     { "name": "KALI LINUX" }
   ],
+  "services": [
+    { "title": "Web Development", "description": "Building high-performance, accessible, and responsive web applications." },
+    { "title": "Multimedia Design", "description": "Creating motion graphics and web-ready visual assets using Adobe Creative Cloud." },
+    { "title": "Network & Hardware", "description": "Diagnosing hardware faults and administrating robust network systems." }
+  ],
+  "faq": [
+    {
+      "question": "What technologies do you specialize in?",
+      "answer": "I specialize in front-end web development with React and Next.js, combined with deep systems administration using Linux, VMware, and hardware diagnostics."
+    },
+    {
+      "question": "Do you offer freelance services?",
+      "answer": "Yes, I am currently available for freelance projects ranging from web development to multimedia editing and motion graphics."
+    },
+    {
+      "question": "What is your hardware and OS setup?",
+      "answer": "I run a dual-boot Windows and Kali Linux environment with high-speed NVMe SSDs, optimized for both creative editing workflows and network security testing."
+    }
+  ],
   "gallery": [
     {
       "id": "gal-1",
-      "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
-      "caption": "Coding Late Nights",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+      "title": "Coding Late Nights",
       "span": "col-span-1 row-span-1"
     },
     {
       "id": "gal-2",
-      "url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
-      "caption": "Hardware Diagnostics & Upgrades",
+      "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
+      "title": "Hardware Diagnostics & Upgrades",
       "span": "col-span-1 row-span-2"
     },
     {
       "id": "gal-3",
-      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
-      "caption": "Network Security Lab",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+      "title": "Network Security Lab",
       "span": "col-span-2 row-span-1"
     },
     {
       "id": "gal-4",
-      "url": "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop",
-      "caption": "Creative Cloud Video Editing",
+      "image": "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop",
+      "title": "Creative Cloud Video Editing",
       "span": "col-span-1 row-span-1"
     },
     {
       "id": "gal-5",
-      "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-      "caption": "Linux Virtual Machines",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+      "title": "Linux Virtual Machines",
       "span": "col-span-2 row-span-2"
     }
+  ],
+  "socials": [
+    { "name": "GitHub", "url": "https://github.com/mujis-star" },
+    { "name": "LinkedIn", "url": "https://linkedin.com" },
+    { "name": "Twitter", "url": "https://twitter.com" },
+    { "name": "Email", "url": "mailto:mujisworld09@gmail.com" }
   ]
 }
