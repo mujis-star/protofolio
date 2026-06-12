@@ -45,7 +45,7 @@ export function Navigation() {
             <Link
               key={link.name}
               href={link.href}
-              className="relative text-sm font-bold text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]"
+              className="relative text-sm font-bold text-neutral-800 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)] [text-shadow:0_2px_10px_rgba(0,0,0,0.8)]"
             >
               {link.name}
             </Link>
