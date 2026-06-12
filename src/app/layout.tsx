@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
 import { CustomCursor } from "@/components/custom-cursor";
+import { ThreeBackground } from "@/components/three-background";
 import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { AnimatedBackground } from "@/components/animated-background";
@@ -62,8 +63,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScroll>
-            <AnimatedBackground />
             <CustomCursor />
+            <ThreeBackground />
+            <AnimatedBackground />
             <Navigation />
             <main className="flex-1 pt-20">
               {children}

@@ -1,33 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 export function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [isMobile, setIsMobile] = useState(true); // default to true to avoid hydration mismatch
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if it's a touch device
-    const checkMobile = () => {
-      setIsMobile(window.matchMedia("(pointer: coarse)").matches);
-    };
-    
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      if (!isVisible) setIsVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+      // Check if hovering over interactive elements
       if (
         target.tagName.toLowerCase() === "a" ||
         target.tagName.toLowerCase() === "button" ||
         target.closest("a") ||
-        target.closest("button")
+        target.closest("button") ||
+        target.classList.contains("interactive")
       ) {
         setIsHovering(true);
       } else {
@@ -35,58 +30,51 @@ export function CustomCursor() {
       }
     };
 
-    if (!isMobile) {
-      window.addEventListener("mousemove", updateMousePosition);
-      window.addEventListener("mouseover", handleMouseOver);
-    }
+    const handleMouseOut = () => {
+      setIsVisible(false);
+    };
+
+    window.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseleave", handleMouseOut);
+    document.addEventListener("mouseenter", () => setIsVisible(true));
 
     return () => {
-      window.removeEventListener("resize", checkMobile);
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseleave", handleMouseOut);
+      document.removeEventListener("mouseenter", () => setIsVisible(true));
     };
-  }, [isMobile]);
+  }, [isVisible]);
 
-  if (isMobile) return null;
+  // Hide cursor on mobile devices
+  if (typeof window !== "undefined" && window.innerWidth < 768) return null;
 
   return (
     <>
-      {/* Central Solid Dot */}
+      {/* The main glowing dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[100] shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+        className="fixed top-0 left-0 w-3 h-3 bg-blue-400 rounded-full pointer-events-none z-[99999] mix-blend-screen shadow-[0_0_10px_rgba(96,165,250,0.8)]"
         animate={{
           x: mousePosition.x - 6,
           y: mousePosition.y - 6,
           scale: isHovering ? 0 : 1,
+          opacity: isVisible ? 1 : 0,
         }}
-        transition={{ type: "spring", stiffness: 800, damping: 28, mass: 0.1 }}
+        transition={{ type: "spring", stiffness: 1000, damping: 40, mass: 0.1 }}
       />
       
-      {/* Outer Ring with Orbital Dots */}
+      {/* The expanding ring when hovering over links */}
       <motion.div
-        className="fixed top-0 left-0 w-16 h-16 border border-white/20 rounded-full pointer-events-none z-[99] flex items-center justify-center"
+        className="fixed top-0 left-0 w-10 h-10 border-2 border-cyan-400 rounded-full pointer-events-none z-[99998] mix-blend-screen shadow-[0_0_15px_rgba(34,211,238,0.5)] bg-blue-500/10 backdrop-blur-sm"
         animate={{
-          x: mousePosition.x - 32,
-          y: mousePosition.y - 32,
+          x: mousePosition.x - 20,
+          y: mousePosition.y - 20,
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? "rgba(255, 255, 255, 0.05)" : "transparent",
+          opacity: isVisible ? (isHovering ? 1 : 0.3) : 0,
         }}
-        transition={{ type: "spring", stiffness: 250, damping: 20, mass: 0.5 }}
-      >
-        {/* Continuous Rotation Wrapper */}
-        <motion.div
-          className="absolute inset-0 w-full h-full rounded-full"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-        >
-          {/* Orbital Dot 1 */}
-          <div className="absolute top-[10%] right-[10%] w-1.5 h-1.5 bg-white/80 rounded-full shadow-[0_0_5px_white]" />
-          {/* Orbital Dot 2 */}
-          <div className="absolute bottom-[-2px] left-1/2 -translate-x-1/2 w-1 h-1 bg-white/60 rounded-full shadow-[0_0_5px_white]" />
-          {/* Orbital Dot 3 */}
-          <div className="absolute top-1/2 left-[-2px] -translate-y-1/2 w-1 h-1 bg-white/40 rounded-full" />
-        </motion.div>
-      </motion.div>
+        transition={{ type: "spring", stiffness: 400, damping: 25, mass: 0.5 }}
+      />
     </>
   );
 }
