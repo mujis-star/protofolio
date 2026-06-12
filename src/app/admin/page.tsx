@@ -73,7 +73,11 @@ export default function AdminPage() {
 
     } catch (error: any) {
       console.error("Error saving data:", error);
-      setMessage({ text: "Error: Invalid JSON format. Please check for syntax errors.", type: "error" });
+      if (error.code === 'permission-denied') {
+        setMessage({ text: "Firebase Permission Denied: You must go to Firebase Console > Firestore Database > Rules and set 'allow read, write: if true;'", type: "error" });
+      } else {
+        setMessage({ text: `Error: ${error.message || "Invalid JSON or network issue."}`, type: "error" });
+      }
     } finally {
       setIsSaving(false);
     }
