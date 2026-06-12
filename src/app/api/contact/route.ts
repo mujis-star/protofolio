@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     if (process.env.RESEND_API_KEY) {
       const data = await resend.emails.send({
         from: "Portfolio Contact <onboarding@resend.dev>",
-        to: ["delivered@resend.dev"], // Replace with your actual email when going to production
+        to: ["mujisworld09@gmail.com"], 
         subject: `New Contact Request from ${name}`,
         html: `
           <h1>New message from ${name}</h1>
