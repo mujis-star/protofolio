@@ -1,25 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { Save, LogOut, Loader2, Database } from "lucide-react";
 import defaultData from "@/data/content.json";
 
 export default function AdminPage() {
-  const router = useRouter();
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [jsonData, setJsonData] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [hasPermissionError, setHasPermissionError] = useState(false);
   const [message, setMessage] = useState({ text: "", type: "" });
 
   useEffect(() => {
     // Check authorization
     const token = sessionStorage.getItem("admin_token");
     if (token !== "mujis_secret_authenticated") {
-      router.push("/");
+      window.location.href = "/";
       return;
     }
     setIsAuthorized(true);
@@ -32,14 +31,17 @@ export default function AdminPage() {
         
         if (docSnap.exists()) {
           setJsonData(JSON.stringify(docSnap.data(), null, 2));
+          setHasPermissionError(false);
         } else {
           // If no data exists in Firebase yet, use local default and show message
           setJsonData(JSON.stringify(defaultData, null, 2));
           setMessage({ text: "No data in Firebase. Loaded defaults. Save to initialize.", type: "warning" });
+          setHasPermissionError(false);
         }
       } catch (error: any) {
         console.error("Error fetching data:", error);
         setJsonData(JSON.stringify(defaultData, null, 2));
+        setHasPermissionError(true);
         setMessage({ 
           text: `Firebase Error: ${error.message}. Please ensure you have created a Firestore Database in Test Mode.`, 
           type: "error" 
@@ -50,7 +52,7 @@ export default function AdminPage() {
     };
 
     fetchData();
-  }, [router]);
+  }, []);
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -65,6 +67,7 @@ export default function AdminPage() {
       await setDoc(docRef, parsedData);
       
       setMessage({ text: "Saved successfully! Refreshing live site...", type: "success" });
+      setHasPermissionError(false);
       
       // Optional: Give it a moment to read success message before reloading
       setTimeout(() => {
@@ -85,19 +88,19 @@ export default function AdminPage() {
 
   const handleLogout = () => {
     sessionStorage.removeItem("admin_token");
-    router.push("/");
+    window.location.href = "/";
   };
 
   if (!isAuthorized || isLoading) {
     return (
-      <div className="min-h-screen bg-[#030712] flex items-center justify-center text-white">
+      <div className="min-h-screen bg-[#030712] flex items-center justify-center text-white relative z-50">
         <Loader2 className="w-8 h-8 animate-spin text-cyan-500" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#030712] text-white p-6 md:p-12 font-mono">
+    <div className="min-h-screen bg-[#030712] text-white p-6 md:p-12 font-mono relative z-50">
       <div className="max-w-6xl mx-auto flex flex-col h-[calc(100vh-6rem)]">
         
         {/* Header */}
@@ -115,22 +118,22 @@ export default function AdminPage() {
           <div className="flex items-center gap-4">
             <button
               onClick={handleLogout}
-              className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-2 text-sm"
+              className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-2 text-sm cursor-pointer z-50"
             >
               <LogOut className="w-4 h-4" />
               Exit
             </button>
             <button
               onClick={handleSave}
-              disabled={isSaving}
-              className="px-6 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 transition-all shadow-[0_0_15px_rgba(34,211,238,0.4)] flex items-center gap-2 text-sm font-bold disabled:opacity-50"
+              disabled={isSaving || hasPermissionError}
+              className="px-6 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 transition-all shadow-[0_0_15px_rgba(34,211,238,0.4)] flex items-center gap-2 text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer z-50"
             >
               {isSaving ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
               ) : (
                 <Save className="w-4 h-4" />
               )}
-              Save to Firebase
+              {hasPermissionError ? "Locked" : "Save to Firebase"}
             </button>
           </div>
         </div>
@@ -147,7 +150,7 @@ export default function AdminPage() {
         )}
 
         {/* Editor */}
-        <div className="flex-1 rounded-xl border border-white/10 bg-[#0a0a0a] overflow-hidden flex flex-col shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+        <div className="flex-1 rounded-xl border border-white/10 bg-[#0a0a0a] overflow-hidden flex flex-col shadow-[0_0_30px_rgba(0,0,0,0.5)] z-50">
           <div className="px-4 py-2 border-b border-white/10 bg-white/5 flex items-center gap-2 text-xs text-neutral-400">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
