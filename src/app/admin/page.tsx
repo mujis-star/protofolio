@@ -37,9 +37,13 @@ export default function AdminPage() {
           setJsonData(JSON.stringify(defaultData, null, 2));
           setMessage({ text: "No data in Firebase. Loaded defaults. Save to initialize.", type: "warning" });
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error("Error fetching data:", error);
-        setMessage({ text: "Failed to connect to Firebase.", type: "error" });
+        setJsonData(JSON.stringify(defaultData, null, 2));
+        setMessage({ 
+          text: `Firebase Error: ${error.message}. Please ensure you have created a Firestore Database in Test Mode.`, 
+          type: "error" 
+        });
       } finally {
         setIsLoading(false);
       }
