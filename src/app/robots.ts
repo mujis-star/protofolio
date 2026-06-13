@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://mujeeb-portfolio.example.com/sitemap.xml",
+    sitemap: "https://mujeeb-rahman-protfolio.vercel.app/sitemap.xml",
   };
 }
