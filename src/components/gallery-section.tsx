@@ -5,6 +5,10 @@ import { useContent } from "@/context/content-context";
 
 export function GallerySection() {
   const data = useContent();
+
+  // Safelist for Tailwind v4 so dynamic admin classes aren't purged
+  const safelist = "col-span-1 col-span-2 col-span-3 col-span-4 row-span-1 row-span-2 row-span-3 row-span-4 row-span-5 row-span-6";
+
   return (
     <section id="gallery" className="py-24 md:py-32 relative overflow-hidden bg-transparent">
       <div className="container mx-auto px-6 relative z-10">
