@@ -10,7 +10,7 @@ interface ProjectsTabProps {
 
 export function ProjectsTab({ data, onChange }: ProjectsTabProps) {
   
-  const handleProjectChange = (index: number, field: string, value: string | string[]) => {
+  const handleProjectChange = (index: number, field: string, value: string | string[] | boolean) => {
     const newProjects = [...data.projects];
     newProjects[index] = { ...newProjects[index], [field]: value };
     onChange({ ...data, projects: newProjects });
@@ -29,6 +29,7 @@ export function ProjectsTab({ data, onChange }: ProjectsTabProps) {
           id: `proj-${Date.now()}`,
           title: "New Project",
           category: "Category",
+          featured: false,
           description: "Project description goes here.",
           image: "/images/projects/aura.png",
           link: "#",
@@ -138,6 +139,17 @@ export function ProjectsTab({ data, onChange }: ProjectsTabProps) {
                   placeholder="React, Tailwind, Next.js"
                   className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-cyan-500 transition-colors"
                 />
+              </div>
+
+              <div className="flex items-center gap-2 md:col-span-2 mt-2">
+                <input 
+                  type="checkbox" 
+                  id={`featured-${idx}`}
+                  checked={!!project.featured}
+                  onChange={(e) => handleProjectChange(idx, "featured", e.target.checked)}
+                  className="rounded border-white/20 bg-black/50 text-cyan-500 focus:ring-cyan-500 focus:ring-2 h-4 w-4 cursor-pointer"
+                />
+                <label htmlFor={`featured-${idx}`} className="text-xs font-bold text-white/90 cursor-pointer uppercase tracking-wider">Featured Project (Display in Featured Work grid)</label>
               </div>
             </div>
 
