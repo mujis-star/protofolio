@@ -52,11 +52,16 @@ export function ProjectsSection() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-400/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Floating View Project Button on Hover */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-sm">
+                <a 
+                  href={project.link || "#"}
+                  target={project.link?.startsWith("http") ? "_blank" : undefined}
+                  rel={project.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-sm cursor-pointer z-10"
+                >
                   <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                     View Case Study <ArrowUpRight className="w-4 h-4" />
                   </span>
-                </div>
+                </a>
               </div>
               
               <div className="px-2">
@@ -68,7 +73,7 @@ export function ProjectsSection() {
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm">
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm whitespace-pre-line">
                   {project.description}
                 </p>
               </div>

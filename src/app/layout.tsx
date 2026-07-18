@@ -23,22 +23,22 @@ const spaceGrotesk = Space_Grotesk({
 import { ContentProvider } from "@/context/content-context";
 
 export const metadata: Metadata = {
-  title: "Mujeeb | Creative Designer & Developer",
-  description: "Crafting premium, ultra-modern digital experiences.",
-  keywords: ["Mujeeb", "Portfolio", "Creative Developer", "Designer", "Next.js", "React", "Three.js"],
-  authors: [{ name: "Mujeeb" }],
+  title: "Mujeeb P | Frontend Developer & UI Engineer",
+  description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in React, Next.js, UI Engineering, and creative web solutions.",
+  keywords: ["Mujeeb P", "Mujeeb", "Portfolio", "Frontend Developer", "UI Engineer", "Creative Developer", "Next.js", "React", "Three.js", "Framer Motion"],
+  authors: [{ name: "Mujeeb P" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://protofolio-mujeeb.vercel.app",
-    title: "Mujeeb | Creative Designer & Developer",
-    description: "Crafting premium, ultra-modern digital experiences.",
-    siteName: "Mujeeb Portfolio",
+    url: "https://mujeeb-portfolio.vercel.app",
+    title: "Mujeeb P | Frontend Developer & UI Engineer",
+    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in React, Next.js, UI Engineering, and creative web solutions.",
+    siteName: "Mujeeb P Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mujeeb | Creative Designer & Developer",
-    description: "Crafting premium, ultra-modern digital experiences.",
+    title: "Mujeeb P | Frontend Developer & UI Engineer",
+    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in React, Next.js, UI Engineering, and creative web solutions.",
     creator: "@mujeeb",
   },
   verification: {

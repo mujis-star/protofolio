@@ -152,7 +152,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white"
             >
-              I craft <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">digital</span>
+              I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">modern web</span>
               <br />
               experiences.
             </motion.h1>
@@ -187,6 +187,31 @@ export function HeroSection() {
                 Contact Me
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
+            </motion.div>
+
+            {/* Professional Stats HUD */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-12 mt-12 border-t border-neutral-200 dark:border-white/10 w-full"
+            >
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-blue-500 font-heading">15+</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Projects Built</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-cyan-400 font-heading">10+</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Technologies</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-purple-500 font-heading">3+</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Years Learning</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-extrabold text-pink-500 font-heading">100%</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Passion</div>
+              </div>
             </motion.div>
           </div>
 

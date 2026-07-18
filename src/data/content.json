@@ -1,33 +1,33 @@
 {
   "personal": {
     "name": "Mujeeb P",
-    "role": "IT & Web Development Student",
+    "role": "Frontend Developer & UI Engineer",
     "location": "Kannur, Kerala, India",
-    "bio": " Versatile IT and Web Development student with a powerful blend of technical hardware skills, front-end development, and professional multimedia editing expertise. Experienced in managing computer lab operations, deploying live web platforms, and utilizing the Adobe Creative Cloud suite for digital asset creation.",
+    "bio": " specialized in crafting fast, beautiful, and scalable digital experiences. Passionate about bridging the gap between clean frontend code, system performance, and polished user interface design.",
     "email": "mujisworld09@gmail.com",
     "phone": "9746613860",
     "github": "https://github.com/mujis-star",
     "linkedin": "https://linkedin.com",
-    "availabilityStatus": "Available for freelance work"
+    "availabilityStatus": "Available for freelance & contract roles"
   },
   "about": {
     "paragraphs": [
-      "I am an IT and Web Development student with a strong passion for blending code, hardware, and creative design. My journey spans from managing computer lab operations to deploying responsive web platforms.",
-      "Beyond code, I have professional multimedia editing expertise using the complete Adobe Creative Cloud suite. Whether it's diagnosing NVMe SSDs and Linux VMs, or creating motion graphics and web-ready visual assets, I love bridging the gap between deep technical infrastructure and polished creative output."
+      "I'm Mujeeb P, a Frontend Developer and UI Engineer focused on building modern, high-performance web applications. My interests combine clean code structure, modern UI/UX architecture, systems automation, and emerging AI technologies.",
+      "My development toolkit centers around React, Next.js, TypeScript, Tailwind CSS, and Framer Motion, complemented by backend knowledge (Node.js/APIs) and deep system infrastructure diagnostics. I love translating creative layout concepts into fluid, accessible, and responsive digital products."
     ]
   },
   "skills": [
     {
-      "category": "Web Development",
-      "items": ["HTML5", "CSS3", "JavaScript", "Vercel", "GitHub"]
+      "category": "Frontend & UI Engineering",
+      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML5 & CSS3"]
     },
     {
-      "category": "Multimedia & Design",
-      "items": ["Photoshop", "Premiere Pro", "Illustrator", "After Effects", "Lightroom"]
+      "category": "Backend & Systems",
+      "items": ["Node.js", "REST APIs", "Linux (Kali / Ubuntu)", "VMware virtualization", "Hardware Diagnostics"]
     },
     {
-      "category": "Systems & Hardware",
-      "items": ["Linux (Kali)", "VMware", "Windows Admin", "NVMe SSDs", "Hardware Diagnostics"]
+      "category": "Creative Production",
+      "items": ["Figma", "Adobe Photoshop", "Premiere Pro & After Effects", "Motion Graphics", "Asset Optimization"]
     }
   ],
   "projects": [
@@ -35,7 +35,7 @@
       "id": "itqan-friends",
       "title": "ITQAN Friends Website",
       "category": "Web Development & Design",
-      "description": "Developed the user interface using clean semantic HTML/CSS and exported web-ready visual assets using Adobe tools to enhance site aesthetics.",
+      "description": "• Problem: A community organization needed a modern, responsive website to coordinate activities and build local identity.\n• Solution: Developed a clean, semantic user interface using HTML/CSS, optimizing layout and media asset size for fast loading.\n• Tech: HTML5, CSS3, JavaScript, Vercel",
       "image": "/images/projects/aura.png",
       "link": "#",
       "techStack": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
@@ -44,7 +44,7 @@
       "id": "personal-portfolio",
       "title": "Professional Portfolio",
       "category": "Frontend Development",
-      "description": "Designed and built a personalized digital portfolio to showcase technical capabilities and creative editing projects. Optimized frontend assets for quick loading.",
+      "description": "• Problem: Needed a premium developer identity that stands out to recruiters and demonstrates advanced web engineering skills.\n• Solution: Built this portfolio using Next.js, Framer Motion, and Three.js. Added a custom admin dashboard integrated with Firebase Firestore.\n• Tech: Next.js, Framer Motion, Three.js, Firebase",
       "image": "/images/projects/lumina.png",
       "link": "#",
       "techStack": ["React", "Tailwind CSS", "Framer Motion", "Three.js"]
@@ -53,7 +53,7 @@
       "id": "hardware-lab",
       "title": "Hardware Lab Management",
       "category": "Systems & Infrastructure",
-      "description": "Managed daily operations and hardware readiness. Diagnosed and resolved faults, recovering unreadable 3.5-inch 1TB external storage drives.",
+      "description": "• Problem: Computer lab needed optimization of hardware inventory and remediation of data-loss risks.\n• Solution: Managed daily lab operations, upgraded speeds with NVMe SSDs, and successfully recovered unreadable 1TB external storage drives.\n• Tech: Linux, Hardware Diagnostics, Virtualization",
       "image": "/images/projects/nexus.png",
       "link": "#",
       "techStack": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
@@ -62,7 +62,7 @@
       "id": "multimedia-production",
       "title": "Multimedia Production",
       "category": "Creative Design",
-      "description": "Experimenting with advanced video editing techniques, audio timing, color grading, and graphic trends to create polished digital solutions.",
+      "description": "• Problem: Digital projects needed engaging multimedia storytelling to capture viewer attention.\n• Solution: Produced high-quality video editing and motion graphics using Premiere Pro and After Effects, editing audio cues, color grading, and trend assets.\n• Tech: Premiere Pro, After Effects, Illustrator",
       "image": "/images/projects/stellar.png",
       "link": "#",
       "techStack": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]

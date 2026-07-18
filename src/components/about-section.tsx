@@ -41,15 +41,25 @@ export function AboutSection() {
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
               About <span className="text-blue-500">Me.</span>
             </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              I am {data.personal.name}, a passionate {data.personal.role} dedicated to crafting 
-              extraordinary digital products. With a strong foundation in both design and development, 
-              I bridge the gap between aesthetics and functionality.
-            </p>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Based in {data.personal.location}, I specialize in building performant web applications 
-              with modern technologies like Next.js, Framer Motion, and Three.js.
-            </p>
+            {data.about?.paragraphs && data.about.paragraphs.length > 0 ? (
+              data.about.paragraphs.map((paragraph, index) => (
+                <p key={index} className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))
+            ) : (
+              <>
+                <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  I am {data.personal.name}, a passionate {data.personal.role} dedicated to crafting 
+                  extraordinary digital products. With a strong foundation in both design and development, 
+                  I bridge the gap between aesthetics and functionality.
+                </p>
+                <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  Based in {data.personal.location}, I specialize in building performant web applications 
+                  with modern technologies like Next.js, Framer Motion, and Three.js.
+                </p>
+              </>
+            )}
           </div>
           
           <div ref={imageRef} className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
