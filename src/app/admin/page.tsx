@@ -231,6 +231,7 @@ export default function AdminPage() {
                   value={rawJsonText}
                   onChange={(e) => setRawJsonText(e.target.value)}
                   spellCheck={false}
+                  data-lenis-prevent
                   className="flex-1 w-full bg-transparent p-6 text-sm font-mono text-neutral-300 focus:outline-none resize-none leading-relaxed h-[600px]"
                 />
               </div>

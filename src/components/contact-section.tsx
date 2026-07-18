@@ -136,6 +136,7 @@ export function ContactSection() {
                   id="message"
                   name="message"
                   rows={4}
+                  data-lenis-prevent
                   placeholder="Tell me about your project..."
                   className="p-4 rounded-xl bg-neutral-100 dark:bg-neutral-900 border-none outline-none focus:ring-2 focus:ring-blue-500 transition-shadow resize-none"
                 />
