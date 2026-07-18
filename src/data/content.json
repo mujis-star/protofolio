@@ -32,36 +32,50 @@
   ],
   "projects": [
     {
+      "id": "studyflow-ai",
+      "title": "StudyFlow AI",
+      "category": "AI Software Engineering",
+      "featured": true,
+      "description": "• Problem: Students struggle to extract key learnings, summarize PDFs, and organize multi-modal learning assets efficiently.\n• Solution: Developed a real-time AI study assistant integrating OpenAI GPT-4 APIs, custom vector embeddings, and PDF extraction pipelines.\n• Tech: Next.js, OpenAI API, Tailwind CSS, Vector DB",
+      "image": "/images/projects/aura.png",
+      "link": "#",
+      "techStack": ["Next.js", "OpenAI API", "Tailwind CSS"]
+    },
+    {
       "id": "itqan-friends",
       "title": "ITQAN Friends Website",
-      "category": "Web Development & Design",
-      "description": "• Problem: A community organization needed a modern, responsive website to coordinate activities and build local identity.\n• Solution: Developed a clean, semantic user interface using HTML/CSS, optimizing layout and media asset size for fast loading.\n• Tech: HTML5, CSS3, JavaScript, Vercel",
-      "image": "/images/projects/aura.png",
+      "category": "Web Design & Community Branding",
+      "featured": true,
+      "description": "• Problem: A local community group needed a modern, accessible interface to organize meetings, share assets, and coordinate resources.\n• Solution: Developed a fast, semantic, and responsive community website, reducing image and asset load sizes by 60% for quick mobile performance.\n• Tech: HTML5, CSS3, JavaScript, Vercel",
+      "image": "/images/projects/nexus.png",
       "link": "#",
       "techStack": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
     },
     {
-      "id": "personal-portfolio",
-      "title": "Professional Portfolio",
-      "category": "Frontend Development",
-      "description": "• Problem: Needed a premium developer identity that stands out to recruiters and demonstrates advanced web engineering skills.\n• Solution: Built this portfolio using Next.js, Framer Motion, and Three.js. Added a custom admin dashboard integrated with Firebase Firestore.\n• Tech: Next.js, Framer Motion, Three.js, Firebase",
+      "id": "vogue-vault",
+      "title": "Vogue Vault",
+      "category": "UI Engineering & E-Commerce",
+      "featured": true,
+      "description": "• Problem: E-commerce sites often suffer from laggy filtering, slow product loading, and poor visual layout scalability on mobile viewports.\n• Solution: Engineered a high-performance shopping interface featuring fluid catalog transitions, instant client-side state filtering, and fully responsive layouts.\n• Tech: React, Tailwind CSS, Framer Motion",
       "image": "/images/projects/lumina.png",
       "link": "#",
-      "techStack": ["React", "Tailwind CSS", "Framer Motion", "Three.js"]
+      "techStack": ["React", "Tailwind CSS", "Framer Motion"]
     },
     {
       "id": "hardware-lab",
       "title": "Hardware Lab Management",
       "category": "Systems & Infrastructure",
+      "featured": false,
       "description": "• Problem: Computer lab needed optimization of hardware inventory and remediation of data-loss risks.\n• Solution: Managed daily lab operations, upgraded speeds with NVMe SSDs, and successfully recovered unreadable 1TB external storage drives.\n• Tech: Linux, Hardware Diagnostics, Virtualization",
-      "image": "/images/projects/nexus.png",
+      "image": "/images/projects/stellar.png",
       "link": "#",
       "techStack": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
     },
     {
       "id": "multimedia-production",
       "title": "Multimedia Production",
-      "category": "Creative Design",
+      "category": "Creative Production",
+      "featured": false,
       "description": "• Problem: Digital projects needed engaging multimedia storytelling to capture viewer attention.\n• Solution: Produced high-quality video editing and motion graphics using Premiere Pro and After Effects, editing audio cues, color grading, and trend assets.\n• Tech: Premiere Pro, After Effects, Illustrator",
       "image": "/images/projects/stellar.png",
       "link": "#",
@@ -70,22 +84,22 @@
   ],
   "experience": [
     {
-      "role": "Computer Lab Assistant & Technical Support",
-      "company": "Academic Computer Lab",
-      "period": "Present",
-      "description": "Manage daily operations, hardware readiness, and software environments across lab workstations. Perform hardware diagnostics, NVMe SSD upgrades, and resolve complex OS anomalies."
+      "role": "Lead Frontend Developer & UI Engineer",
+      "company": "Personal & Freelance Production",
+      "period": "2025 - Present",
+      "description": "Engineering production-ready React/Next.js web applications. Integrating AI interfaces (like StudyFlow AI), coding fluid Framer Motion animations, and designing CMS systems backed by Firebase Firestore."
     },
     {
-      "role": "Frontend Developer & Asset Designer",
+      "role": "Web Developer & Asset Designer",
       "company": "ITQAN Friends Project",
-      "period": "Academic Project",
-      "description": "Developed and structured the user interface using semantic HTML and responsive CSS. Designed and optimized web-ready visual assets using Adobe tools."
+      "period": "2024 - 2025",
+      "description": "Architected and structured responsive community web templates using semantic HTML5 and clean CSS layouts. Optimized digital creative assets, speeding up page interaction metrics."
     },
     {
-      "role": "Independent Developer & Media Creator",
-      "company": "Personal Projects",
-      "period": "Ongoing",
-      "description": "Designing personalized digital portfolios and experimenting with advanced video editing techniques, audio timing, and color grading."
+      "role": "Systems Administrator & Lab Assistant",
+      "company": "Academic Hardware Lab",
+      "period": "2023 - 2024",
+      "description": "Maintained computer lab hardware operations. Performed hardware diagnostics, NVMe SSD speed upgrades, systems virtualization setups, and successfully recovered unreadable external storage drives."
     }
   ],
   "achievements": [

@@ -67,6 +67,27 @@ export function TechStack() {
             </motion.div>
           ))}
         </div>
+        {/* Currently Exploring */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 p-6 md:p-8 rounded-3xl bg-white/5 dark:bg-black/20 border border-neutral-200 dark:border-white/10 backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6 overflow-hidden relative group"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative z-10">
+            <h4 className="text-sm font-mono text-cyan-400 uppercase tracking-widest mb-1.5 font-bold">Currently Exploring & Learning</h4>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">Actively expanding my horizons in modern software architecture, intelligence, and system scaling.</p>
+          </div>
+          <div className="relative z-10 flex flex-wrap gap-2.5">
+            {["AI Agents", "Three.js & R3F", "Cloud Architecture", "System Design"].map((item) => (
+              <span key={item} className="px-3.5 py-1.5 text-xs font-mono rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 dark:text-blue-300 font-bold">
+                {item}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

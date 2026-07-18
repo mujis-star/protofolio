@@ -33,53 +33,112 @@ export function ProjectsSection() {
           </a>
         </motion.div>
 
+        {/* Featured Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {data.projects.map((project, index) => (
+          {data.projects
+            .filter((p: any) => p.featured === true || p.featured === "true")
+            .map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="group relative flex flex-col gap-6 p-6 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all duration-500"
+              >
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 group-hover:rotate-1 transition-transform duration-700 ease-in-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-400/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Floating View Project Button on Hover */}
+                  <a 
+                    href={project.link || "#"}
+                    target={project.link?.startsWith("http") ? "_blank" : undefined}
+                    rel={project.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-sm cursor-pointer z-10"
+                  >
+                    <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                      View Case Study <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </a>
+                </div>
+                
+                <div className="px-2">
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-blue-400">{project.category}</span>
+                    <div className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700" />
+                    <span className="text-xs text-neutral-500 font-mono uppercase tracking-wide">{project.techStack.slice(0, 3).join(" • ")}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm whitespace-pre-line">
+                    {project.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+        </div>
+
+        {/* Other Projects Section */}
+        {data.projects.some((p: any) => p.featured === false || p.featured === "false") && (
+          <div className="mt-24 border-t border-neutral-200 dark:border-white/10 pt-16">
             <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group relative flex flex-col gap-6 p-6 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all duration-500"
+              transition={{ duration: 0.8 }}
+              className="mb-12"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 group-hover:rotate-1 transition-transform duration-700 ease-in-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-cyan-400/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Floating View Project Button on Hover */}
-                <a 
-                  href={project.link || "#"}
-                  target={project.link?.startsWith("http") ? "_blank" : undefined}
-                  rel={project.link?.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-sm cursor-pointer z-10"
-                >
-                  <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    View Case Study <ArrowUpRight className="w-4 h-4" />
-                  </span>
-                </a>
-              </div>
-              
-              <div className="px-2">
-                <div className="flex items-center gap-4 mb-3">
-                  <span className="text-xs font-bold uppercase tracking-wider text-blue-400">{project.category}</span>
-                  <div className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-                  <span className="text-xs text-neutral-500 font-mono uppercase tracking-wide">{project.techStack.slice(0, 3).join(" • ")}</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm whitespace-pre-line">
-                  {project.description}
-                </p>
-              </div>
+              <h3 className="text-3xl font-bold tracking-tight mb-2">Other Projects</h3>
+              <p className="text-sm text-neutral-500">Additional engineering experiments and technical setups.</p>
             </motion.div>
-          ))}
-        </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {data.projects
+                .filter((p: any) => p.featured === false || p.featured === "false")
+                .map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="group relative flex flex-col gap-4 p-6 rounded-2xl bg-white/5 dark:bg-black/10 border border-neutral-200 dark:border-white/5 hover:border-blue-500/20 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-300"
+                  >
+                    <div className="flex justify-between items-start gap-4">
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400 font-mono">{project.category}</span>
+                        <h4 className="text-xl font-bold mt-1 group-hover:text-blue-400 transition-colors">{project.title}</h4>
+                      </div>
+                      <a
+                        href={project.link || "#"}
+                        target={project.link?.startsWith("http") ? "_blank" : undefined}
+                        rel={project.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="p-2 rounded-full border border-white/10 bg-white/5 hover:bg-blue-600 hover:text-white transition-colors cursor-pointer text-neutral-400"
+                      >
+                        <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    </div>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed whitespace-pre-line">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {project.techStack.map((tech: string) => (
+                        <span key={tech} className="px-2.5 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-900 text-[10px] font-mono text-neutral-500 dark:text-neutral-400">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
