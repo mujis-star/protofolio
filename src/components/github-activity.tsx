@@ -5,18 +5,8 @@ import { GitBranch, GitCommit, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function GitHubActivity() {
-  const [visitorCount, setVisitorCount] = useState(1337);
-
-  useEffect(() => {
-    // Generate a random-looking visitor count that increases slowly
-    const interval = setInterval(() => {
-      setVisitorCount((prev) => prev + Math.floor(Math.random() * 2));
-    }, 15000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Mocking GitHub contributions graph
-  // 52 columns x 7 rows
+  // GitHub contributions graph
+  // 24 columns x 7 rows
   const weeks = 24; // Limit to 24 weeks for compact premium look
   const days = 7;
   
@@ -113,12 +103,12 @@ export function GitHubActivity() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="p-6 rounded-3xl bg-white/5 dark:bg-black/20 border border-neutral-200 dark:border-white/10 backdrop-blur-md flex items-center gap-4 relative group"
           >
-            <div className="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400">
+            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
               <Eye className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white">{visitorCount.toLocaleString()}</div>
-              <div className="text-xs text-neutral-400 font-mono uppercase tracking-wider mt-0.5">Profile Visits</div>
+              <div className="text-2xl font-bold text-white">15+</div>
+              <div className="text-xs text-neutral-400 font-mono uppercase tracking-wider mt-0.5">Repositories</div>
             </div>
           </motion.div>
         </div>

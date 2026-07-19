@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -16,6 +15,7 @@ const navLinks = [
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -25,6 +25,24 @@ export function Navigation() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -58,20 +76,34 @@ export function Navigation() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] tracking-wide"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const targetId = link.href.replace("#", "");
+            const isActive = activeSection === targetId;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleScrollTo(e, targetId)}
+                className={`text-sm font-medium transition-colors relative py-1 ${
+                  isActive ? "text-blue-400 font-bold" : "text-neutral-300 hover:text-white"
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <motion.div
+                    layoutId="active-pill"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+                  />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-4">
           <Link
             href="#contact"
+            onClick={(e) => handleScrollTo(e, "contact")}
             className="hidden md:inline-flex h-9 items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-bold text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
           >
             Let's Talk

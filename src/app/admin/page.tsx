@@ -159,22 +159,32 @@ export default function AdminPage() {
               onClick={handleLogout}
               className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-2 text-sm cursor-pointer z-50 flex-1 sm:flex-none justify-center"
             >
-              <LogOut className="w-4 h-4" />
-              Exit
+              <LogOut className="w-4 h-4 text-red-400" />
+              Sign Out
             </button>
             <button
               onClick={handleSave}
-              disabled={isSaving || hasPermissionError}
-              className="px-6 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 transition-all shadow-[0_0_15px_rgba(34,211,238,0.4)] flex items-center gap-2 text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer z-50 text-black flex-1 sm:flex-none justify-center"
+              disabled={isSaving}
+              className="px-6 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold transition-all shadow-[0_0_15px_rgba(34,211,238,0.4)] flex items-center gap-2 text-sm disabled:opacity-50 cursor-pointer z-50 flex-1 sm:flex-none justify-center"
             >
               {isSaving ? (
-                <Loader2 className="w-4 h-4 animate-spin" />
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Saving...
+                </>
               ) : (
-                <Save className="w-4 h-4" />
+                <>
+                  <Save className="w-4 h-4" />
+                  Save Changes
+                </>
               )}
-              {hasPermissionError ? "Locked" : "Save to Firebase"}
             </button>
           </div>
+        </div>
+
+        {/* Security Notice Banner */}
+        <div className="bg-blue-500/10 border border-blue-500/20 px-4 py-3 rounded-xl text-xs text-blue-300 flex items-center justify-between gap-2">
+          <span>🔒 <strong>Development & Demo Access Mode</strong>: Authenticated via session token. For production, protect with server middleware or NextAuth.</span>
         </div>
 
         {/* Status Message */}

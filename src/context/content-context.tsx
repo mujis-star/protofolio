@@ -29,12 +29,14 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists() && isMounted) {
           const fetched = docSnap.data() as ContentData;
-          if (fetched.personal) {
-            if (fetched.personal.email === "mujisworld09@gmail.com" || !fetched.personal.email) {
-              fetched.personal.email = "mujee00012@gmail.com";
-            }
-          }
-          setData(fetched);
+          const merged = {
+            ...defaultData,
+            ...fetched,
+            personal: { ...defaultData.personal, ...fetched?.personal, email: "mujee00012@gmail.com" },
+            about: defaultData.about,
+            projects: defaultData.projects,
+          };
+          setData(merged);
         }
       } catch (error) {
         console.error("Error fetching content from Firebase:", error);

@@ -59,6 +59,12 @@ export default function RootLayout({
       className={`${outfit.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[99999] focus:px-6 focus:py-3 focus:bg-blue-600 focus:text-white focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -72,7 +78,7 @@ export default function RootLayout({
               <ThreeBackground />
               <AnimatedBackground />
               <Navigation />
-              <main className="flex-1 pt-20">
+              <main id="main-content" tabIndex={-1} className="flex-1 pt-20 outline-none">
                 {children}
               </main>
               <Footer />

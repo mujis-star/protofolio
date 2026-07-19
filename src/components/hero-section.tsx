@@ -182,10 +182,10 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white"
             >
-              Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">modern web</span> experiences with performance & accessibility.
+              Frontend Developer & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">Creative UI Engineer</span>
             </motion.h1>
 
-            {/* Value Proposition & Roles */}
+            {/* Value Proposition & Brand Statement */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -193,14 +193,19 @@ export function HeroSection() {
               className="mb-8 flex flex-col gap-4 text-left"
             >
               <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-bold tracking-widest font-mono uppercase text-blue-400">
-                <span>Frontend Developer</span>
+                <span>UI/UX Design</span>
                 <span className="text-neutral-600">•</span>
-                <span>UI Engineer</span>
+                <span>Web Engineering</span>
                 <span className="text-neutral-600">•</span>
-                <span>Problem Solver</span>
+                <span>AI Integration</span>
+                <span className="text-neutral-600">•</span>
+                <span>Deployment</span>
               </div>
-              <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-xl leading-relaxed">
-                Hi, I'm <strong className="text-black dark:text-white font-semibold">{data.personal.name}</strong>. I enjoy turning ideas into fast, responsive, and user-friendly digital products. My work combines frontend engineering, UI design, and modern web technologies to create experiences people enjoy using.
+              <p className="text-lg md:text-xl font-medium text-neutral-200 dark:text-neutral-200 max-w-xl leading-relaxed">
+                I design and build complete digital experiences—from UI design to deployment.
+              </p>
+              <p className="text-base text-neutral-400 dark:text-neutral-400 max-w-xl leading-relaxed">
+                Building modern, high-performance web applications with exceptional user experiences.
               </p>
             </motion.div>
 
@@ -208,7 +213,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
             >
               <a
                 href="#projects"
@@ -218,10 +223,12 @@ export function HeroSection() {
                 View Projects
               </a>
               <a
-                href="#contact"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 dark:bg-white/5 backdrop-blur-md px-8 text-sm font-bold text-neutral-800 dark:text-white transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
               >
-                Contact Me
+                Download Resume
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>

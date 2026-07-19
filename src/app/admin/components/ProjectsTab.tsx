@@ -30,9 +30,12 @@ export function ProjectsTab({ data, onChange }: ProjectsTabProps) {
           title: "New Project",
           category: "Category",
           featured: false,
+          tags: ["React"],
           description: "Project description goes here.",
+          challenges: "Technical challenge solved.",
           image: "/images/projects/aura.png",
           link: "#",
+          github: "#",
           techStack: ["React", "Tailwind"]
         },
         ...data.projects

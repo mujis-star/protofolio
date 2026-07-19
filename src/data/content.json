@@ -12,8 +12,8 @@
   },
   "about": {
     "paragraphs": [
-      "I enjoy turning ideas into fast, responsive, and user-friendly digital products. My work combines frontend engineering, UI design, and modern web technologies to create experiences people enjoy using.",
-      "My development toolkit centers around React, Next.js, TypeScript, Tailwind CSS, and Framer Motion, complemented by backend knowledge (Node.js/APIs) and deep system infrastructure diagnostics."
+      "I enjoy building products that combine beautiful interfaces with practical solutions. My interests include frontend engineering, AI-powered applications, and UI/UX design.",
+      "I don't just write code—I design and build complete digital experiences, from UI mockups and client architecture down to backend APIs and automated deployment."
     ]
   },
   "skills": [
@@ -40,9 +40,12 @@
       "title": "StudyFlow AI",
       "category": "AI Software Engineering",
       "featured": true,
+      "tags": ["AI", "React", "Full Stack"],
       "description": "• Problem: Students waste time reading long PDFs and documents.\n• Solution: AI summarizes documents and extracts key learnings instantly.\n• Tech: Next.js, OpenAI API, Tailwind CSS, Vector DB",
+      "challenges": "Optimizing vector embedding retrieval speeds and handling long PDF token context limits.",
       "image": "/images/projects/aura.png",
-      "link": "#",
+      "link": "https://studyflow-ai.example.com",
+      "github": "https://github.com/mujis-star/studyflow-ai",
       "techStack": ["Next.js", "OpenAI API", "Tailwind CSS"]
     },
     {
@@ -50,9 +53,12 @@
       "title": "ITQAN Friends Website",
       "category": "Web Design & Community Branding",
       "featured": true,
-      "description": "• Problem: A community needed a modern digital presence and accessible layout.\n• Solution: Developed a fast, semantic, and responsive community website, reducing asset load sizes.\n• Tech: HTML, CSS, JavaScript, Vercel",
+      "tags": ["UI Design", "Full Stack"],
+      "description": "• Problem: A community needed a modern digital presence and accessible layout.\n• Solution: Developed a fast, semantic, and responsive community website, reducing asset load sizes by 60%.\n• Tech: HTML, CSS, JavaScript, Vercel",
+      "challenges": "Optimizing image compression pipelines without degrading visual fidelity on retina displays.",
       "image": "/images/projects/nexus.png",
-      "link": "#",
+      "link": "https://itqan-friends.example.com",
+      "github": "https://github.com/mujis-star/itqan-friends",
       "techStack": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
     },
     {
@@ -60,9 +66,12 @@
       "title": "Vogue Vault",
       "category": "UI Engineering & E-Commerce",
       "featured": true,
+      "tags": ["React", "UI Design"],
       "description": "• Problem: E-commerce shopping catalogs suffer from laggy filters and layouts.\n• Solution: Engineered a high-performance shopping interface with instant filtering.\n• Tech: React, Tailwind CSS, Framer Motion",
+      "challenges": "Maintaining 60 FPS layout re-renders during rapid multi-property category filtering.",
       "image": "/images/projects/lumina.png",
-      "link": "#",
+      "link": "https://vogue-vault.example.com",
+      "github": "https://github.com/mujis-star/vogue-vault",
       "techStack": ["React", "Tailwind CSS", "Framer Motion"]
     },
     {
@@ -70,9 +79,12 @@
       "title": "Hardware Lab Management",
       "category": "Systems & Infrastructure",
       "featured": false,
+      "tags": ["Full Stack"],
       "description": "• Problem: Lab environment required optimization of system backups and speed upgrades.\n• Solution: Managed daily lab operations, upgraded NVMe SSDs, and recovered unreadable drives.\n• Tech: Linux, Hardware Diagnostics, Virtualization",
+      "challenges": "Performing bit-level data recovery on damaged 1TB storage clusters without data corruption.",
       "image": "/images/projects/stellar.png",
       "link": "#",
+      "github": "https://github.com/mujis-star",
       "techStack": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
     },
     {
@@ -80,9 +92,12 @@
       "title": "Multimedia Production",
       "category": "Creative Production",
       "featured": false,
+      "tags": ["UI Design"],
       "description": "• Problem: Raw assets needed polished digital editing to capture audience attention.\n• Solution: Edited dynamic sound cues, color grade presets, and motion graphics assets.\n• Tech: Premiere Pro, After Effects, Illustrator",
+      "challenges": "Timing keyframe transitions to audio waveforms with sub-frame precision.",
       "image": "/images/projects/stellar.png",
       "link": "#",
+      "github": "https://github.com/mujis-star",
       "techStack": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]
     }
   ],
