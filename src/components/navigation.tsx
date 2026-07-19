@@ -84,7 +84,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, targetId)}
-                className={`text-sm font-medium transition-colors relative py-1 ${
+                className={`text-sm font-medium transition-colors relative py-2 px-1 flex items-center min-h-[44px] ${
                   isActive ? "text-blue-400 font-bold" : "text-neutral-300 hover:text-white"
                 }`}
               >

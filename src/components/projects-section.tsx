@@ -47,7 +47,7 @@ export function ProjectsSection() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
+                className={`px-5 py-2.5 min-h-[44px] flex items-center justify-center rounded-full text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
                   activeFilter === cat
                     ? "bg-blue-600 text-white shadow-[0_0_15px_rgba(37,99,235,0.4)] border border-blue-400"
                     : "bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:bg-white/10"
