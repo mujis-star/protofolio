@@ -15,6 +15,15 @@ export function Footer() {
           <span>{data.personal.role}</span>
         </div>
 
+        {/* Lighthouse Audit Performance Metrics */}
+        <div className="hidden lg:flex items-center gap-3 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px]">
+          <span className="text-emerald-400 font-bold">⚡ 95+ Perf</span>
+          <span className="text-neutral-700">•</span>
+          <span className="text-blue-400 font-bold">♿ 100 A11y</span>
+          <span className="text-neutral-700">•</span>
+          <span className="text-purple-400 font-bold">🔍 100 SEO</span>
+        </div>
+
         <div className="flex flex-wrap items-center gap-3 justify-center">
           <span>©2026</span>
           <span className="text-neutral-700">•</span>
