@@ -7,6 +7,7 @@ import { ThreeBackground } from "@/components/three-background";
 import { Footer } from "@/components/footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { AnimatedBackground } from "@/components/animated-background";
+import { CommandPalette } from "@/components/command-palette";
 
 import { Outfit, Space_Grotesk } from "next/font/google";
 
@@ -67,6 +68,7 @@ export default function RootLayout({
           <SmoothScroll>
             <ContentProvider>
               <CustomCursor />
+              <CommandPalette />
               <ThreeBackground />
               <AnimatedBackground />
               <Navigation />

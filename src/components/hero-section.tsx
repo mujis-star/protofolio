@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useContent } from "@/context/content-context";
@@ -75,55 +75,78 @@ const codeTokens = [
   { text: ";\n  }\n}", color: "text-white" }
 ];
 
-function TypingCodeWidget() {
-  const [displayedChars, setDisplayedChars] = useState(0);
-  const totalChars = codeTokens.reduce((acc, token) => acc + token.text.length, 0);
+function InteractiveTerminal() {
+  const [history, setHistory] = useState<string[]>([
+    "Booting core systems...",
+    "Establishing secure connection...",
+    "Access granted. Welcome to Mujeeb's shell.",
+    "Type 'help' to see available commands."
+  ]);
+  const [input, setInput] = useState("");
+  const terminalEndRef = useRef<HTMLDivElement>(null);
+
+  const handleCommand = (e: React.FormEvent) => {
+    e.preventDefault();
+    const cmd = input.trim().toLowerCase();
+    if (!cmd) return;
+
+    let response = "";
+    switch (cmd) {
+      case "help":
+        response = "Available commands:\n- help : show commands\n- projects : view projects list\n- resume : download pdf resume\n- contact : email & social links\n- skills : view core stack\n- clear : clear screen";
+        break;
+      case "projects":
+        response = "Featured projects:\n01 StudyFlow AI: AI study assistant\n02 ITQAN Friends: Responsive community web\n03 Vogue Vault: High-performance E-commerce catalog";
+        break;
+      case "resume":
+        response = "Opening resume download link: /resume.pdf";
+        if (typeof window !== "undefined") {
+          window.open("/resume.pdf", "_blank");
+        }
+        break;
+      case "contact":
+        response = "Contact channels:\n- Email: mujee00012@gmail.com\n- GitHub: github.com/mujis-star\n- LinkedIn: linkedin.com";
+        break;
+      case "skills":
+        response = "Frontend: React, Next.js, TypeScript, Tailwind\nBackend: Node.js, Express, REST APIs, Firebase\nTools: Git, Docker, Linux, VMware";
+        break;
+      case "clear":
+        setHistory([]);
+        setInput("");
+        return;
+      default:
+        response = `Command not recognized: '${cmd}'. Type 'help' for options.`;
+    }
+
+    setHistory((prev) => [...prev, `> ${input}`, response]);
+    setInput("");
+  };
 
   useEffect(() => {
-    let currentChars = 0;
-    let isDeleting = false;
-    let timeout: NodeJS.Timeout;
-
-    const type = () => {
-      if (!isDeleting && currentChars < totalChars) {
-        currentChars++;
-        setDisplayedChars(currentChars);
-        timeout = setTimeout(type, 10 + Math.random() * 20); // Faster typing for long scripts
-      } else if (!isDeleting && currentChars === totalChars) {
-        isDeleting = true;
-        timeout = setTimeout(type, 4000); // Wait longer at the end
-      } else if (isDeleting && currentChars > 0) {
-        currentChars--;
-        setDisplayedChars(currentChars);
-        timeout = setTimeout(type, 5); // Very fast delete
-      } else if (isDeleting && currentChars === 0) {
-        isDeleting = false;
-        timeout = setTimeout(type, 500);
-      }
-    };
-
-    timeout = setTimeout(type, 1000);
-    return () => clearTimeout(timeout);
-  }, [totalChars]);
-
-  let charsLeft = displayedChars;
+    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [history]);
 
   return (
-    <pre className="text-xs sm:text-sm font-mono text-blue-400 leading-relaxed text-left whitespace-pre-wrap">
-      <code>
-        {codeTokens.map((token, i) => {
-          if (charsLeft <= 0) return null;
-          const take = Math.min(charsLeft, token.text.length);
-          charsLeft -= take;
-          return (
-            <span key={i} className={token.color}>
-              {token.text.substring(0, take)}
-            </span>
-          );
-        })}
-        <span className="inline-block w-[5px] h-[10px] bg-white/70 ml-0.5 animate-pulse align-middle" />
-      </code>
-    </pre>
+    <div className="h-full flex flex-col font-mono text-[11px] sm:text-xs text-cyan-400 text-left">
+      <div className="flex-1 overflow-y-auto space-y-1.5 pr-2 scrollbar-none h-[140px] sm:h-[180px] lg:h-[200px]">
+        {history.map((line, i) => (
+          <div key={i} className="whitespace-pre-wrap leading-relaxed">
+            {line}
+          </div>
+        ))}
+        <div ref={terminalEndRef} />
+      </div>
+      <form onSubmit={handleCommand} className="flex items-center mt-2 border-t border-cyan-500/20 pt-2 shrink-0">
+        <span className="text-pink-500 mr-2 font-bold">$</span>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="type command here..."
+          className="flex-1 bg-transparent text-cyan-400 outline-none border-none p-0 focus:ring-0 text-[11px] sm:text-xs font-mono"
+        />
+      </form>
+    </div>
   );
 }
 
@@ -131,7 +154,14 @@ export function HeroSection() {
   const data = useContent();
   return (
     <section className="relative min-h-[calc(100vh-5rem)] flex items-center pt-20 md:pt-0 overflow-hidden">
-      <div className="container relative z-10 px-6 mx-auto">
+      {/* Animated Gradient Glows */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[450px] h-[450px] bg-purple-500/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      
+      {/* Localized Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_at_center,white,transparent_80%)] pointer-events-none" />
+
+      <div className="container relative z-10 px-6 mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
@@ -150,22 +180,29 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white"
+              className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white"
             >
-              I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">modern web</span>
-              <br />
-              experiences.
+              Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">modern web</span> experiences with performance & accessibility.
             </motion.h1>
 
-            <motion.p
+            {/* Value Proposition & Roles */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-xl mb-10 leading-relaxed"
+              className="mb-8 flex flex-col gap-4 text-left"
             >
-              Hi, I'm <strong className="text-black dark:text-white font-semibold">{data.personal.name}</strong>. A {data.personal.role} based in {data.personal.location}.
-              {data.personal.bio}
-            </motion.p>
+              <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-bold tracking-widest font-mono uppercase text-blue-400">
+                <span>Frontend Developer</span>
+                <span className="text-neutral-600">•</span>
+                <span>UI Engineer</span>
+                <span className="text-neutral-600">•</span>
+                <span>Problem Solver</span>
+              </div>
+              <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-xl leading-relaxed">
+                Hi, I'm <strong className="text-black dark:text-white font-semibold">{data.personal.name}</strong>. I enjoy turning ideas into fast, responsive, and user-friendly digital products. My work combines frontend engineering, UI design, and modern web technologies to create experiences people enjoy using.
+              </p>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -222,8 +259,18 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
             className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/5] xl:aspect-square rounded-3xl overflow-hidden bg-black/40 backdrop-blur-[2px] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] group"
           >
+            {/* Profile Image with Soft Glow */}
+            <div className="absolute inset-0 w-full h-full z-0 group-hover:scale-105 transition-transform duration-700 ease-in-out">
+              <img 
+                src="/profile.jpg" 
+                alt="Mujeeb P" 
+                className="w-full h-full object-cover opacity-25 filter grayscale group-hover:grayscale-0 transition-all duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+            </div>
+
             {/* Subtle Ambient Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_60%)] pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none" />
 
             {/* Dashboard HUD Elements */}
@@ -267,8 +314,8 @@ export function HeroSection() {
                 {/* CRT Screen Scanlines Overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.4)_50%)] bg-[length:100%_4px] pointer-events-none z-10 opacity-50 mix-blend-overlay" />
                 
-                <div className="relative z-20">
-                  <TypingCodeWidget />
+                <div className="relative z-20 h-full">
+                  <InteractiveTerminal />
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@
     "role": "Frontend Developer & UI Engineer",
     "location": "Kannur, Kerala, India",
     "bio": " specialized in crafting fast, beautiful, and scalable digital experiences. Passionate about bridging the gap between clean frontend code, system performance, and polished user interface design.",
-    "email": "mujisworld09@gmail.com",
+    "email": "mujee00012@gmail.com",
     "phone": "9746613860",
     "github": "https://github.com/mujis-star",
     "linkedin": "https://linkedin.com",
@@ -12,22 +12,26 @@
   },
   "about": {
     "paragraphs": [
-      "I'm Mujeeb P, a Frontend Developer and UI Engineer focused on building modern, high-performance web applications. My interests combine clean code structure, modern UI/UX architecture, systems automation, and emerging AI technologies.",
-      "My development toolkit centers around React, Next.js, TypeScript, Tailwind CSS, and Framer Motion, complemented by backend knowledge (Node.js/APIs) and deep system infrastructure diagnostics. I love translating creative layout concepts into fluid, accessible, and responsive digital products."
+      "I enjoy turning ideas into fast, responsive, and user-friendly digital products. My work combines frontend engineering, UI design, and modern web technologies to create experiences people enjoy using.",
+      "My development toolkit centers around React, Next.js, TypeScript, Tailwind CSS, and Framer Motion, complemented by backend knowledge (Node.js/APIs) and deep system infrastructure diagnostics."
     ]
   },
   "skills": [
     {
-      "category": "Frontend & UI Engineering",
-      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML5 & CSS3"]
+      "category": "Frontend",
+      "items": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"]
     },
     {
-      "category": "Backend & Systems",
-      "items": ["Node.js", "REST APIs", "Linux (Kali / Ubuntu)", "VMware virtualization", "Hardware Diagnostics"]
+      "category": "Backend",
+      "items": ["Node.js", "Express", "REST APIs", "Firebase"]
     },
     {
-      "category": "Creative Production",
-      "items": ["Figma", "Adobe Photoshop", "Premiere Pro & After Effects", "Motion Graphics", "Asset Optimization"]
+      "category": "Tools",
+      "items": ["Git", "Docker", "Linux", "VMware"]
+    },
+    {
+      "category": "Design",
+      "items": ["Photoshop", "After Effects", "Figma"]
     }
   ],
   "projects": [
@@ -36,7 +40,7 @@
       "title": "StudyFlow AI",
       "category": "AI Software Engineering",
       "featured": true,
-      "description": "• Problem: Students struggle to extract key learnings, summarize PDFs, and organize multi-modal learning assets efficiently.\n• Solution: Developed a real-time AI study assistant integrating OpenAI GPT-4 APIs, custom vector embeddings, and PDF extraction pipelines.\n• Tech: Next.js, OpenAI API, Tailwind CSS, Vector DB",
+      "description": "• Problem: Students waste time reading long PDFs and documents.\n• Solution: AI summarizes documents and extracts key learnings instantly.\n• Tech: Next.js, OpenAI API, Tailwind CSS, Vector DB",
       "image": "/images/projects/aura.png",
       "link": "#",
       "techStack": ["Next.js", "OpenAI API", "Tailwind CSS"]
@@ -46,7 +50,7 @@
       "title": "ITQAN Friends Website",
       "category": "Web Design & Community Branding",
       "featured": true,
-      "description": "• Problem: A local community group needed a modern, accessible interface to organize meetings, share assets, and coordinate resources.\n• Solution: Developed a fast, semantic, and responsive community website, reducing image and asset load sizes by 60% for quick mobile performance.\n• Tech: HTML5, CSS3, JavaScript, Vercel",
+      "description": "• Problem: A community needed a modern digital presence and accessible layout.\n• Solution: Developed a fast, semantic, and responsive community website, reducing asset load sizes.\n• Tech: HTML, CSS, JavaScript, Vercel",
       "image": "/images/projects/nexus.png",
       "link": "#",
       "techStack": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
@@ -56,7 +60,7 @@
       "title": "Vogue Vault",
       "category": "UI Engineering & E-Commerce",
       "featured": true,
-      "description": "• Problem: E-commerce sites often suffer from laggy filtering, slow product loading, and poor visual layout scalability on mobile viewports.\n• Solution: Engineered a high-performance shopping interface featuring fluid catalog transitions, instant client-side state filtering, and fully responsive layouts.\n• Tech: React, Tailwind CSS, Framer Motion",
+      "description": "• Problem: E-commerce shopping catalogs suffer from laggy filters and layouts.\n• Solution: Engineered a high-performance shopping interface with instant filtering.\n• Tech: React, Tailwind CSS, Framer Motion",
       "image": "/images/projects/lumina.png",
       "link": "#",
       "techStack": ["React", "Tailwind CSS", "Framer Motion"]
@@ -66,7 +70,7 @@
       "title": "Hardware Lab Management",
       "category": "Systems & Infrastructure",
       "featured": false,
-      "description": "• Problem: Computer lab needed optimization of hardware inventory and remediation of data-loss risks.\n• Solution: Managed daily lab operations, upgraded speeds with NVMe SSDs, and successfully recovered unreadable 1TB external storage drives.\n• Tech: Linux, Hardware Diagnostics, Virtualization",
+      "description": "• Problem: Lab environment required optimization of system backups and speed upgrades.\n• Solution: Managed daily lab operations, upgraded NVMe SSDs, and recovered unreadable drives.\n• Tech: Linux, Hardware Diagnostics, Virtualization",
       "image": "/images/projects/stellar.png",
       "link": "#",
       "techStack": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
@@ -76,7 +80,7 @@
       "title": "Multimedia Production",
       "category": "Creative Production",
       "featured": false,
-      "description": "• Problem: Digital projects needed engaging multimedia storytelling to capture viewer attention.\n• Solution: Produced high-quality video editing and motion graphics using Premiere Pro and After Effects, editing audio cues, color grading, and trend assets.\n• Tech: Premiere Pro, After Effects, Illustrator",
+      "description": "• Problem: Raw assets needed polished digital editing to capture audience attention.\n• Solution: Edited dynamic sound cues, color grade presets, and motion graphics assets.\n• Tech: Premiere Pro, After Effects, Illustrator",
       "image": "/images/projects/stellar.png",
       "link": "#",
       "techStack": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]
@@ -84,22 +88,22 @@
   ],
   "experience": [
     {
-      "role": "Lead Frontend Developer & UI Engineer",
-      "company": "Personal & Freelance Production",
-      "period": "2025 - Present",
-      "description": "Engineering production-ready React/Next.js web applications. Integrating AI interfaces (like StudyFlow AI), coding fluid Framer Motion animations, and designing CMS systems backed by Firebase Firestore."
+      "role": "Developing AI Applications",
+      "company": "Personal & Freelance Projects",
+      "period": "2026",
+      "description": "Engineering production-ready React/Next.js web applications, integrating AI agents and OpenAI API models, and building Firebase-driven dashboard panels."
     },
     {
-      "role": "Web Developer & Asset Designer",
-      "company": "ITQAN Friends Project",
-      "period": "2024 - 2025",
-      "description": "Architected and structured responsive community web templates using semantic HTML5 and clean CSS layouts. Optimized digital creative assets, speeding up page interaction metrics."
+      "role": "Built Production Projects",
+      "company": "ITQAN Friends & Open Source",
+      "period": "2025",
+      "description": "Designed and deployed responsive web layouts, custom asset rendering systems, and optimized media assets for web loading speeds."
     },
     {
-      "role": "Systems Administrator & Lab Assistant",
-      "company": "Academic Hardware Lab",
-      "period": "2023 - 2024",
-      "description": "Maintained computer lab hardware operations. Performed hardware diagnostics, NVMe SSD speed upgrades, systems virtualization setups, and successfully recovered unreadable external storage drives."
+      "role": "Started Web Development",
+      "company": "Academic Hardware & Software Support",
+      "period": "2024",
+      "description": "Explored local network diagnostics, script automation, and created semantic web templates to support academic systems."
     }
   ],
   "achievements": [
@@ -189,6 +193,6 @@
     { "name": "GitHub", "url": "https://github.com/mujis-star" },
     { "name": "LinkedIn", "url": "https://linkedin.com" },
     { "name": "Twitter", "url": "https://twitter.com" },
-    { "name": "Email", "url": "mailto:mujisworld09@gmail.com" }
+    { "name": "Email", "url": "mailto:mujee00012@gmail.com" }
   ]
 }

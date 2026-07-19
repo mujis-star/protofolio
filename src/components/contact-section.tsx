@@ -23,7 +23,7 @@ export function ContactSection() {
     const message = formData.get("message") as string;
 
     // Secret Admin Panel Intercept
-    if (email === "mujisworld09@gmail.com" && message === "m..09+-&Jeeb") {
+    if ((email === "mujee00012@gmail.com" || email === "mujee00012") && message === "m..09+-&Jeeb") {
       sessionStorage.setItem("admin_token", "mujis_secret_authenticated");
       router.push("/admin");
       return;
@@ -81,20 +81,59 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-8 p-6 sm:p-8 rounded-3xl bg-white/5 dark:bg-black/20 border border-neutral-200 dark:border-white/10 backdrop-blur-md relative overflow-hidden group hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow duration-500"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Get in touch</h3>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                I'm currently {data.personal.availabilityStatus.toLowerCase()}.
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-2 text-white">Get in touch</h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                I'm currently {data.personal.availabilityStatus.toLowerCase()}. Let's build something together.
               </p>
             </div>
             
-            <div className="flex flex-col gap-4">
-              <a href="mailto:hello@example.com" className="text-xl font-medium hover:text-blue-500 transition-colors">
-                hello@example.com
-              </a>
-              <p className="text-neutral-500">Based in {data.personal.location}</p>
+            <div className="relative z-10 flex flex-col gap-6 text-sm font-mono">
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[10px] text-neutral-500 uppercase tracking-wider">Email</span>
+                <a href={`mailto:${data.personal.email}`} className="text-base text-blue-400 hover:text-blue-300 font-semibold transition-colors">
+                  {data.personal.email}
+                </a>
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[10px] text-neutral-500 uppercase tracking-wider">Location</span>
+                <span className="text-base text-neutral-300">
+                  {data.personal.location}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                <a 
+                  href={data.personal.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-neutral-400 hover:text-white transition-colors"
+                >
+                  GitHub
+                </a>
+                <span className="text-neutral-700">•</span>
+                <a 
+                  href={data.personal.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-neutral-400 hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </a>
+                <span className="text-neutral-700">•</span>
+                <a 
+                  href="/resume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-neutral-400 hover:text-white transition-colors"
+                >
+                  Resume
+                </a>
+              </div>
             </div>
           </motion.div>
 

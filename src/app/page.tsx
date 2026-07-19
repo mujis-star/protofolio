@@ -12,6 +12,7 @@ import { AchievementsSection } from "@/components/achievements-section";
 import { GallerySection } from "@/components/gallery-section";
 import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
+import { GitHubActivity } from "@/components/github-activity";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,6 +54,7 @@ export default function Home() {
         <AchievementsSection />
         <ProjectsSection />
         <ExperienceSection />
+        <GitHubActivity />
         <GallerySection />
         <FAQSection />
         <ContactSection />

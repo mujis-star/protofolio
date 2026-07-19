@@ -8,9 +8,10 @@ import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
+  { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export function Navigation() {
@@ -71,10 +72,18 @@ export function Navigation() {
         <div className="flex items-center gap-4">
           <Link
             href="#contact"
-            className="hidden md:inline-flex h-9 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+            className="hidden md:inline-flex h-9 items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-bold text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
           >
             Let's Talk
           </Link>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex h-9 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 text-sm font-bold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+          >
+            Resume
+          </a>
         </div>
       </div>
     </motion.header>
