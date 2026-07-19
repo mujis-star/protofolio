@@ -50,13 +50,10 @@ export function AboutSection() {
             ) : (
               <>
                 <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  I am {data.personal.name}, a passionate {data.personal.role} dedicated to crafting 
-                  extraordinary digital products. With a strong foundation in both design and development, 
-                  I bridge the gap between aesthetics and functionality.
+                  I'm {data.personal.name}. I combine frontend engineering, UI design, and system knowledge to build complete digital experiences—from UI mockups to deployment.
                 </p>
                 <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  Based in {data.personal.location}, I specialize in building performant web applications 
-                  with modern technologies like Next.js, Framer Motion, and Three.js.
+                  Based in {data.personal.location}, I specialize in building performant web applications with modern technologies like React, Next.js, and AI API integrations.
                 </p>
               </>
             )}

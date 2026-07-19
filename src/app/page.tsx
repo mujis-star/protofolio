@@ -14,6 +14,7 @@ import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { GitHubActivity } from "@/components/github-activity";
 import { ProcessSection } from "@/components/process-section";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,13 +24,12 @@ export default function Home() {
     "@type": "ProfilePage",
     "mainEntity": {
       "@type": "Person",
-      "name": "Mujeeb",
-      "jobTitle": "Creative Developer & Tech Enthusiast",
-      "url": "https://mujeeb-portfolio.example.com",
+      "name": "Mujeeb P",
+      "jobTitle": "Frontend Developer & Creative UI Engineer",
+      "url": "https://mujeeb-portfolio.vercel.app",
       "sameAs": [
-        "https://github.com",
-        "https://linkedin.com",
-        "https://twitter.com"
+        "https://github.com/mujis-star",
+        "https://linkedin.com"
       ]
     }
   };
@@ -57,6 +57,7 @@ export default function Home() {
         <ProjectsSection />
         <ExperienceSection />
         <GitHubActivity />
+        <Testimonials />
         <GallerySection />
         <FAQSection />
         <ContactSection />

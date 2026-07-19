@@ -85,10 +85,14 @@ export function ContactSection() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2 text-white">Get in touch</h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                I'm currently {data.personal.availabilityStatus.toLowerCase()}. Let's build something together.
+              <h3 className="text-2xl font-bold mb-2 text-white">Let's Build Something Great Together</h3>
+              <p className="text-sm text-neutral-400 mb-3">
+                I'm currently open for **Full-Time Frontend Roles**, **Freelance Projects**, and **Open Source Collaboration**.
               </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                {data.personal.availabilityStatus}
+              </div>
             </div>
             
             <div className="relative z-10 flex flex-col gap-6 text-sm font-mono">
