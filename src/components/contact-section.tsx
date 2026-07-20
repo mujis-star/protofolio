@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useContent } from "@/context/content-context";
-
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 
 export function ContactSection() {
@@ -36,19 +37,25 @@ export function ContactSection() {
     };
 
     try {
-      const response = await fetch("/api/contact", {
+      await addDoc(collection(db, "messages"), {
+        name: formValues.name,
+        email: formValues.email,
+        message: formValues.message,
+        createdAt: serverTimestamp(),
+        read: false
+      });
+      
+      // Trigger the email notification via Resend API
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formValues),
       });
 
-      if (response.ok) {
-        setStatus("success");
-        (e.target as HTMLFormElement).reset();
-      } else {
-        setStatus("error");
-      }
+      setStatus("success");
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
+      console.error("Error saving message:", error);
       setStatus("error");
     } finally {
       setIsSubmitting(false);

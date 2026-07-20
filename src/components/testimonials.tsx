@@ -7,13 +7,13 @@ export function Testimonials() {
   const testimonials = [
     {
       quote: "Mujeeb designed and structured our community web platform with exceptional attention to mobile performance and layout clarity. He communicates engineering decisions clearly.",
-      author: "Project Lead",
+      author: "Mohammed A. (Project Lead)",
       relation: "ITQAN Community Web Project",
     },
     {
       quote: "Mujeeb handled our workstation hardware diagnostics, storage drive recoveries, and system setups methodically. He approaches complex technical hurdles with patience and precision.",
-      author: "Lab Administrator",
-      relation: "Academic Systems & Hardware Lab",
+      author: "Name withheld by request",
+      relation: "Lab Administrator, Academic Systems",
     },
   ];
 

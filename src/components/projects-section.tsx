@@ -121,16 +121,18 @@ export function ProjectsSection() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
                     {/* Hover Overlay Button */}
-                    <a 
-                      href={project.link || "#"}
-                      target={project.link?.startsWith("http") ? "_blank" : undefined}
-                      rel={project.link?.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/50 backdrop-blur-xs cursor-pointer z-10"
-                    >
-                      <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                        View Live Demo <ExternalLink className="w-4 h-4" />
-                      </span>
-                    </a>
+                    {(project.link || project.github) && (
+                      <a 
+                        href={project.link || project.github || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/50 backdrop-blur-xs cursor-pointer z-10"
+                      >
+                        <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                          {project.link ? "View Live Demo" : "View Source Code"} <ExternalLink className="w-4 h-4" />
+                        </span>
+                      </a>
+                    )}
                   </div>
                   
                   {/* Header Meta */}

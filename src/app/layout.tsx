@@ -24,22 +24,22 @@ const spaceGrotesk = Space_Grotesk({
 import { ContentProvider } from "@/context/content-context";
 
 export const metadata: Metadata = {
-  title: "Mujeeb P | Frontend Developer & UI Engineer",
-  description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in React, Next.js, UI Engineering, and creative web solutions.",
+  title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
+  description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
   keywords: ["Mujeeb P", "Mujeeb", "Portfolio", "Frontend Developer", "UI Engineer", "Creative Developer", "Next.js", "React", "Three.js", "Framer Motion"],
   authors: [{ name: "Mujeeb P" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mujeeb-portfolio.vercel.app",
-    title: "Mujeeb P | Frontend Developer & UI Engineer",
-    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in React, Next.js, UI Engineering, and creative web solutions.",
-    siteName: "Mujeeb P Portfolio",
+    url: "https://mujeeb-rahman.vercel.app",
+    title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
+    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
+    siteName: "Mujeeb Rahman Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mujeeb P | Frontend Developer & UI Engineer",
-    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in React, Next.js, UI Engineering, and creative web solutions.",
+    title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
+    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
     creator: "@mujeeb",
   },
   verification: {

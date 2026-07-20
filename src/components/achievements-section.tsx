@@ -17,7 +17,7 @@ export function AchievementsSection() {
           className="text-center mb-16 md:mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
-            Awards & <span className="text-blue-500">Achievements.</span>
+            Key <span className="text-blue-500">Milestones.</span>
           </h2>
           <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
             Milestones and recognitions from my journey in tech, AI, and cybersecurity.

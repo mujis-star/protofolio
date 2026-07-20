@@ -1,13 +1,13 @@
 {
   "personal": {
     "name": "Mujeeb Rahman",
-    "role": "Full Stack Engineer",
+    "role": "Full Stack + Infrastructure Engineer",
     "location": "Kannur, Kerala, India",
     "bio": "Building scalable applications with Next.js, React, Firebase, and Node.js. Currently building modern web experiences.",
     "email": "mujee00012@gmail.com",
     "phone": "9746613860",
     "github": "https://github.com/mujis-star",
-    "linkedin": "https://linkedin.com",
+    "linkedin": "https://linkedin.com/in/mujeeb-rahman",
     "availabilityStatus": "Open to Full-time, Freelance & Remote Opportunities"
   },
   "about": {
@@ -52,22 +52,21 @@
       "description": "✓ Role-based authentication\n✓ Google Drive integration\n✓ Custom Admin Dashboard\n✓ Fully responsive UI",
       "challenges": "Architecting a secure authentication flow and structuring Firestore databases for scalable PDF archiving and user management.",
       "image": "/images/projects/nexus.png",
-      "link": "https://itqan-friends.example.com",
+      "link": "https://itqan-friends.vercel.app",
       "github": "https://github.com/mujis-star/itqan-friends",
       "techStack": ["Next.js", "Firebase", "Google Drive API"]
     },
     {
-      "id": "studyflow-ai",
-      "title": "StudyFlow AI",
-      "category": "AI Software Engineering",
+      "id": "proxmox-homelab",
+      "title": "Enterprise Homelab Infrastructure",
+      "category": "Systems & Network Engineering",
       "featured": true,
-      "tags": ["AI", "React", "Full Stack"],
-      "description": "✓ Vector DB integration\n✓ OpenAI API processing\n✓ Responsive Framer UI\n✓ Automated summarization",
-      "challenges": "Optimizing vector embedding retrieval speeds and handling long PDF token context limits.",
+      "tags": ["Proxmox", "pfSense", "TrueNAS"],
+      "description": "✓ Bare-metal hypervisor deployment\n✓ VLAN network segmentation\n✓ ZFS storage pool recovery\n✓ Secure reverse proxying",
+      "challenges": "Recovering corrupted storage arrays and securely exposing internal services behind a reverse proxy with pfSense.",
       "image": "/images/projects/aura.png",
-      "link": "https://studyflow-ai.example.com",
-      "github": "https://github.com/mujis-star/studyflow-ai",
-      "techStack": ["Next.js", "OpenAI API", "Tailwind CSS"]
+      "github": "https://github.com/mujis-star",
+      "techStack": ["Proxmox VE", "Linux", "Networking"]
     },
     {
       "id": "vogue-vault",
@@ -78,7 +77,6 @@
       "description": "✓ 60 FPS layout re-renders\n✓ Custom instant filtering\n✓ Responsive E-commerce UI",
       "challenges": "Maintaining 60 FPS layout re-renders during rapid multi-property category filtering.",
       "image": "/images/projects/lumina.png",
-      "link": "https://vogue-vault.example.com",
       "github": "https://github.com/mujis-star/vogue-vault",
       "techStack": ["React", "Tailwind CSS", "Framer Motion"]
     }
@@ -188,7 +186,7 @@
   ],
   "socials": [
     { "name": "GitHub", "url": "https://github.com/mujis-star" },
-    { "name": "LinkedIn", "url": "https://linkedin.com" },
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/mujeeb-rahman" },
     { "name": "Twitter", "url": "https://twitter.com" },
     { "name": "Email", "url": "mailto:mujee00012@gmail.com" }
   ]

@@ -255,7 +255,7 @@ export function HeroSection() {
                 <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Technologies</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-extrabold text-purple-500 font-heading">3+</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-purple-500 font-heading">2+</div>
                 <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Years Learning</div>
               </div>
               <div>

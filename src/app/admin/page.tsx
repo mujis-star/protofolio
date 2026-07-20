@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { Save, LogOut, Loader2, Database, User, FolderGit2, Briefcase, Wrench, Settings, Code } from "lucide-react";
+import { Save, LogOut, Loader2, Database, User, FolderGit2, Briefcase, Wrench, Settings, Code, MessageSquare } from "lucide-react";
 import defaultData from "@/data/content.json";
 import { ContentData } from "@/context/content-context";
 
@@ -12,8 +12,9 @@ import { ProjectsTab } from "./components/ProjectsTab";
 import { ExperienceTab } from "./components/ExperienceTab";
 import { SkillsTab } from "./components/SkillsTab";
 import { AdvancedTab } from "./components/AdvancedTab";
+import { MessagesTab } from "./components/MessagesTab";
 
-type TabType = "personal" | "projects" | "experience" | "skills" | "advanced" | "raw";
+type TabType = "personal" | "projects" | "experience" | "skills" | "advanced" | "messages" | "raw";
 
 export default function AdminPage() {
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -135,6 +136,7 @@ export default function AdminPage() {
     { id: "experience", label: "Experience", icon: Briefcase },
     { id: "skills", label: "Skills", icon: Wrench },
     { id: "advanced", label: "Advanced", icon: Settings },
+    { id: "messages", label: "Messages", icon: MessageSquare },
     { id: "raw", label: "Raw JSON", icon: Code },
   ];
 
@@ -228,6 +230,7 @@ export default function AdminPage() {
             {activeTab === "experience" && <ExperienceTab data={formData} onChange={setFormData} />}
             {activeTab === "skills" && <SkillsTab data={formData} onChange={setFormData} />}
             {activeTab === "advanced" && <AdvancedTab data={formData} onChange={setFormData} />}
+            {activeTab === "messages" && <MessagesTab />}
             
             {activeTab === "raw" && (
               <div className="flex-1 rounded-xl border border-white/10 bg-[#0a0a0a] overflow-hidden flex flex-col shadow-[0_0_30px_rgba(0,0,0,0.5)] animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-[600px]">
