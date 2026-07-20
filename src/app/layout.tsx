@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mujeeb-rahman.vercel.app",
+    url: "https://mujeeb-rahman-portfolio.vercel.app",
     title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
     description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
     siteName: "Mujeeb Rahman Portfolio",

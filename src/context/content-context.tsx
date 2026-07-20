@@ -35,6 +35,7 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
             personal: { ...defaultData.personal, ...fetched?.personal, email: "mujee00012@gmail.com" },
             about: defaultData.about,
             projects: defaultData.projects,
+            faq: defaultData.faq,
           };
           setData(merged);
         }

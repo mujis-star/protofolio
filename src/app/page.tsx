@@ -26,7 +26,7 @@ export default function Home() {
       "@type": "Person",
       "name": "Mujeeb Rahman",
       "jobTitle": "Full Stack + Infrastructure Engineer",
-      "url": "https://mujeeb-rahman.vercel.app",
+      "url": "https://mujeeb-rahman-portfolio.vercel.app",
       "sameAs": [
         "https://github.com/mujis-star",
         "https://linkedin.com/in/mujeeb-rahman"
