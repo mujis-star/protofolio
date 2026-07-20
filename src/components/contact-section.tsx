@@ -81,7 +81,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-8 p-6 sm:p-8 rounded-3xl bg-white/5 dark:bg-black/20 border border-neutral-200 dark:border-white/10 backdrop-blur-md relative overflow-hidden group hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow duration-500"
+            className="flex flex-col gap-8 p-6 sm:p-8 rounded-3xl bg-white/5 dark:bg-black/20 border border-neutral-200 dark:border-white/10 backdrop-blur-md relative overflow-hidden group hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-shadow duration-500"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
@@ -90,7 +90,7 @@ export function ContactSection() {
                 I'm currently open for **Full-Time Frontend Roles**, **Freelance Projects**, and **Open Source Collaboration**.
               </p>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
                 {data.personal.availabilityStatus}
               </div>
             </div>

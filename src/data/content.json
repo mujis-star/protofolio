@@ -1,19 +1,19 @@
 {
   "personal": {
-    "name": "Mujeeb P",
-    "role": "Frontend Developer & UI Engineer",
+    "name": "Mujeeb Rahman",
+    "role": "Full Stack Web Developer",
     "location": "Kannur, Kerala, India",
-    "bio": " specialized in crafting fast, beautiful, and scalable digital experiences. Passionate about bridging the gap between clean frontend code, system performance, and polished user interface design.",
+    "bio": "Building scalable applications with Next.js, React, Firebase, and Node.js. Currently building modern web experiences.",
     "email": "mujee00012@gmail.com",
     "phone": "9746613860",
     "github": "https://github.com/mujis-star",
     "linkedin": "https://linkedin.com",
-    "availabilityStatus": "Available for freelance & contract roles"
+    "availabilityStatus": "Available for full-time & contract roles"
   },
   "about": {
     "paragraphs": [
-      "I enjoy building products that combine beautiful interfaces with practical solutions. My interests include frontend engineering, AI-powered applications, and UI/UX design.",
-      "I don't just write code—I design and build complete digital experiences, from UI mockups and client architecture down to backend APIs and automated deployment."
+      "I build fast, accessible, and scalable web applications with a focus on modern user experience and maintainable architecture.",
+      "My interests include frontend engineering, AI-powered applications, and robust backend systems."
     ]
   },
   "skills": [
@@ -23,18 +23,31 @@
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express", "REST APIs", "Firebase"]
+      "items": ["Node.js", "Express", "Firebase", "REST APIs"]
+    },
+    {
+      "category": "Database",
+      "items": ["Firestore", "MySQL"]
     },
     {
       "category": "Tools",
-      "items": ["Git", "Docker", "Linux", "VMware"]
-    },
-    {
-      "category": "Design",
-      "items": ["Photoshop", "After Effects", "Figma"]
+      "items": ["Git", "GitHub", "Figma", "Vercel", "Docker"]
     }
   ],
   "projects": [
+    {
+      "id": "itqan-friends",
+      "title": "ITQAN Friends Portal",
+      "category": "Community Management Platform",
+      "featured": true,
+      "tags": ["Next.js", "Firebase", "Full Stack"],
+      "description": "• Authentication\n• Admin Dashboard\n• PDF Archive\n• Google Drive Storage\n• Firebase\n• Next.js",
+      "challenges": "Architecting a secure authentication flow and structuring Firestore databases for scalable PDF archiving and user management.",
+      "image": "/images/projects/nexus.png",
+      "link": "https://itqan-friends.example.com",
+      "github": "https://github.com/mujis-star/itqan-friends",
+      "techStack": ["Next.js", "Firebase", "Google Drive API"]
+    },
     {
       "id": "studyflow-ai",
       "title": "StudyFlow AI",
@@ -49,23 +62,10 @@
       "techStack": ["Next.js", "OpenAI API", "Tailwind CSS"]
     },
     {
-      "id": "itqan-friends",
-      "title": "ITQAN Friends Website",
-      "category": "Web Design & Community Branding",
-      "featured": true,
-      "tags": ["UI Design", "Full Stack"],
-      "description": "• Problem: A community needed a modern digital presence and accessible layout.\n• Solution: Developed a fast, semantic, and responsive community website, reducing asset load sizes by 60%.\n• Tech: HTML, CSS, JavaScript, Vercel",
-      "challenges": "Optimizing image compression pipelines without degrading visual fidelity on retina displays.",
-      "image": "/images/projects/nexus.png",
-      "link": "https://itqan-friends.example.com",
-      "github": "https://github.com/mujis-star/itqan-friends",
-      "techStack": ["HTML5", "CSS3", "JavaScript", "Adobe CC", "Vercel"]
-    },
-    {
       "id": "vogue-vault",
       "title": "Vogue Vault",
       "category": "UI Engineering & E-Commerce",
-      "featured": true,
+      "featured": false,
       "tags": ["React", "UI Design"],
       "description": "• Problem: E-commerce shopping catalogs suffer from laggy filters and layouts.\n• Solution: Engineered a high-performance shopping interface with instant filtering.\n• Tech: React, Tailwind CSS, Framer Motion",
       "challenges": "Maintaining 60 FPS layout re-renders during rapid multi-property category filtering.",
@@ -73,52 +73,26 @@
       "link": "https://vogue-vault.example.com",
       "github": "https://github.com/mujis-star/vogue-vault",
       "techStack": ["React", "Tailwind CSS", "Framer Motion"]
-    },
-    {
-      "id": "hardware-lab",
-      "title": "Hardware Lab Management",
-      "category": "Systems & Infrastructure",
-      "featured": false,
-      "tags": ["Full Stack"],
-      "description": "• Problem: Lab environment required optimization of system backups and speed upgrades.\n• Solution: Managed daily lab operations, upgraded NVMe SSDs, and recovered unreadable drives.\n• Tech: Linux, Hardware Diagnostics, Virtualization",
-      "challenges": "Performing bit-level data recovery on damaged 1TB storage clusters without data corruption.",
-      "image": "/images/projects/stellar.png",
-      "link": "#",
-      "github": "https://github.com/mujis-star",
-      "techStack": ["Hardware Diagnostics", "NVMe SSDs", "Motherboard Testing"]
-    },
-    {
-      "id": "multimedia-production",
-      "title": "Multimedia Production",
-      "category": "Creative Production",
-      "featured": false,
-      "tags": ["UI Design"],
-      "description": "• Problem: Raw assets needed polished digital editing to capture audience attention.\n• Solution: Edited dynamic sound cues, color grade presets, and motion graphics assets.\n• Tech: Premiere Pro, After Effects, Illustrator",
-      "challenges": "Timing keyframe transitions to audio waveforms with sub-frame precision.",
-      "image": "/images/projects/stellar.png",
-      "link": "#",
-      "github": "https://github.com/mujis-star",
-      "techStack": ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"]
     }
   ],
   "experience": [
     {
-      "role": "Developing AI Applications",
-      "company": "Personal & Freelance Projects",
+      "role": "Production Projects",
+      "company": "Next.js, Firebase, Node",
       "period": "2026",
-      "description": "Engineering production-ready React/Next.js web applications, integrating AI agents and OpenAI API models, and building Firebase-driven dashboard panels."
+      "description": "Building scalable applications, integrating AI workflows, creating secure admin dashboards, and handling full deployment pipelines."
     },
     {
-      "role": "Built Production Projects",
-      "company": "ITQAN Friends & Open Source",
+      "role": "React",
+      "company": "UI Engineering & Optimization",
       "period": "2025",
-      "description": "Designed and deployed responsive web layouts, custom asset rendering systems, and optimized media assets for web loading speeds."
+      "description": "Designed and deployed responsive web layouts, custom asset rendering systems, and optimized media assets for fast load speeds."
     },
     {
-      "role": "Started Web Development",
-      "company": "Academic Hardware & Software Support",
+      "role": "Started HTML/CSS",
+      "company": "Web Development Basics",
       "period": "2024",
-      "description": "Explored local network diagnostics, script automation, and created semantic web templates to support academic systems."
+      "description": "Explored semantic web templates, local network diagnostics, and script automation to support academic systems."
     }
   ],
   "achievements": [

@@ -28,14 +28,14 @@ export function TechStack() {
           <div className="hidden md:flex relative w-64 h-24 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="flex gap-4 items-center z-10">
-              <span className="w-3 h-3 rounded-full bg-blue-500 animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+              <span className="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
               <span className="font-mono text-sm tracking-widest uppercase text-neutral-300">System Ready</span>
             </div>
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data.skills.map((skillGroup, groupIndex) => (
             <motion.div
               key={skillGroup.category}
@@ -43,7 +43,7 @@ export function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: groupIndex * 0.2 }}
-              className="group relative p-8 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] overflow-hidden"
+              className="group relative p-8 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] overflow-hidden"
             >
               {/* Subtle gradient background on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

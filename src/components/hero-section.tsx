@@ -154,9 +154,9 @@ export function HeroSection() {
   const data = useContent();
   return (
     <section className="relative min-h-[calc(100vh-5rem)] flex items-center pt-20 md:pt-0 overflow-hidden">
-      {/* Animated Gradient Glows */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[450px] h-[450px] bg-purple-500/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      {/* Static Gradient Glows (Animations removed) */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[450px] h-[450px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
       
       {/* Localized Subtle Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_at_center,white,transparent_80%)] pointer-events-none" />
@@ -170,20 +170,26 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5 text-sm font-medium mb-8 shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(59,130,246,0.15)]"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5 text-sm font-medium mb-8 shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(59,130,246,0.1)]"
             >
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+              <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
               <span className="text-neutral-700 dark:text-neutral-300">{data.personal.availabilityStatus}</span>
             </motion.div>
 
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white"
             >
-              Frontend Developer & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">Creative UI Engineer</span>
-            </motion.h1>
+              <h2 className="text-xl sm:text-2xl font-semibold text-neutral-500 dark:text-neutral-400 mb-2">
+                {data.personal.name}
+              </h2>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter mb-6 leading-tight text-neutral-900 dark:text-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-600 drop-shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                  {data.personal.role}
+                </span>
+              </h1>
+            </motion.div>
 
             {/* Value Proposition & Brand Statement */}
             <motion.div
@@ -193,19 +199,19 @@ export function HeroSection() {
               className="mb-8 flex flex-col gap-4 text-left"
             >
               <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-bold tracking-widest font-mono uppercase text-blue-400">
-                <span>UI/UX Design</span>
+                <span>Next.js</span>
                 <span className="text-neutral-600">•</span>
-                <span>Web Engineering</span>
+                <span>React</span>
                 <span className="text-neutral-600">•</span>
-                <span>AI Integration</span>
+                <span>Firebase</span>
                 <span className="text-neutral-600">•</span>
-                <span>Deployment</span>
+                <span>Node.js</span>
               </div>
               <p className="text-lg md:text-xl font-medium text-neutral-200 dark:text-neutral-200 max-w-xl leading-relaxed">
-                I design and build complete digital experiences—from UI design to deployment.
+                {data.personal.bio.split(". ")[0]}.
               </p>
               <p className="text-base text-neutral-400 dark:text-neutral-400 max-w-xl leading-relaxed">
-                Building modern, high-performance web applications with exceptional user experiences.
+                {data.personal.bio.split(". ")[1]}
               </p>
             </motion.div>
 
@@ -347,18 +353,7 @@ export function HeroSection() {
               <div className="flex justify-between items-end">
                 <div>
                   <h3 className="text-sm sm:text-base font-bold text-white mb-1 tracking-wide">Currently Building</h3>
-                  <p className="text-xs sm:text-sm text-blue-300 font-mono">AI & Secure Network Systems</p>
-                </div>
-                <div className="flex gap-1 h-6 items-end">
-                  {/* Fake Audio/Data Visualizer */}
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <motion.div
-                      key={i}
-                      animate={{ height: ["20%", "100%", "40%", "80%", "20%"] }}
-                      transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.1 }}
-                      className="w-1.5 bg-cyan-400 rounded-t-sm"
-                    />
-                  ))}
+                  <p className="text-xs sm:text-sm text-blue-300 font-mono">Modern web experiences</p>
                 </div>
               </div>
             </div>

@@ -10,23 +10,23 @@ export function FeaturedCaseStudy() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="mb-20 rounded-3xl bg-gradient-to-b from-blue-950/30 via-black/40 to-black/20 border border-blue-500/30 p-6 sm:p-10 backdrop-blur-xl relative overflow-hidden group shadow-[0_0_60px_rgba(59,130,246,0.15)]"
+      className="mb-20 rounded-3xl bg-neutral-900/40 border border-white/10 p-6 sm:p-10 backdrop-blur-xl relative overflow-hidden group shadow-[0_0_40px_rgba(0,0,0,0.2)]"
     >
-      {/* Background Glow Overlay */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/20 transition-all duration-700" />
+      {/* Background Glow Overlay - Toned down */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none transition-all duration-700" />
 
       {/* Top Banner Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10 relative z-10">
         <div className="flex items-center gap-3">
-          <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" /> Flagship Case Study
           </span>
-          <span className="text-xs font-mono text-neutral-400">Next.js • OpenAI API • Vector DB</span>
+          <span className="text-xs font-mono text-neutral-400">Next.js • Firebase • Full Stack</span>
         </div>
 
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/mujis-star/studyflow-ai"
+            href="https://github.com/mujis-star/itqan-friends"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:text-white transition-colors text-neutral-300"
@@ -37,10 +37,10 @@ export function FeaturedCaseStudy() {
             </svg>
           </a>
           <a
-            href="https://studyflow-ai.example.com"
+            href="https://itqan-friends.example.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]"
           >
             Live Demo <ArrowUpRight className="w-4 h-4" />
           </a>
@@ -50,65 +50,89 @@ export function FeaturedCaseStudy() {
       {/* Title & Tagline */}
       <div className="mb-10 relative z-10">
         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3">
-          StudyFlow AI
+          ITQAN Friends Portal
         </h3>
         <p className="text-lg text-neutral-300 max-w-2xl font-medium">
-          An intelligent document assistant engineered to transform dense academic PDFs into instant interactive summaries and study vectors.
+          A scalable community management platform with secure authentication, admin controls, and cloud-synced PDF archiving.
         </p>
+      </div>
+
+      {/* Architecture Diagram */}
+      <div className="mb-10 p-5 rounded-2xl bg-black/40 border border-white/10 relative z-10">
+        <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono mb-4 flex items-center gap-2">
+          <Layers className="w-4 h-4 text-cyan-400" /> Architecture
+        </h4>
+        <div className="font-mono text-xs sm:text-sm text-neutral-300 flex flex-col gap-2 opacity-80">
+          <div className="flex items-center gap-4">
+            <span className="bg-blue-500/20 px-3 py-1 rounded border border-blue-500/30">Next.js Client</span>
+            <span>→</span>
+            <span className="bg-orange-500/20 px-3 py-1 rounded border border-orange-500/30">Firebase Auth</span>
+          </div>
+          <div className="flex items-center gap-4 ml-8 border-l border-neutral-700 pl-4 py-2">
+            <span>↳</span>
+            <span className="bg-yellow-500/20 px-3 py-1 rounded border border-yellow-500/30">Firestore DB</span>
+            <span>↔</span>
+            <span className="bg-green-500/20 px-3 py-1 rounded border border-green-500/30">Google Drive API</span>
+          </div>
+          <div className="flex items-center gap-4 ml-16 border-l border-neutral-700 pl-4 py-2">
+            <span>↳</span>
+            <span className="bg-purple-500/20 px-3 py-1 rounded border border-purple-500/30">Admin Dashboard</span>
+          </div>
+        </div>
       </div>
 
       {/* Case Study Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         {/* Problem */}
-        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col justify-between">
+        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
           <div>
             <div className="w-9 h-9 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center mb-3">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono mb-2">01. Problem</h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              Students waste dozens of hours reading long, unstructured academic PDFs and struggling to isolate key exam topics.
+              The community lacked a centralized, secure platform to share resources, manage members, and host a digital PDF library.
             </p>
           </div>
         </div>
 
         {/* Research */}
-        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col justify-between">
+        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
           <div>
             <div className="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3">
               <BookOpen className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono mb-2">02. Research</h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              Existing generic LLMs lacked study-specific context management and suffered from PDF layout extraction loss.
+              Evaluated scalable storage solutions and authentication providers, prioritizing security, minimal latency, and developer velocity.
             </p>
           </div>
         </div>
 
         {/* Challenges */}
-        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col justify-between">
+        <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
           <div>
             <div className="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3">
               <Layers className="w-5 h-5" />
             </div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono mb-2">03. Engineering</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono mb-2">03. Challenges</h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              Engineered token chunking pipelines, context window buffering, prompt tuning, and streaming response UI.
+              Designing role-based access control (RBAC) securely on the client-side while managing seamless Google Drive API limits.
             </p>
           </div>
         </div>
 
         {/* Results */}
-        <div className="p-5 rounded-2xl bg-blue-500/10 border border-blue-500/20 backdrop-blur-md flex flex-col justify-between">
+        <div className="p-5 rounded-2xl bg-blue-500/5 border border-blue-500/20 flex flex-col justify-between">
           <div>
             <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono mb-2">04. Results</h4>
             <ul className="text-xs text-neutral-300 space-y-1 font-mono">
-              <li>⚡ 70% Faster study workflows</li>
-              <li>🎨 Responsive Framer UI</li>
-              <li>🛡️ Clean scalable architecture</li>
+              <li>⚡ Sub-1s page loads</li>
+              <li>🛡️ Secure admin controls</li>
+              <li>📁 Automated PDF syncing</li>
             </ul>
           </div>
         </div>

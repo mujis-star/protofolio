@@ -79,7 +79,7 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all duration-500"
+                className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-500"
               >
                 <div>
                   {/* Image Banner */}
@@ -87,7 +87,7 @@ export function ProjectsSection() {
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 group-hover:rotate-1 transition-transform duration-700 ease-in-out"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
@@ -122,7 +122,7 @@ export function ProjectsSection() {
                   </h3>
 
                   {/* Problem & Solution Breakdown */}
-                  <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-sm whitespace-pre-line mb-4 font-sans">
+                  <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-sm whitespace-pre-line mb-4 font-sans opacity-90">
                     {project.description}
                   </p>
 
