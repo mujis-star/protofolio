@@ -105,7 +105,7 @@ function InteractiveTerminal() {
         }
         break;
       case "contact":
-        response = "Contact channels:\n- Email: mujee00012@gmail.com\n- GitHub: github.com/mujis-star\n- LinkedIn: linkedin.com";
+        response = "Contact channels:\n- Email: mujee00012@gmail.com\n- GitHub: github.com/mujis-star\n- LinkedIn: linkedin.com/in/mujeeb-rahman";
         break;
       case "skills":
         response = "Frontend: React, Next.js, TypeScript, Tailwind\nBackend: Node.js, Express, REST APIs, Firebase\nTools: Git, Docker, Linux, VMware";

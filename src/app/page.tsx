@@ -25,11 +25,11 @@ export default function Home() {
     "mainEntity": {
       "@type": "Person",
       "name": "Mujeeb Rahman",
-      "jobTitle": "Full Stack Engineer",
-      "url": "https://mujeeb-portfolio.vercel.app",
+      "jobTitle": "Full Stack + Infrastructure Engineer",
+      "url": "https://mujeeb-rahman.vercel.app",
       "sameAs": [
         "https://github.com/mujis-star",
-        "https://linkedin.com"
+        "https://linkedin.com/in/mujeeb-rahman"
       ]
     }
   };

@@ -37,7 +37,7 @@ export function FeaturedCaseStudy() {
             </svg>
           </a>
           <a
-            href="https://itqan-friends.example.com"
+            href="https://itqan-friends.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]"
