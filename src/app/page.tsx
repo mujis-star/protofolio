@@ -24,8 +24,8 @@ export default function Home() {
     "@type": "ProfilePage",
     "mainEntity": {
       "@type": "Person",
-      "name": "Mujeeb P",
-      "jobTitle": "Frontend Developer & Creative UI Engineer",
+      "name": "Mujeeb Rahman",
+      "jobTitle": "Full Stack Engineer",
       "url": "https://mujeeb-portfolio.vercel.app",
       "sameAs": [
         "https://github.com/mujis-star",

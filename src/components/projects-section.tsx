@@ -59,6 +59,35 @@ export function ProjectsSection() {
           </div>
         </motion.div>
 
+        {/* Technical Highlights */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="flex flex-wrap items-center justify-between md:justify-start gap-8 mb-12 p-6 md:px-10 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 backdrop-blur-md"
+        >
+          <div className="flex flex-col">
+            <span className="text-3xl font-bold text-white">40+</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Components</span>
+          </div>
+          <div className="w-px h-10 bg-white/10 hidden md:block" />
+          <div className="flex flex-col">
+            <span className="text-3xl font-bold text-white">15+</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Projects</span>
+          </div>
+          <div className="w-px h-10 bg-white/10 hidden md:block" />
+          <div className="flex flex-col">
+            <span className="text-3xl font-bold text-emerald-400">95+</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Lighthouse</span>
+          </div>
+          <div className="w-px h-10 bg-white/10 hidden md:block" />
+          <div className="flex flex-col">
+            <span className="text-3xl font-bold text-blue-400">100%</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Responsive</span>
+          </div>
+        </motion.div>
+
         {/* Featured Flagship Case Study */}
         <FeaturedCaseStudy />
 

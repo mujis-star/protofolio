@@ -104,7 +104,7 @@ export function PersonalTab({ data, onChange }: PersonalTabProps) {
                 onClick={() => {
                   const newP = [...data.about.paragraphs];
                   newP.splice(idx, 1);
-                  onChange({ ...data, about: { paragraphs: newP } });
+                  onChange({ ...data, about: { ...data.about, paragraphs: newP } });
                 }}
                 className="absolute top-0 right-0 text-xs text-red-400 hover:text-red-300 px-2 py-1"
               >
@@ -114,7 +114,7 @@ export function PersonalTab({ data, onChange }: PersonalTabProps) {
           ))}
           <button
             onClick={() => {
-              onChange({ ...data, about: { paragraphs: [...data.about.paragraphs, ""] } });
+              onChange({ ...data, about: { ...data.about, paragraphs: [...data.about.paragraphs, ""] } });
             }}
             className="text-sm text-cyan-400 hover:text-cyan-300"
           >

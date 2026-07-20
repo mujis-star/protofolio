@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContent } from "@/context/content-context";
+import { CheckCircle2 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,6 +58,44 @@ export function AboutSection() {
                 </p>
               </>
             )}
+
+            {data.about?.engineeringPrinciples && (
+              <div className="mt-6 p-6 rounded-2xl bg-white/5 border border-neutral-200 dark:border-white/10 backdrop-blur-md">
+                <h3 className="text-sm font-bold text-neutral-800 dark:text-white uppercase tracking-wider font-mono mb-4">
+                  Engineering Principles
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {data.about.engineeringPrinciples.map((principle, index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      {principle.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Quick Resume Preview */}
+            <div className="mt-6 p-6 rounded-2xl bg-blue-500/5 border border-blue-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <h4 className="font-bold text-neutral-800 dark:text-white mb-1">Résumé Preview</h4>
+                <div className="flex flex-wrap gap-2 text-xs font-mono text-neutral-500 dark:text-neutral-400">
+                  <span>Experience</span>
+                  <span>•</span>
+                  <span>Education</span>
+                  <span>•</span>
+                  <span>Skills</span>
+                </div>
+              </div>
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-colors whitespace-nowrap"
+              >
+                Download PDF
+              </a>
+            </div>
           </div>
           
           <div ref={imageRef} className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">

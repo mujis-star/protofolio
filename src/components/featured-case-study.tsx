@@ -79,6 +79,9 @@ export function FeaturedCaseStudy() {
             <span className="bg-purple-500/20 px-3 py-1 rounded border border-purple-500/30">Admin Dashboard</span>
           </div>
         </div>
+        <p className="text-xs sm:text-sm text-neutral-400 mt-6 leading-relaxed">
+          Authentication is managed through Firebase Authentication. User metadata and role permissions are stored in Firestore, while PDFs and large media assets are uploaded to Google Drive to reduce storage costs and avoid Firebase Storage limitations. This architecture keeps authentication, metadata, and file storage separated for easier maintenance and scalability.
+        </p>
       </div>
 
       {/* Case Study Grid */}

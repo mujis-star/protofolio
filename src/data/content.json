@@ -1,19 +1,27 @@
 {
   "personal": {
     "name": "Mujeeb Rahman",
-    "role": "Full Stack Web Developer",
+    "role": "Full Stack Engineer",
     "location": "Kannur, Kerala, India",
     "bio": "Building scalable applications with Next.js, React, Firebase, and Node.js. Currently building modern web experiences.",
     "email": "mujee00012@gmail.com",
     "phone": "9746613860",
     "github": "https://github.com/mujis-star",
     "linkedin": "https://linkedin.com",
-    "availabilityStatus": "Available for full-time & contract roles"
+    "availabilityStatus": "Open to Full-time, Freelance & Remote Opportunities"
   },
   "about": {
     "paragraphs": [
       "I build fast, accessible, and scalable web applications with a focus on modern user experience and maintainable architecture.",
       "My interests include frontend engineering, AI-powered applications, and robust backend systems."
+    ],
+    "engineeringPrinciples": [
+      { "title": "Performance First" },
+      { "title": "Accessibility by Default" },
+      { "title": "Clean & Maintainable Architecture" },
+      { "title": "Type-Safe Development" },
+      { "title": "User-Centered Design" },
+      { "title": "Continuous Learning" }
     ]
   },
   "skills": [
@@ -41,7 +49,7 @@
       "category": "Community Management Platform",
       "featured": true,
       "tags": ["Next.js", "Firebase", "Full Stack"],
-      "description": "• Authentication\n• Admin Dashboard\n• PDF Archive\n• Google Drive Storage\n• Firebase\n• Next.js",
+      "description": "✓ Role-based authentication\n✓ Google Drive integration\n✓ Custom Admin Dashboard\n✓ Fully responsive UI",
       "challenges": "Architecting a secure authentication flow and structuring Firestore databases for scalable PDF archiving and user management.",
       "image": "/images/projects/nexus.png",
       "link": "https://itqan-friends.example.com",
@@ -54,7 +62,7 @@
       "category": "AI Software Engineering",
       "featured": true,
       "tags": ["AI", "React", "Full Stack"],
-      "description": "• Problem: Students waste time reading long PDFs and documents.\n• Solution: AI summarizes documents and extracts key learnings instantly.\n• Tech: Next.js, OpenAI API, Tailwind CSS, Vector DB",
+      "description": "✓ Vector DB integration\n✓ OpenAI API processing\n✓ Responsive Framer UI\n✓ Automated summarization",
       "challenges": "Optimizing vector embedding retrieval speeds and handling long PDF token context limits.",
       "image": "/images/projects/aura.png",
       "link": "https://studyflow-ai.example.com",
@@ -67,7 +75,7 @@
       "category": "UI Engineering & E-Commerce",
       "featured": false,
       "tags": ["React", "UI Design"],
-      "description": "• Problem: E-commerce shopping catalogs suffer from laggy filters and layouts.\n• Solution: Engineered a high-performance shopping interface with instant filtering.\n• Tech: React, Tailwind CSS, Framer Motion",
+      "description": "✓ 60 FPS layout re-renders\n✓ Custom instant filtering\n✓ Responsive E-commerce UI",
       "challenges": "Maintaining 60 FPS layout re-renders during rapid multi-property category filtering.",
       "image": "/images/projects/lumina.png",
       "link": "https://vogue-vault.example.com",
