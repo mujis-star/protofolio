@@ -53,14 +53,17 @@ export function ContactSection() {
       });
 
       if (!res.ok) {
-        throw new Error("Failed to send email via API");
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || "Failed to send email via API");
       }
 
       setStatus("success");
       (e.target as HTMLFormElement).reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error saving message:", error);
       setStatus("error");
+      // You could optionally set the specific error message to state here if you wanted
+      // to display it instead of a generic one. For now we will just show the error in the console.
     } finally {
       setIsSubmitting(false);
     }
