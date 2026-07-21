@@ -3,7 +3,7 @@
 import { useContent, useContentLoading, Project } from "@/context/content-context";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, Github, CheckCircle2, Activity, LayoutTemplate, Shield, Zap } from "lucide-react";
+import { ArrowLeft, ExternalLink, Code2, CheckCircle2, Activity, LayoutTemplate, Shield, Zap } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -122,7 +122,7 @@ export default function ProjectCaseStudy() {
           <div className="flex gap-4">
             {project.github && (
               <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-colors">
-                <Github className="w-4 h-4" /> Source
+                <Code2 className="w-4 h-4" /> Source
               </a>
             )}
             {project.link && (

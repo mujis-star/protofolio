@@ -37,7 +37,7 @@ export function ProjectsTab({ data, onChange }: ProjectsTabProps) {
           link: "#",
           github: "#",
           techStack: ["React", "Tailwind"]
-        },
+        } as any,
         ...data.projects
       ]
     });

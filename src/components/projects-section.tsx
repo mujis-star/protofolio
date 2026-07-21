@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useContent } from "@/context/content-context";
-import { ArrowUpRight, ExternalLink, Github, ArrowRight, AlertCircle } from "lucide-react";
+import { ArrowUpRight, ExternalLink, ArrowRight, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { FeaturedCaseStudy } from "./featured-case-study";
 
