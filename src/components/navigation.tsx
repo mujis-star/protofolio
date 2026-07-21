@@ -75,7 +75,7 @@ export function Navigation() {
           MUJEEB
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => {
             const targetId = link.href.replace("#", "");
             const isActive = activeSection === targetId;
@@ -84,7 +84,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, targetId)}
-                className={`text-sm font-medium transition-colors relative py-2 px-1 flex items-center min-h-[44px] ${
+                className={`text-sm font-medium transition-colors relative py-2 px-1 flex items-center min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded ${
                   isActive ? "text-blue-400 font-bold" : "text-neutral-300 hover:text-white"
                 }`}
               >
@@ -110,8 +110,7 @@ export function Navigation() {
           </Link>
           <a
             href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             className="hidden md:inline-flex h-9 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 text-sm font-bold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
           >
             Resume

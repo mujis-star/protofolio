@@ -46,9 +46,9 @@ export function Footer() {
           <div className="flex items-center gap-3 mt-1">
             <span>© 2026</span>
             <span className="text-neutral-700">•</span>
-            <a href={data.personal.github} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href={data.personal.github} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded">GitHub</a>
             <span className="text-neutral-700">•</span>
-            <a href={data.personal.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href={data.personal.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded">LinkedIn</a>
           </div>
         </div>
       </div>

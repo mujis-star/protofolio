@@ -113,7 +113,7 @@ export function ContactSection() {
             <div className="relative z-10 flex flex-col gap-6 text-sm font-mono">
               <div className="flex flex-col gap-1.5">
                 <span className="text-[10px] text-neutral-500 uppercase tracking-wider">Email</span>
-                <a href={`mailto:${data.personal.email}`} className="text-base text-blue-400 hover:text-blue-300 font-semibold transition-colors">
+                <a href={`mailto:${data.personal.email}`} className="text-base text-blue-400 hover:text-blue-300 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded">
                   {data.personal.email}
                 </a>
               </div>
@@ -130,7 +130,7 @@ export function ContactSection() {
                   href={data.personal.github} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-xs text-neutral-400 hover:text-white transition-colors"
+                  className="text-xs text-neutral-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded"
                 >
                   GitHub
                 </a>
@@ -139,16 +139,15 @@ export function ContactSection() {
                   href={data.personal.linkedin} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-xs text-neutral-400 hover:text-white transition-colors"
+                  className="text-xs text-neutral-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded"
                 >
                   LinkedIn
                 </a>
                 <span className="text-neutral-700">•</span>
                 <a 
                   href="/resume.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-xs text-neutral-400 hover:text-white transition-colors"
+                  download 
+                  className="text-xs text-neutral-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded"
                 >
                   Resume
                 </a>

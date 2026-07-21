@@ -7,9 +7,18 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+    
+    if (hasVisited) {
+      setIsVisible(false);
+      onComplete();
+      return;
+    }
+
     // Show loading screen for at least 2.5 seconds
     const timer = setTimeout(() => {
       setIsVisible(false);
+      localStorage.setItem("hasVisited", "true");
       setTimeout(onComplete, 1000); // Wait for exit animation to finish before notifying parent
     }, 2500);
 

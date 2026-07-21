@@ -208,10 +208,7 @@ export function HeroSection() {
                 <span>Node.js</span>
               </div>
               <p className="text-lg md:text-xl font-medium text-neutral-200 dark:text-neutral-200 max-w-xl leading-relaxed">
-                {data.personal.bio.split(". ")[0]}.
-              </p>
-              <p className="text-base text-neutral-400 dark:text-neutral-400 max-w-xl leading-relaxed">
-                {data.personal.bio.split(". ")[1]}
+                {data.personal.bio}
               </p>
             </motion.div>
 
@@ -223,16 +220,15 @@ export function HeroSection() {
             >
               <a
                 href="#projects"
-                className="group flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-sm font-bold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+                className="group flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-sm font-bold text-white transition-all duration-300 hover:bg-blue-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 <Sparkles className="w-4 h-4" />
                 View Projects
               </a>
               <a
                 href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 dark:bg-white/5 backdrop-blur-md px-8 text-sm font-bold text-neutral-800 dark:text-white transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                download
+                className="group flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 dark:bg-white/5 backdrop-blur-md px-8 text-sm font-bold text-neutral-800 dark:text-white transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 Download Resume
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

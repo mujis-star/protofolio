@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useContent } from "@/context/content-context";
-import { ArrowUpRight, ExternalLink, AlertCircle } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github, ArrowRight, AlertCircle } from "lucide-react";
+import Link from "next/link";
 import { FeaturedCaseStudy } from "./featured-case-study";
 
 export function ProjectsSection() {
@@ -121,18 +122,14 @@ export function ProjectsSection() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
                     {/* Hover Overlay Button */}
-                    {(project.link || project.github) && (
-                      <a 
-                        href={project.link || project.github || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/50 backdrop-blur-xs cursor-pointer z-10"
-                      >
-                        <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                          {project.link ? "View Live Demo" : "View Source Code"} <ExternalLink className="w-4 h-4" />
-                        </span>
-                      </a>
-                    )}
+                    <Link 
+                      href={`/projects/${project.id}`}
+                      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/50 backdrop-blur-xs cursor-pointer z-10"
+                    >
+                      <span className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        View Case Study <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </Link>
                   </div>
                   
                   {/* Header Meta */}
@@ -148,9 +145,11 @@ export function ProjectsSection() {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </h3>
+                  <Link href={`/projects/${project.id}`} className="hover:text-blue-400 transition-colors">
+                    <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">
+                      {project.title}
+                    </h3>
+                  </Link>
 
                   {/* Problem & Solution Breakdown */}
                   <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-sm whitespace-pre-line mb-4 font-sans opacity-90">

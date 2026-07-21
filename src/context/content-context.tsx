@@ -7,6 +7,34 @@ import defaultData from "@/data/content.json";
 
 export type ContentData = typeof defaultData;
 
+export interface ProjectPerformance {
+  lighthouse?: number;
+  accessibility?: number;
+  seo?: number;
+  bestPractices?: number;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  category: string;
+  featured: boolean;
+  tags: string[];
+  description: string;
+  overview?: string;
+  role?: string;
+  problem?: string;
+  solution?: string;
+  architecture?: string;
+  challenges?: string;
+  performance?: ProjectPerformance;
+  outcome?: string;
+  lessonsLearned?: string;
+  image: string;
+  link?: string;
+  github?: string;
+  techStack: string[];
+}
 interface ContentContextType {
   data: ContentData;
   isLoading: boolean;

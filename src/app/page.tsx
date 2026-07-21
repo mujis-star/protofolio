@@ -14,6 +14,7 @@ import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { GitHubActivity } from "@/components/github-activity";
 import { ProcessSection } from "@/components/process-section";
+import { ArchitectureSection } from "@/components/architecture-section";
 import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
@@ -52,6 +53,7 @@ export default function Home() {
         <AboutSection />
         <ServicesSection />
         <TechStack />
+        <ArchitectureSection />
         <ProcessSection />
         <AchievementsSection />
         <ProjectsSection />
