@@ -61,7 +61,7 @@ export function CustomCursor() {
           scale: isHovering ? 0 : 1,
           opacity: isVisible ? 1 : 0,
         }}
-        transition={{ type: "spring", stiffness: 1000, damping: 40, mass: 0.1 }}
+        transition={{ type: "spring", stiffness: 2000, damping: 30, mass: 0.05 }}
       />
       
       {/* The expanding ring when hovering over links */}
@@ -73,7 +73,7 @@ export function CustomCursor() {
           scale: isHovering ? 1.5 : 1,
           opacity: isVisible ? (isHovering ? 1 : 0.3) : 0,
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 25, mass: 0.5 }}
+        transition={{ type: "spring", stiffness: 800, damping: 25, mass: 0.1 }}
       />
     </>
   );
