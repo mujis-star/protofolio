@@ -13,11 +13,13 @@ export function ContactSection() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus("idle");
+    setErrorMessage("");
 
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email") as string;
@@ -62,8 +64,7 @@ export function ContactSection() {
     } catch (error: any) {
       console.error("Error saving message:", error);
       setStatus("error");
-      // You could optionally set the specific error message to state here if you wanted
-      // to display it instead of a generic one. For now we will just show the error in the console.
+      setErrorMessage(error.message || "Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -221,9 +222,9 @@ export function ContactSection() {
                 </div>
               )}
               {status === "error" && (
-                <div className="flex items-center gap-2 mt-2 text-red-600 dark:text-red-500 text-sm font-medium">
-                  <AlertCircle className="w-4 h-4" />
-                  Failed to send message. Please try again.
+                <div className="flex items-start gap-2 mt-2 text-red-600 dark:text-red-500 text-sm font-medium bg-red-500/10 border border-red-500/20 p-3 rounded-lg">
+                  <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span>{errorMessage}</span>
                 </div>
               )}
             </form>
