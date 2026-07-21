@@ -46,11 +46,15 @@ export function ContactSection() {
       });
       
       // Trigger the email notification via Resend API
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formValues),
       });
+
+      if (!res.ok) {
+        throw new Error("Failed to send email via API");
+      }
 
       setStatus("success");
       (e.target as HTMLFormElement).reset();
