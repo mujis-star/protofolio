@@ -15,15 +15,35 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
       return;
     }
 
-    // Show loading screen for at least 2.5 seconds
+    const skip = () => {
+      setIsVisible(false);
+      localStorage.setItem("hasVisited", "true");
+      onComplete();
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") skip();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Show loading screen for at least 2.0 seconds
     const timer = setTimeout(() => {
       setIsVisible(false);
       localStorage.setItem("hasVisited", "true");
-      setTimeout(onComplete, 1000); // Wait for exit animation to finish before notifying parent
-    }, 2500);
+      setTimeout(onComplete, 800);
+    }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [onComplete]);
+
+  const handleSkip = () => {
+    setIsVisible(false);
+    localStorage.setItem("hasVisited", "true");
+    onComplete();
+  };
 
   return (
     <AnimatePresence>
@@ -73,15 +93,15 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
                 <span className="text-[10px] text-blue-400/60 ml-2">sys_boot.exe</span>
               </div>
               <div className="text-xs text-cyan-400/80 space-y-1">
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>{">"} INITIATING NEURAL NETWORKS...</motion.div>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>{">"} DECRYPTING PROTOCOLS...</motion.div>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}>{">"} ESTABLISHING SECURE CONNECTION...</motion.div>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.0 }} className="text-green-400">{">"} ACCESS GRANTED. WELCOME MUJEEB.</motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>{">"} INITIALIZING PFSENSE GATEWAY & RADIUS AUTH...</motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>{">"} MOUNTING NFS POOLS & EXTENDING LVM STORAGE...</motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}>{">"} SYNCHRONIZING SAMBA AD DIRECTORY & VEYON FLEET...</motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.0 }} className="text-emerald-400">{">"} LAB ENVIRONMENT ONLINE. WELCOME MUJEEB.</motion.div>
               </div>
             </div>
 
             {/* Segmented Cyber Progress Bar */}
-            <div className="w-full flex gap-1 h-1.5">
+            <div className="w-full flex gap-1 h-1.5 mb-4">
               {[...Array(20)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -92,6 +112,13 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
                 />
               ))}
             </div>
+
+            <button
+              onClick={handleSkip}
+              className="text-[10px] text-neutral-500 hover:text-cyan-400 font-mono tracking-widest uppercase transition-colors py-1 px-3 rounded border border-white/5 hover:border-cyan-500/30 cursor-pointer"
+            >
+              Skip Boot Sequence [ESC]
+            </button>
           </div>
         </motion.div>
       )}

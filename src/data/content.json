@@ -1,232 +1,345 @@
 {
   "personal": {
     "name": "Mujeeb Rahman",
-    "role": "Frontend Engineer",
+    "role": "Computer Lab Assistant | Systems & Network Administration | Web Deployment",
     "location": "Kannur, Kerala, India",
-    "bio": "Building fast, accessible, and premium web experiences with React, Next.js, and Three.js.",
+    "bio": "Computer lab assistant and student administrator with hands-on experience maintaining workstations, automating lab-wide software deployments, configuring network firewalls, and deploying full-stack web applications.",
     "email": "mujee00012@gmail.com",
     "phone": "9746613860",
     "github": "https://github.com/mujis-star",
     "linkedin": "https://linkedin.com/in/mujeeb-rahman",
-    "availabilityStatus": "Open to internships, freelance, and exciting collaborations"
+    "availabilityStatus": "Available for Lab Support, Systems Administration & Web Deployment"
   },
   "about": {
     "paragraphs": [
-      "I build fast, accessible, and scalable web applications with a focus on modern user experience and maintainable architecture.",
-      "My interests include frontend engineering, AI-powered applications, and robust backend systems."
+      "I am a student and computer lab assistant based in Kannur, Kerala, managing day-to-day lab operations, terminal maintenance, and multi-system deployment pipelines.",
+      "My technical foundation bridges physical infrastructure (pfSense firewalls, Samba Active Directory, FOG Server imaging, custom workstation assembly) with modern web engineering (JavaScript, Next.js, Firebase Auth/Firestore, and automated Vercel workflows)."
     ],
     "engineeringPrinciples": [
-      { "title": "Performance First" },
-      { "title": "Accessibility by Default" },
-      { "title": "Clean & Maintainable Architecture" },
-      { "title": "Type-Safe Development" },
-      { "title": "User-Centered Design" },
-      { "title": "Continuous Learning" }
+      { "title": "Zero-Touch Silent Provisioning" },
+      { "title": "Secure Network Segmentation" },
+      { "title": "High Availability & Data Redundancy" },
+      { "title": "Clean Type-Safe Web Architecture" },
+      { "title": "Responsive Cross-Platform UI" },
+      { "title": "Continuous Systems Monitoring" }
     ]
   },
   "skills": [
     {
-      "category": "Frontend",
-      "items": ["React", "Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"]
+      "category": "Networking & Infrastructure",
+      "items": ["pfSense Firewall", "RADIUS Billing & Captive Portal", "Samba Active Directory", "NFS Storage Mounting", "LVM Partition Management", "FOG Server Imaging", "Veyon Lab Monitoring"]
     },
     {
-      "category": "Backend",
-      "items": ["Node.js", "Express", "Firebase", "REST APIs"]
+      "category": "Virtualization & Systems",
+      "items": ["Proxmox VE Hypervisor", "TrueNAS Storage", "Ubuntu Server", "Kali Linux", "Windows Batch Scripting", "Silent Installation Automation"]
     },
     {
-      "category": "Database",
-      "items": ["Firestore", "MySQL"]
+      "category": "Hardware & Storage",
+      "items": ["Custom Desktop Assembly", "Intel H410 Platform", "NVMe SSD Optimization", "Storage Diagnostics", "Power Redundancy & Cabling"]
     },
     {
-      "category": "Tools",
-      "items": ["Git", "GitHub", "Figma", "Vercel", "Docker"]
+      "category": "Web Engineering & Cloud",
+      "items": ["JavaScript / TypeScript", "Next.js & React", "Firebase Auth & Firestore", "Git & GitHub CI/CD", "Vercel Deployment", "Sitemaps & Google Search Console"]
+    },
+    {
+      "category": "Design & Multimedia",
+      "items": ["Adobe Creative Cloud", "Filmora & Premiere", "Canva", "A3 Tabloid Editorial Layout", "Video Subtitling", "Vector & Print Production"]
     }
   ],
   "projects": [
     {
       "id": "itqan-friends",
-      "title": "ITQAN Friends Portal",
-      "category": "Community Management Platform",
+      "title": "ITQAN Friends Web Portal",
+      "category": "Full-Stack Web Portal & Search Indexing",
       "featured": true,
-      "tags": ["Next.js", "Firebase", "Full Stack"],
-      "description": "A comprehensive community management portal with role-based access and Google Drive integration.",
-      "overview": "ITQAN Friends is a full-stack community management platform built to handle member resources, secure document sharing, and administrative oversight.",
-      "role": "Lead Full Stack Engineer",
-      "problem": "The community relied on scattered Google Drive folders and WhatsApp groups to manage members and resources, leading to lost files and zero access control.",
-      "solution": "Built a centralized portal using Next.js App Router, Firebase Authentication, and a custom integration with the Google Drive API to securely serve documents based on user roles.",
-      "architecture": "Next.js 14 (App Router) for Server Components and SEO. Firebase Auth for session management. Firestore for NoSQL user data. Google Drive API for zero-cost secure file storage.",
-      "challenges": "Implementing secure role-based access control (RBAC) across server components and client components without causing hydration mismatches or layout shifts.",
+      "tags": ["Next.js", "Firebase", "Vercel", "Search Console"],
+      "description": "Production community portal deployed to Vercel featuring Firebase authentication, structured search metadata, and Search Console indexing workflows.",
+      "overview": "Built and deployed the ITQAN Friends community web portal, optimizing discovery with sitemap architecture, OpenGraph metadata, and Google Search Console indexing.",
+      "role": "Web Deployment Engineer & Metadata Architect",
+      "problem": "The organization lacked a centralized digital hub with proper search engine visibility, making resource discovery difficult across mobile and desktop devices.",
+      "solution": "Engineered an accessible web platform using Next.js and Firebase, structured clean metadata schemas, and established automated Vercel deployments with sitemap generation.",
+      "architecture": "Next.js App Router for Server-Side Rendering & SEO. Firebase Authentication for user sessions. Firestore for document storage. Google Search Console for real-time indexing.",
+      "challenges": "Ensuring perfect mobile responsiveness and fast first-contentful paint while maintaining real-time Firestore database queries.",
       "performance": {
         "lighthouse": 98,
         "accessibility": 100,
         "seo": 100,
         "bestPractices": 100
       },
-      "outcome": "Successfully migrated 100+ active members to the new platform, reducing resource discovery time by 80% and providing admins with a secure dashboard.",
-      "lessonsLearned": "Deepened my understanding of Next.js Server Actions and how to securely pass JWT tokens to external APIs (Google Drive) without exposing service account credentials to the client.",
+      "outcome": "Live at itqan-friends.vercel.app with verified indexing on Google Search and sub-second page delivery across networks.",
+      "lessonsLearned": "Gained mastery in configuring automated sitemaps, robots.txt, and metadata tags for optimal production search visibility.",
       "image": "/images/projects/nexus.png",
       "link": "https://itqan-friends.vercel.app",
       "github": "https://github.com/mujis-star/itqan-friends",
-      "techStack": ["Next.js", "Firebase", "Google Drive API"]
+      "techStack": ["Next.js", "Firebase", "Vercel", "Sitemaps"]
     },
     {
-      "id": "proxmox-homelab",
-      "title": "Enterprise Homelab Infrastructure",
-      "category": "Systems & Network Engineering",
+      "id": "automated-lab-provisioning",
+      "title": "Automated Lab Provisioning Suite",
+      "category": "Systems Automation & Batch Scripting",
       "featured": true,
-      "tags": ["Proxmox", "pfSense", "TrueNAS"],
-      "description": "An enterprise-grade bare-metal virtualized environment for self-hosting services securely.",
-      "overview": "A fully self-hosted, virtualized environment using Proxmox VE to manage multiple containers and VMs securely behind a reverse proxy and firewall.",
-      "role": "Systems Administrator",
-      "problem": "Relying on expensive third-party cloud hosting for development environments and personal services became unsustainable and lacked privacy.",
-      "solution": "Built a local enterprise-grade server environment using a bare-metal hypervisor, containerized services, and robust network segmentation.",
-      "architecture": "Proxmox VE on bare metal. TrueNAS for ZFS storage pools. pfSense for firewall/VLANs. Nginx Proxy Manager for SSL and reverse proxying to Docker containers.",
-      "challenges": "Configuring secure VLANs to separate IoT devices from the management network and recovering a corrupted ZFS pool after a power failure.",
+      "tags": ["Windows Batch", "Veyon", "Automation", "SysAdmin"],
+      "description": "Modular unattended batch scripts engineered for silent, zero-touch deployment of VS Code, Python, Adobe CC, and Veyon across multiple lab workstations.",
+      "overview": "Created unattended batch automation scripts to silently install, configure, and verify developer software across computer lab terminals without manual intervention.",
+      "role": "Computer Lab Assistant & Automation Author",
+      "problem": "Setting up 30+ lab workstations manually after OS installations was slow, repetitive, and prone to configuration discrepancies.",
+      "solution": "Developed batch scripts with silent installer flags (`/S`, `/qn`, `/silent`), registry configurations, and unattended Veyon client setup over local shares.",
+      "architecture": "Local network repository holding software packages. Unattended batch scripts executing silently with administrative privileges and error logging.",
+      "challenges": "Handling differing installer parameters across diverse software packages (Adobe CC vs VS Code vs Veyon) and ensuring clean network-share distribution.",
       "performance": {
         "lighthouse": 100,
         "accessibility": 100,
         "seo": 100,
         "bestPractices": 100
       },
-      "outcome": "Reduced monthly cloud hosting costs by 100% while increasing available compute power and gaining deep systems administration experience.",
-      "lessonsLearned": "Learned the critical importance of automated off-site backups (using Proxmox Backup Server) and proper firewall rule ordering in pfSense.",
+      "outcome": "Reduced full lab provisioning time from multiple hours to a single automated sequence per workstation with zero human error.",
+      "lessonsLearned": "Learned unattended application packaging, registry injection techniques, and silent service orchestration for educational labs.",
       "image": "/images/projects/aura.png",
       "github": "https://github.com/mujis-star",
-      "techStack": ["Proxmox VE", "Linux", "Networking"]
+      "techStack": ["Windows Batch", "Veyon", "Silent Installers", "Scripting"]
     },
     {
-      "id": "vogue-vault",
-      "title": "Vogue Vault",
-      "category": "UI Engineering & E-Commerce",
-      "featured": false,
-      "tags": ["React", "UI Design"],
-      "description": "A high-performance E-commerce catalog with custom filtering and 60 FPS animations.",
-      "overview": "Vogue Vault is an interactive, highly-optimized E-commerce catalog built to demonstrate complex client-side filtering without compromising frame rates.",
-      "role": "Frontend Developer",
-      "problem": "Many e-commerce sites suffer from layout thrashing and dropped frames when users rapidly toggle product filters.",
-      "solution": "Implemented a custom React-based filtering engine combined with Framer Motion layout transitions to ensure buttery smooth catalog updates.",
-      "architecture": "React SPA with Tailwind CSS for utility styling. Context API for global state. Framer Motion for hardware-accelerated layout transitions.",
-      "challenges": "Maintaining 60 FPS layout re-renders during rapid multi-property category filtering by optimizing component memoization.",
+      "id": "imaging-and-storage",
+      "title": "FOG Server Imaging & NFS Storage",
+      "category": "Infrastructure, LVM & Storage",
+      "featured": true,
+      "tags": ["FOG Server", "LVM", "NFS", "Linux"],
+      "description": "Centralized PXE network image distribution platform using FOG Project, LVM partition extension, and dedicated NFS network shared storage.",
+      "overview": "Configured FOG Server on Linux to deploy disk images across lab computers via PXE boot, with scalable LVM storage partitions and NFS network mounting.",
+      "role": "Systems Administrator & Infrastructure Engineer",
+      "problem": "Reinstalling workstations individually from USB flash drives during lab resets was inefficient and caused excessive downtime during academic sessions.",
+      "solution": "Set up a centralized FOG Server enabling PXE network booting, extended dynamic Linux LVM storage volumes, and connected NFS shares for scalable image storage.",
+      "architecture": "PXE boot network service, TFTP bootloaders, FOG Server Linux backend, dynamic LVM partition pooling, and NFS shared mounts.",
+      "challenges": "Dynamic partition resizing using `lvextend` and `resize2fs` while preserving existing disk image repositories without data loss.",
       "performance": {
-        "lighthouse": 95,
+        "lighthouse": 100,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "outcome": "Enabled rapid parallel terminal re-imaging across the entire network in minutes over gigabit ethernet.",
+      "lessonsLearned": "Mastered Linux storage management (LVM physical volumes, volume groups, logical volumes) and network filesystem exports.",
+      "image": "/images/projects/lumina.png",
+      "github": "https://github.com/mujis-star",
+      "techStack": ["FOG Server", "LVM", "NFS", "Ubuntu Server", "PXE"]
+    },
+    {
+      "id": "network-access-management",
+      "title": "Enterprise Firewall, RADIUS & Samba AD",
+      "category": "Network Engineering & Identity",
+      "featured": true,
+      "tags": ["pfSense", "RADIUS", "Samba AD", "Networking"],
+      "description": "Production network topology featuring pfSense firewall, captive portal with RADIUS authentication and billing, and Samba Active Directory domain controller.",
+      "overview": "Architected and tested secure lab networking policies using pfSense firewalls, captive portal access rules, RADIUS billing authentication, and Samba AD directory services.",
+      "role": "Network Administrator",
+      "problem": "Unmanaged lab network traffic without user isolation, bandwidth controls, or central directory authentication created security and administrative overhead.",
+      "solution": "Deployed pfSense gateway with dedicated captive portal, integrated FreeRADIUS server for credentials/billing, and established Samba AD for domain logons.",
+      "architecture": "pfSense router/firewall at network perimeter. FreeRADIUS server validating portal sessions. Samba 4 Domain Controller providing Kerberos and LDAP.",
+      "challenges": "Configuring correct firewall rule hierarchies and RADIUS attribute mappings to properly enforce session duration and bandwidth limits.",
+      "performance": {
+        "lighthouse": 100,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "outcome": "Enforced secure isolated client networks, authenticated user access, and central credential management across lab systems.",
+      "lessonsLearned": "Deepened understanding of TCP/IP networking, VLAN tagging, firewall state tables, and Active Directory schema administration.",
+      "image": "/images/projects/stellar.png",
+      "github": "https://github.com/mujis-star",
+      "techStack": ["pfSense", "RADIUS", "Samba AD", "VLANs", "Firewall"]
+    },
+    {
+      "id": "reelagram",
+      "title": "Reelagram Media Platform",
+      "category": "Full-Stack Web Application",
+      "featured": false,
+      "tags": ["Firebase", "JavaScript", "Auth", "Firestore"],
+      "description": "Full-stack media web application featuring user authentication, Firestore real-time database feeds, and responsive media handling.",
+      "overview": "Built a full-stack media platform implementing Firebase Authentication, Firestore document collections, and modern front-end state management.",
+      "role": "Full-Stack Developer",
+      "problem": "Designing an interactive media platform requiring fast user authentication, secure data rules, and real-time feed updates.",
+      "solution": "Engineered a responsive web client integrated with Firebase Auth for email/password sessions and Firestore security rules to protect user data.",
+      "architecture": "JavaScript/React front-end with responsive UI. Firebase Authentication for user accounts. Firestore NoSQL database for post feeds and metadata.",
+      "challenges": "Optimizing real-time listener queries and client-side media rendering to keep mobile performance smooth.",
+      "performance": {
+        "lighthouse": 96,
         "accessibility": 98,
         "seo": 100,
         "bestPractices": 100
       },
-      "outcome": "Achieved a visually striking, zero-jank filtering experience that feels instantaneous to the user.",
-      "lessonsLearned": "Mastered the use of React.memo, useMemo, and useCallback to prevent unnecessary re-renders in deep component trees during state updates.",
-      "image": "/images/projects/lumina.png",
-      "github": "https://github.com/mujis-star/vogue-vault",
-      "techStack": ["React", "Tailwind CSS", "Framer Motion"]
+      "outcome": "Achieved seamless authentication flows and instant Firestore sync across connected client sessions.",
+      "lessonsLearned": "Learned secure Firestore security rules syntax and real-time state synchronization in single-page applications.",
+      "image": "/images/projects/aura.png",
+      "github": "https://github.com/mujis-star",
+      "techStack": ["JavaScript", "Firebase Auth", "Firestore", "Tailwind CSS"]
+    },
+    {
+      "id": "itqan-artfeast",
+      "title": "Itqan Artfeast Web Architecture",
+      "category": "Repository Governance & Deployment",
+      "featured": false,
+      "tags": ["GitHub", "Vercel", "Sitemaps", "CI/CD"],
+      "description": "Managed the GitHub repository, configured continuous Vercel deployment pipelines, and built automated sitemap architecture.",
+      "overview": "Governed the Itqan Artfeast web repository, automating continuous deployments through Vercel and structuring comprehensive sitemaps for search visibility.",
+      "role": "Repository Manager & Deployment Lead",
+      "problem": "Rapid event updates required zero-downtime automated publishing and search engines needed to index newly released event schedules immediately.",
+      "solution": "Configured automated GitHub to Vercel deployment pipelines on branch pushes and wrote dynamic sitemap generators for event pages.",
+      "architecture": "GitHub version control with branch protection. Vercel Edge Network for instant global cache invalidation. Automated XML sitemaps.",
+      "challenges": "Managing branch merge workflows and ensuring build validation passed before deployment artifacts reached edge servers.",
+      "performance": {
+        "lighthouse": 98,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "outcome": "Delivered continuous deployment with sub-minute build times and automatic sitemap discovery by search crawlers.",
+      "lessonsLearned": "Mastered Git collaboration workflows, CI/CD edge environments, and search indexing automation.",
+      "image": "/images/projects/nexus.png",
+      "github": "https://github.com/mujis-star",
+      "techStack": ["GitHub CI/CD", "Vercel", "XML Sitemaps", "Web Deployment"]
     }
   ],
   "experience": [
     {
-      "role": "Production Projects",
-      "company": "Next.js, Firebase, Node",
-      "period": "2026",
-      "description": "Building scalable applications, integrating AI workflows, creating secure admin dashboards, and handling full deployment pipelines."
+      "role": "Computer Lab Assistant & Student Administrator",
+      "company": "Academic Computer Lab",
+      "period": "Present",
+      "description": "Oversee daily lab operations, workstation hardware maintenance, OS deployment, and network policies across lab terminals. Automate software installations via silent batch scripting, maintain FOG Server imaging, troubleshoot storage/hardware faults, and create organizational print layouts and A3 tabloid publications."
     },
     {
-      "role": "React",
-      "company": "UI Engineering & Optimization",
-      "period": "2025",
-      "description": "Designed and deployed responsive web layouts, custom asset rendering systems, and optimized media assets for fast load speeds."
+      "role": "Systems & Network Administrator",
+      "company": "Self-Hosted & Lab Infrastructure",
+      "period": "2024 - Present",
+      "description": "Configured pfSense perimeter firewalls, captive portals with RADIUS billing, Proxmox VE hypervisors, TrueNAS storage pools, NFS mounts, and Samba Active Directory domain controllers."
     },
     {
-      "role": "Started HTML/CSS",
-      "company": "Web Development Basics",
-      "period": "2024",
-      "description": "Explored semantic web templates, local network diagnostics, and script automation to support academic systems."
+      "role": "Web Deployment & Media Lead",
+      "company": "Community Web Portals",
+      "period": "2024 - Present",
+      "description": "Engineered, deployed, and maintained full-stack web applications (Itqan Friends, Reelagram, Itqan Artfeast) using Next.js, Firebase Auth/Firestore, Git CI/CD, and Vercel edge infrastructure."
     }
   ],
   "achievements": [
     {
-      "title": "IT & Web Dev Student",
-      "category": "Education",
-      "date": "Present",
-      "description": "Information Technology / Computer Science track resident in Kannur, Kerala.",
-      "icon": "award"
-    },
-    {
-      "title": "Hardware Troubleshooting",
-      "category": "Technical",
-      "date": "2024",
-      "description": "Successfully recovered unreadable 1TB storage drives and performed high-speed NVMe upgrades.",
+      "title": "Computer Lab Support & Operations",
+      "category": "Infrastructure",
+      "date": "Active",
+      "description": "Managing daily terminal availability, hardware health, OS provisioning, and network connectivity for lab students.",
       "icon": "shield"
     },
     {
-      "title": "Multimedia Editor",
+      "title": "Hardware & Storage Diagnostics",
+      "category": "Hardware",
+      "date": "2024 - 2026",
+      "description": "Custom desktop assembly (Intel H410 platform), NVMe SSD optimization, and LVM logical volume storage expansion.",
+      "icon": "award"
+    },
+    {
+      "title": "Editorial & Publication Design",
       "category": "Creative",
-      "date": "2023",
-      "description": "Mastery of the complete Adobe Creative Cloud suite for professional-grade asset creation.",
+      "date": "Active",
+      "description": "Production of A3 tabloid layouts, event posters, creative publications, and video subtitling using Adobe Creative Cloud.",
       "icon": "trophy"
     }
   ],
   "clients": [
-    { "name": "ADOBE CC" },
-    { "name": "LINUX" },
-    { "name": "VMWARE" },
-    { "name": "WINDOWS" },
+    { "name": "PFSENSE" },
+    { "name": "PROXMOX VE" },
+    { "name": "SAMBA AD" },
+    { "name": "FOG SERVER" },
+    { "name": "UBUNTU LINUX" },
     { "name": "VERCEL" },
-    { "name": "GITHUB" },
-    { "name": "KALI LINUX" }
+    { "name": "FIREBASE" }
   ],
   "services": [
-    { "title": "Web Development", "description": "Building high-performance, accessible, and responsive web applications." },
-    { "title": "Multimedia Design", "description": "Creating motion graphics and web-ready visual assets using Adobe Creative Cloud." },
-    { "title": "Network & Hardware", "description": "Diagnosing hardware faults and administrating robust network systems." }
+    {
+      "title": "Computer Lab & Workstation Provisioning",
+      "description": "Automated zero-touch software installations via batch scripts, FOG Server PXE imaging, and Veyon lab fleet management."
+    },
+    {
+      "title": "Systems & Network Administration",
+      "description": "pfSense firewall rule enforcement, captive portal with RADIUS billing, Samba Active Directory DC, and NFS shared storage."
+    },
+    {
+      "title": "Web Development & Cloud Deployment",
+      "description": "Full-stack React/Next.js development, Firebase Auth & Firestore, Git CI/CD, Vercel deployments, and SEO sitemaps."
+    },
+    {
+      "title": "Multimedia & Editorial Print Design",
+      "description": "A3 tabloid editorial layouts, print typography, video subtitling in Filmora/Premiere, and digital assets in Adobe Creative Cloud."
+    }
   ],
   "faq": [
     {
-      "question": "What technologies do you specialize in?",
-      "answer": "I specialize in front-end web development with React and Next.js, combined with deep systems administration using Linux, VMware, and hardware diagnostics."
+      "question": "What infrastructure and lab systems do you actively manage?",
+      "answer": "I configure and manage pfSense firewalls, captive portals with RADIUS authentication, Samba Active Directory domain controllers, Proxmox VE hypervisors, FOG Server PXE imaging, NFS shared mounts, and Veyon classroom monitoring across terminal fleets."
     },
     {
-      "question": "Do you offer freelance services?",
-      "answer": "Yes, I am currently available for freelance projects ranging from web development to multimedia editing and motion graphics."
+      "question": "How do you automate software installation across multiple PCs?",
+      "answer": "I develop modular Windows batch scripts utilizing silent installer flags (/S, /qn, /silent) for unattended deployment of tools like VS Code, Python, Adobe Creative Cloud, and Veyon from local network shares."
     },
     {
-      "question": "What is your hardware and OS setup?",
-      "answer": "I run a dual-boot Windows and Kali Linux environment with high-speed NVMe SSDs, optimized for both creative editing workflows and network security testing."
+      "question": "What is your web development and deployment stack?",
+      "answer": "I build applications using JavaScript, TypeScript, React, and Next.js, backed by Firebase Authentication and Firestore NoSQL. Deployments are automated through GitHub repositories connected to Vercel edge networks, complete with sitemap generation and Google Search Console indexing."
+    },
+    {
+      "question": "What design and multimedia work do you produce?",
+      "answer": "I design A3 tabloid editorial print layouts, organizational event posters, and digital graphics using Adobe Creative Cloud and Canva, alongside video editing and subtitling in Filmora and Premiere."
     }
   ],
   "gallery": [
     {
       "id": "gal-1",
-      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
-      "title": "Coding Late Nights",
-      "span": "col-span-1 row-span-1"
+      "image": "/images/events/event-1.jpg",
+      "title": "Campus Tech & Leadership Gathering",
+      "span": "col-span-2 row-span-1"
     },
     {
       "id": "gal-2",
-      "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop",
-      "title": "Hardware Diagnostics & Upgrades",
+      "image": "/images/events/event-3.jpg",
+      "title": "Academic & Cultural Assembly",
       "span": "col-span-1 row-span-2"
     },
     {
       "id": "gal-3",
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
-      "title": "Network Security Lab",
-      "span": "col-span-2 row-span-1"
+      "image": "/images/events/event-2.jpg",
+      "title": "Stage Presentation & Event Proceedings",
+      "span": "col-span-1 row-span-1"
     },
     {
       "id": "gal-4",
-      "image": "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=800&auto=format&fit=crop",
-      "title": "Creative Cloud Video Editing",
+      "image": "/images/events/event-4.jpg",
+      "title": "Auditorium & Audience Proceedings",
       "span": "col-span-1 row-span-1"
     },
     {
       "id": "gal-5",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
-      "title": "Linux Virtual Machines",
-      "span": "col-span-2 row-span-2"
+      "image": "/images/events/event-6.jpg",
+      "title": "Institutional Convocation & Summit",
+      "span": "col-span-2 row-span-1"
+    },
+    {
+      "id": "gal-6",
+      "image": "/images/events/event-5.jpg",
+      "title": "Honorary Dignitary Address",
+      "span": "col-span-1 row-span-2"
+    },
+    {
+      "id": "gal-7",
+      "image": "/images/events/event-9.jpg",
+      "title": "Institutional Forum & Delegation",
+      "span": "col-span-2 row-span-1"
+    },
+    {
+      "id": "gal-8",
+      "image": "/images/events/event-7.jpg",
+      "title": "Formal Welcome & Proceedings",
+      "span": "col-span-1 row-span-1"
     }
   ],
   "socials": [
     { "name": "GitHub", "url": "https://github.com/mujis-star" },
     { "name": "LinkedIn", "url": "https://linkedin.com/in/mujeeb-rahman" },
-    { "name": "Twitter", "url": "https://twitter.com" },
     { "name": "Email", "url": "mailto:mujee00012@gmail.com" }
   ]
 }

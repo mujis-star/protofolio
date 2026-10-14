@@ -63,8 +63,8 @@ export function ExperienceSection() {
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-30" />
           
-          <p className="text-center text-sm font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-10">
-            Trusted by innovative teams
+          <p className="text-center text-xs font-mono font-bold text-neutral-400 uppercase tracking-widest mb-10">
+            Core Platforms & Environments Administered
           </p>
           
           {/* Faux Infinite Marquee using overflow and flex */}

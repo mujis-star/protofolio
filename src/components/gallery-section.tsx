@@ -24,7 +24,7 @@ export function GallerySection() {
               Events & <span className="text-blue-500">Gallery.</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-xl">
-              Moments from hackathons, global tech summits, and collaborative deep work.
+              Moments from institutional events, campus assemblies, organizational conferences, and presentations.
             </p>
           </div>
         </motion.div>

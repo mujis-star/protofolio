@@ -25,12 +25,7 @@ export function ContactSection() {
     const email = formData.get("email") as string;
     const message = formData.get("message") as string;
 
-    // Secret Admin Panel Intercept
-    if ((email === "mujee00012@gmail.com" || email === "mujee00012") && message === "m..09+-&Jeeb") {
-      sessionStorage.setItem("admin_token", "mujis_secret_authenticated");
-      router.push("/admin");
-      return;
-    }
+
 
     const formValues = {
       name: formData.get("name"),

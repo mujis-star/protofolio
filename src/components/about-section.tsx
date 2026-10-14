@@ -98,14 +98,15 @@ export function AboutSection() {
             </div>
           </div>
           
-          <div ref={imageRef} className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
+          <div ref={imageRef} className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden bg-neutral-900 border border-white/10 shadow-[0_0_40px_rgba(59,130,246,0.15)] flex items-center justify-center group">
             <img 
               src="/profile.jpg" 
-              alt="Mujeeb Profile" 
-              className="absolute inset-0 w-full h-full object-cover"
+              alt="Mujeeb Rahman, Computer Lab Assistant and Systems Engineer" 
+              className="absolute inset-0 w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            {/* Overlay to ensure it blends nicely with the theme */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 mix-blend-overlay" />
+            {/* Elegant vignette and subtle border ring */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
           </div>
         </motion.div>
       </div>

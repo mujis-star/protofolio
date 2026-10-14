@@ -11,10 +11,30 @@ export function ProjectsSection() {
   const data = useContent();
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filterCategories = ["All", "React", "AI", "UI Design", "Full Stack"];
+  const filterCategories = ["All", "Web Deployment", "Systems & Storage", "Networking & Identity", "Automation"];
 
   const filteredProjects = data.projects.filter((project: any) => {
     if (activeFilter === "All") return true;
+    if (activeFilter === "Web Deployment") {
+      return ["Next.js", "Firebase", "Vercel", "Web"].some(k => 
+        project.category?.includes("Web") || project.tags?.includes(k)
+      );
+    }
+    if (activeFilter === "Systems & Storage") {
+      return ["FOG Server", "LVM", "NFS", "Proxmox", "Linux"].some(k => 
+        project.category?.includes("Storage") || project.category?.includes("Systems") || project.tags?.includes(k)
+      );
+    }
+    if (activeFilter === "Networking & Identity") {
+      return ["pfSense", "RADIUS", "Samba AD", "Networking"].some(k => 
+        project.category?.includes("Network") || project.tags?.includes(k)
+      );
+    }
+    if (activeFilter === "Automation") {
+      return ["Windows Batch", "Veyon", "Automation", "Scripting"].some(k => 
+        project.category?.includes("Automation") || project.tags?.includes(k)
+      );
+    }
     if (project.tags && Array.isArray(project.tags)) {
       return project.tags.includes(activeFilter);
     }
@@ -38,7 +58,7 @@ export function ProjectsSection() {
               Featured <span className="text-blue-500">Projects.</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-xl">
-              Production-ready web applications, UI systems, and AI integrations built for real-world impact.
+              Real-world lab infrastructure, network deployments, unattended automation scripts, and production web portals.
             </p>
           </div>
 
@@ -69,23 +89,23 @@ export function ProjectsSection() {
           className="flex flex-wrap items-center justify-between md:justify-start gap-8 mb-12 p-6 md:px-10 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 backdrop-blur-md"
         >
           <div className="flex flex-col">
-            <span className="text-3xl font-bold text-white">40+</span>
-            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Components</span>
+            <span className="text-3xl font-bold text-white">30+</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Workstations Managed</span>
           </div>
           <div className="w-px h-10 bg-white/10 hidden md:block" />
           <div className="flex flex-col">
-            <span className="text-3xl font-bold text-white">15+</span>
-            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Projects</span>
+            <span className="text-3xl font-bold text-white">Gigabit</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">PXE / FOG Deployments</span>
           </div>
           <div className="w-px h-10 bg-white/10 hidden md:block" />
           <div className="flex flex-col">
-            <span className="text-3xl font-bold text-emerald-400">95+</span>
-            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Lighthouse</span>
+            <span className="text-3xl font-bold text-emerald-400">Zero-Touch</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Silent Automation</span>
           </div>
           <div className="w-px h-10 bg-white/10 hidden md:block" />
           <div className="flex flex-col">
-            <span className="text-3xl font-bold text-blue-400">100%</span>
-            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Responsive</span>
+            <span className="text-3xl font-bold text-blue-400">Production</span>
+            <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Vercel & Next.js Deployed</span>
           </div>
         </motion.div>
 

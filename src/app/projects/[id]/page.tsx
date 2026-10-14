@@ -134,58 +134,91 @@ export default function ProjectCaseStudy() {
         </motion.div>
 
         {/* Deep Dive Content */}
-        <div className="space-y-16 text-neutral-300 text-lg leading-relaxed">
+        <div className="space-y-12 text-neutral-300 text-lg leading-relaxed">
           {project.problem && (
-            <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-8 h-px bg-blue-500" /> The Problem
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md"
+            >
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-400" /> 01. Context & Challenge
               </h2>
-              <p>{project.problem}</p>
+              <p className="text-base text-neutral-300 leading-relaxed">{project.problem}</p>
             </motion.section>
           )}
 
           {project.solution && (
-            <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-8 h-px bg-cyan-400" /> The Solution
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md"
+            >
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" /> 02. Engineering Implementation
               </h2>
-              <p>{project.solution}</p>
+              <p className="text-base text-neutral-300 leading-relaxed">{project.solution}</p>
             </motion.section>
           )}
 
           {project.architecture && (
-            <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-8 h-px bg-purple-500" /> Architecture & Decisions
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-white/5 border border-blue-500/20 backdrop-blur-md relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 px-4 py-1 rounded-bl-xl bg-blue-500/10 border-l border-b border-blue-500/20 text-[10px] font-mono uppercase text-blue-400 font-bold">
+                System Topology
+              </div>
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-400" /> 03. Architecture & Decisions
               </h2>
-              <p>{project.architecture}</p>
+              <p className="text-base text-neutral-300 leading-relaxed mb-4">{project.architecture}</p>
             </motion.section>
           )}
 
           {project.challenges && (
-            <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-8 h-px bg-orange-500" /> Technical Challenges
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md"
+            >
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-400" /> 04. Technical Obstacles & Resolutions
               </h2>
-              <p>{project.challenges}</p>
+              <p className="text-base text-neutral-300 leading-relaxed">{project.challenges}</p>
             </motion.section>
           )}
 
           {project.outcome && (
-            <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-8 h-px bg-green-500" /> Results & Outcome
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 backdrop-blur-md"
+            >
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" /> 05. Verified Results & Production Impact
               </h2>
-              <p>{project.outcome}</p>
+              <p className="text-base text-emerald-200/90 leading-relaxed font-mono">{project.outcome}</p>
             </motion.section>
           )}
 
           {project.lessonsLearned && (
-            <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-8 h-px bg-pink-500" /> Lessons Learned
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md"
+            >
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-purple-400" /> 06. Key Takeaways & Competencies Gained
               </h2>
-              <p>{project.lessonsLearned}</p>
+              <p className="text-base text-neutral-300 leading-relaxed">{project.lessonsLearned}</p>
             </motion.section>
           )}
         </div>

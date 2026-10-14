@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useContent } from "@/context/content-context";
+import { SpotlightCard } from "@/components/spotlight-card";
 
 export function TechStack() {
   const data = useContent();
@@ -43,12 +44,11 @@ export function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: groupIndex * 0.2 }}
-              className="group relative p-8 rounded-3xl bg-white/5 dark:bg-black/20 backdrop-blur-md border border-neutral-200 dark:border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] overflow-hidden"
             >
-              {/* Subtle gradient background on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <h3 className="relative z-10 text-xl font-bold mb-6 group-hover:text-blue-400 transition-colors">{skillGroup.category}</h3>
+              <SpotlightCard className="p-8 h-full">
+                <h3 className="relative z-10 text-xl font-bold mb-6 text-white group-hover:text-blue-400 transition-colors">
+                  {skillGroup.category}
+                </h3>
               <ul className="relative z-10 flex flex-col gap-4">
                 {skillGroup.items.map((item, index) => (
                   <motion.li
@@ -64,7 +64,8 @@ export function TechStack() {
                   </motion.li>
                 ))}
               </ul>
-            </motion.div>
+            </SpotlightCard>
+          </motion.div>
           ))}
         </div>
         {/* Currently Exploring */}

@@ -60,10 +60,13 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
           const merged = {
             ...defaultData,
             ...fetched,
-            personal: { ...defaultData.personal, ...fetched?.personal, email: "mujee00012@gmail.com" },
+            personal: { ...defaultData.personal, ...fetched?.personal },
             about: defaultData.about,
+            skills: defaultData.skills,
             projects: defaultData.projects,
+            services: defaultData.services,
             faq: defaultData.faq,
+            achievements: defaultData.achievements,
           };
           setData(merged);
         }

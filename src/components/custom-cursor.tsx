@@ -47,7 +47,18 @@ export function CustomCursor() {
     };
   }, [isVisible]);
 
-  // Hide cursor on mobile devices
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
+
+  // Hide cursor on mobile or if user prefers reduced motion
+  if (prefersReducedMotion) return null;
   if (typeof window !== "undefined" && window.innerWidth < 768) return null;
 
   return (

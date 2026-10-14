@@ -1,25 +1,316 @@
 %PDF-1.4
-1 0 obj <</Type /Catalog /Pages 2 0 R>> endobj
-2 0 obj <</Type /Pages /Count 1 /Kids [3 0 R]>> endobj
-3 0 obj <</Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources <</Font <</F1 5 0 R>>>>>> endobj
-4 0 obj <</Length 68>> stream
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595.28 841.89]
+  /Resources <<
+    /Font <<
+      /F1 4 0 R
+      /F2 5 0 R
+      /F3 6 0 R
+    >>
+  >>
+  /Contents 7 0 R
+>>
+endobj
+4 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Oblique
+>>
+endobj
+7 0 obj
+<<
+  /Length 8 0 R
+>>
+stream
 BT
-/F1 18 Tf
-100 700 Td
-(Mujeeb P - Frontend Developer & UI Engineer) Tj
+/F1 20 Tf
+50 785 Td
+(MUJEEB RAHMAN) Tj
+ET
+
+BT
+/F1 10.5 Tf
+50 767 Td
+(Computer Lab Assistant  |  Systems & Network Administration  |  Web Deployment) Tj
+ET
+
+BT
+/F2 9 Tf
+50 752 Td
+(Kannur, Kerala, India   |   Email: mujisworld09@gmail.com   |   Portfolio: mujeeb-rahman-protfolio.vercel.app) Tj
+ET
+
+0.2 0.4 0.8 rg
+50 740 495 1.5 re f
+0 g
+
+BT
+/F1 11 Tf
+50 722 Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+
+BT
+/F2 8.5 Tf
+50 707 Td
+(Dedicated Computer Lab Assistant and Student Administrator with hands-on experience maintaining lab workstations,) Tj
+0 -12 Td
+(configuring enterprise network services, deploying applications, and automating terminal software distribution.) Tj
+0 -12 Td
+(Proven track record managing pfSense firewalls, Samba Active Directory, Proxmox VE hypervisors, and Next.js platforms.) Tj
+ET
+
+BT
+/F1 11 Tf
+50 663 Td
+(TECHNICAL CORE COMPETENCIES) Tj
+ET
+
+BT
+/F1 9 Tf
+50 648 Td
+(Networking & Infrastructure: ) Tj
+/F2 8.5 Tf
+(pfSense, RADIUS Billing, Samba Active Directory, NFS Mounting, LVM Storage, FOG Server, Veyon) Tj
+ET
+
+BT
+/F1 9 Tf
+50 634 Td
+(Virtualization & Systems: ) Tj
+/F2 8.5 Tf
+(Proxmox VE, TrueNAS, Ubuntu Server, Kali Linux, Windows Unattended Batch Scripting) Tj
+ET
+
+BT
+/F1 9 Tf
+50 620 Td
+(Hardware & Terminals: ) Tj
+/F2 8.5 Tf
+(Custom Desktop Assembly, Intel H410 Chipset Platforms, NVMe SSD Performance Optimization) Tj
+ET
+
+BT
+/F1 9 Tf
+50 606 Td
+(Web Development & Cloud: ) Tj
+/F2 8.5 Tf
+(JavaScript, TypeScript, React, Next.js, Firebase Auth & Firestore, Git, GitHub CI/CD, Vercel) Tj
+ET
+
+BT
+/F1 9 Tf
+50 592 Td
+(Multimedia & Layout Design: ) Tj
+/F2 8.5 Tf
+(Adobe Creative Cloud, Filmora, Canva, A3 Tabloid Editorial Print Layout, Video Subtitling) Tj
+ET
+
+0.2 0.4 0.8 rg
+50 580 495 0.75 re f
+0 g
+
+BT
+/F1 11 Tf
+50 562 Td
+(PROFESSIONAL EXPERIENCE) Tj
+ET
+
+BT
+/F1 10 Tf
+50 547 Td
+(Computer Lab Assistant & Student Administrator) Tj
+ET
+
+BT
+/F3 8.5 Tf
+50 534 Td
+(Campus Digital Computer Lab - Kannur, Kerala  |  2024 - Present) Tj
+ET
+
+BT
+/F2 8.5 Tf
+50 519 Td
+(- Oversee daily operations, OS deployment, and maintenance across 30+ Intel H410 lab workstations.) Tj
+0 -12 Td
+(- Automated multi-terminal provisioning using unattended silent batch scripts for VS Code, Python, Adobe CC, and Veyon.) Tj
+0 -12 Td
+(- Configured and deployed pfSense firewall rules, captive portal authentication with RADIUS, and Samba Active Directory.) Tj
+0 -12 Td
+(- Deployed centralized PXE network imaging via FOG Project over extended LVM dynamic partitions and NFS storage pools.) Tj
+0 -12 Td
+(- Designed organizational publication layouts, A3 tabloid event prints, and video promotional media.) Tj
+ET
+
+0.2 0.4 0.8 rg
+50 445 495 0.75 re f
+0 g
+
+BT
+/F1 11 Tf
+50 425 Td
+(KEY ENGINEERING & DEPLOYMENT PROJECTS) Tj
+ET
+
+BT
+/F1 9.5 Tf
+50 410 Td
+(Automated Lab Provisioning Suite ) Tj
+/F3 8.5 Tf
+(| Windows Batch Scripting, Silent Installers, Veyon) Tj
+ET
+BT
+/F2 8.5 Tf
+50 398 Td
+(- Engineered modular unattended batch deployment scripts, reducing setup time per workstation from 45 min to under 8 min.) Tj
+ET
+
+BT
+/F1 9.5 Tf
+50 378 Td
+(Enterprise PXE Imaging & NFS Storage ) Tj
+/F3 8.5 Tf
+(| FOG Project, LVM, NFS Mounts, Linux) Tj
+ET
+BT
+/F2 8.5 Tf
+50 366 Td
+(- Set up centralized PXE image distribution server; configured dynamic LVM storage expansion and NFS network mounting.) Tj
+ET
+
+BT
+/F1 9.5 Tf
+50 346 Td
+(Network & Access Management Topology ) Tj
+/F3 8.5 Tf
+(| pfSense, FreeRADIUS, Samba Active Directory) Tj
+ET
+BT
+/F2 8.5 Tf
+50 334 Td
+(- Implemented network gateway firewall with captive portal billing and Samba AD domain authentication controller.) Tj
+ET
+
+BT
+/F1 9.5 Tf
+50 314 Td
+(ITQAN Friends Web Portal ) Tj
+/F3 8.5 Tf
+(| Next.js App Router, Firebase Auth, Firestore, Google Search Console) Tj
+ET
+BT
+/F2 8.5 Tf
+50 302 Td
+(- Architected and deployed production web portal at itqan-friends.vercel.app with complete sitemap and verified indexing.) Tj
+ET
+
+BT
+/F1 9.5 Tf
+50 282 Td
+(Reelagram Media Platform ) Tj
+/F3 8.5 Tf
+(| Full-Stack JavaScript, Firebase Authentication & Firestore) Tj
+ET
+BT
+/F2 8.5 Tf
+50 270 Td
+(- Developed full-stack media platform with responsive interface, secure cloud authentication, and database persistence.) Tj
+ET
+
+0.2 0.4 0.8 rg
+50 252 495 0.75 re f
+0 g
+
+BT
+/F1 11 Tf
+50 234 Td
+(EDUCATION & EXTRACURRICULAR RECOGNITIONS) Tj
+ET
+
+BT
+/F1 9.5 Tf
+50 219 Td
+(Student & Resident Administrator) Tj
+/F2 9 Tf
+( - Kannur, Kerala) Tj
+ET
+BT
+/F2 8.5 Tf
+50 205 Td
+(- Active participation in English letter-writing competitions, historical-analysis presentations, and editorial publications.) Tj
+ET
+
+BT
+/F1 11 Tf
+50 172 Td
+(PUBLICATIONS & MULTIMEDIA DESIGN) Tj
+ET
+
+BT
+/F2 8.5 Tf
+50 157 Td
+(- Produced A3 tabloid print layouts, campus news bulletins, and institutional event banners using Adobe Creative Cloud.) Tj
+0 -12 Td
+(- Video subtitling, audio syncing, and multimedia post-production using Filmora and Adobe Premiere.) Tj
+ET
+
+BT
+/F3 8 Tf
+50 85 Td
+(References and technical documentation available upon request  |  Portfolio: https://mujeeb-rahman-protfolio.vercel.app) Tj
 ET
 endstream
 endobj
-5 0 obj <</Type /Font /Subtype /Type1 /BaseFont /Helvetica>> endobj
+8 0 obj
+3320
+endobj
 xref
-0 6
+0 9
 0000000000 65535 f 
-0000000009 00000 n 
-0000000056 00000 n 
-0000000111 00000 n 
-0000000223 00000 n 
-0000000341 00000 n 
-trailer <</Size 6 /Root 1 0 R>>
+0000000010 00000 n 
+0000000059 00000 n 
+0000000118 00000 n 
+0000000287 00000 n 
+0000000371 00000 n 
+0000000450 00000 n 
+0000000537 00000 n 
+0000003910 00000 n 
+trailer
+<<
+  /Size 9
+  /Root 1 0 R
+>>
 startxref
-412
+3933
 %%EOF

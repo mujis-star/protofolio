@@ -45,7 +45,21 @@ function Starfield() {
   );
 }
 
+import { useState, useEffect } from "react";
+
 export function ThreeBackground() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
+
+  if (prefersReducedMotion) return null;
+
   return (
     <div className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-60">
       <Canvas camera={{ position: [0, 0, 5] }}>

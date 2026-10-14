@@ -24,22 +24,32 @@ const spaceGrotesk = Space_Grotesk({
 import { ContentProvider } from "@/context/content-context";
 
 export const metadata: Metadata = {
-  title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
-  description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
-  keywords: ["Mujeeb P", "Mujeeb", "Portfolio", "Frontend Developer", "UI Engineer", "Creative Developer", "Next.js", "React", "Three.js", "Framer Motion"],
-  authors: [{ name: "Mujeeb P" }],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://mujeeb-rahman-protfolio.vercel.app"),
+  title: "Mujeeb Rahman | Computer Lab Assistant | Systems & Network Administration",
+  description: "Computer Lab Assistant & Student Administrator specializing in Systems & Network Administration, pfSense, Samba Active Directory, PXE Imaging, and Web Deployment.",
+  keywords: ["Mujeeb Rahman", "Mujeeb", "Portfolio", "Computer Lab Assistant", "Systems Administrator", "Network Administration", "pfSense", "Samba AD", "FOG Server", "Next.js", "React"],
+  authors: [{ name: "Mujeeb Rahman" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mujeeb-rahman-portfolio.vercel.app",
-    title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
-    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
+    url: "https://mujeeb-rahman-protfolio.vercel.app",
+    title: "Mujeeb Rahman | Computer Lab Assistant | Systems & Network Administration",
+    description: "Computer Lab Assistant & Student Administrator specializing in Systems & Network Administration, pfSense, Samba Active Directory, PXE Imaging, and Web Deployment.",
     siteName: "Mujeeb Rahman Portfolio",
+    images: [
+      {
+        url: "/images/projects/nexus.png",
+        width: 1200,
+        height: 630,
+        alt: "Mujeeb Rahman - Systems, Network & Web Engineering Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mujeeb Rahman | Full Stack + Infrastructure Engineer",
-    description: "Crafting fast, beautiful, and scalable digital experiences. Specializing in Systems Infrastructure, Next.js, and robust web solutions.",
+    title: "Mujeeb Rahman | Computer Lab Assistant | Systems & Network Administration",
+    description: "Computer Lab Assistant & Student Administrator specializing in Systems & Network Administration, pfSense, Samba Active Directory, PXE Imaging, and Web Deployment.",
+    images: ["/images/projects/nexus.png"],
     creator: "@mujeeb",
   },
   verification: {

@@ -28,13 +28,15 @@ export default function AdminPage() {
   // For raw json tab
   const [rawJsonText, setRawJsonText] = useState("");
 
+  const [passphrase, setPassphrase] = useState("");
+  const [authError, setAuthError] = useState("");
+
   useEffect(() => {
     const token = sessionStorage.getItem("admin_token");
-    if (token !== "mujis_secret_authenticated") {
-      window.location.href = "/";
-      return;
+    if (token === "authenticated") {
+      setIsAuthorized(true);
     }
-    setIsAuthorized(true);
+    setIsLoading(false);
 
     const fetchData = async () => {
       try {
@@ -68,6 +70,17 @@ export default function AdminPage() {
 
     fetchData();
   }, []);
+
+  const handleAdminLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passphrase === "mujeeb@admin2026") {
+      sessionStorage.setItem("admin_token", "authenticated");
+      setIsAuthorized(true);
+      setAuthError("");
+    } else {
+      setAuthError("Invalid administrative credentials.");
+    }
+  };
 
   // Sync raw JSON to form data when typing in the Raw tab
   useEffect(() => {
@@ -122,10 +135,42 @@ export default function AdminPage() {
     window.location.href = "/";
   };
 
-  if (!isAuthorized || isLoading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-[#030712] flex items-center justify-center text-white relative z-50">
         <Loader2 className="w-8 h-8 animate-spin text-cyan-500" />
+      </div>
+    );
+  }
+
+  if (!isAuthorized) {
+    return (
+      <div className="min-h-screen bg-[#030712] flex items-center justify-center text-white p-6 relative z-50">
+        <form onSubmit={handleAdminLogin} className="w-full max-w-md p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col gap-4">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 text-cyan-400">
+              <Database className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold">Admin Verification</h2>
+              <p className="text-xs text-neutral-400 font-mono">Authentication Required</p>
+            </div>
+          </div>
+          <input
+            type="password"
+            placeholder="Enter administrative passphrase..."
+            value={passphrase}
+            onChange={(e) => setPassphrase(e.target.value)}
+            className="w-full h-12 px-4 rounded-xl bg-black/60 border border-white/10 text-sm font-mono text-cyan-300 outline-none focus:border-cyan-400 transition-colors"
+          />
+          {authError && <p className="text-xs text-red-400 font-mono">{authError}</p>}
+          <button
+            type="submit"
+            className="w-full h-11 rounded-xl bg-cyan-600 hover:bg-cyan-500 font-bold text-sm text-white transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+          >
+            Authenticate Session
+          </button>
+        </form>
       </div>
     );
   }

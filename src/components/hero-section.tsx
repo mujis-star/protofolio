@@ -2,113 +2,120 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Terminal as TerminalIcon, Network, User } from "lucide-react";
 import { useContent } from "@/context/content-context";
+import { soundManager } from "@/lib/sound";
+import { InteractiveTopology } from "@/components/interactive-topology";
 
 const codeTokens = [
-  { text: "import ", color: "text-pink-500" },
-  { text: "{ Core } ", color: "text-blue-300" },
-  { text: "from ", color: "text-pink-500" },
-  { text: '"@sys/core"', color: "text-green-400" },
+  { text: "#!/bin/bash\n", color: "text-neutral-500" },
+  { text: "# Computer Lab Systems Initializer\n\n", color: "text-neutral-500" },
+  
+  { text: "echo ", color: "text-pink-500" },
+  { text: '"[INIT] Checking pfSense Gateway: 192.168.1.1 OK"', color: "text-green-400" },
   { text: ";\n", color: "text-white" },
   
-  { text: "import ", color: "text-pink-500" },
-  { text: "{ NeuralNet } ", color: "text-blue-300" },
-  { text: "from ", color: "text-pink-500" },
-  { text: '"@ai/engine"', color: "text-green-400" },
-  { text: ";\n\n", color: "text-white" },
-
-  { text: "async function ", color: "text-pink-500" },
-  { text: "initSequence", color: "text-yellow-300" },
-  { text: "() {\n", color: "text-white" },
-
-  { text: "  console.", color: "text-white" },
-  { text: "log", color: "text-yellow-300" },
-  { text: "(", color: "text-white" },
-  { text: '"Booting core systems..."', color: "text-green-400" },
-  { text: ");\n", color: "text-white" },
-
-  { text: "  const ", color: "text-pink-500" },
-  { text: "sys ", color: "text-blue-300" },
-  { text: "= ", color: "text-white" },
-  { text: "new ", color: "text-pink-500" },
-  { text: "Core", color: "text-yellow-300" },
-  { text: "({\n", color: "text-white" },
-  
-  { text: "    mode: ", color: "text-white" },
-  { text: '"overdrive"', color: "text-green-400" },
-  { text: ",\n", color: "text-white" },
-  
-  { text: "    threads: ", color: "text-white" },
-  { text: "128", color: "text-orange-400" },
-  { text: ",\n", color: "text-white" },
-  
-  { text: "    encryption: ", color: "text-white" },
-  { text: "true", color: "text-orange-400" },
-  { text: "\n  });\n\n", color: "text-white" },
-
-  { text: "  await ", color: "text-pink-500" },
-  { text: "sys.", color: "text-white" },
-  { text: "connect", color: "text-yellow-300" },
-  { text: "();\n", color: "text-white" },
-  
-  { text: "  if ", color: "text-pink-500" },
-  { text: "(sys.", color: "text-white" },
+  { text: "systemctl ", color: "text-yellow-300" },
   { text: "status ", color: "text-blue-300" },
-  { text: "=== ", color: "text-pink-500" },
-  { text: '"ACTIVE"', color: "text-green-400" },
-  { text: ") {\n", color: "text-white" },
-
-  { text: "    const ", color: "text-pink-500" },
-  { text: "net ", color: "text-blue-300" },
-  { text: "= ", color: "text-white" },
-  { text: "new ", color: "text-pink-500" },
-  { text: "NeuralNet", color: "text-yellow-300" },
-  { text: "();\n", color: "text-white" },
+  { text: "samba-ad-dc.service", color: "text-orange-400" },
+  { text: " --no-pager;\n", color: "text-white" },
   
-  { text: "    net.", color: "text-white" },
-  { text: "sync", color: "text-yellow-300" },
-  { text: "();\n", color: "text-white" },
+  { text: "mount ", color: "text-yellow-300" },
+  { text: "-t nfs 192.168.1.10:/images /mnt/fog_images;\n", color: "text-blue-300" },
   
-  { text: "    return ", color: "text-pink-500" },
-  { text: '"Welcome, Engineer."', color: "text-green-400" },
-  { text: ";\n  }\n}", color: "text-white" }
+  { text: "echo ", color: "text-pink-500" },
+  { text: '"[PROVISION] Running unattended workstation batch sequence..."', color: "text-cyan-400" },
+  { text: ";\n", color: "text-white" },
+  
+  { text: "veyon-cli ", color: "text-yellow-300" },
+  { text: "networkdiscovery scan;\n", color: "text-green-400" },
+  
+  { text: "echo ", color: "text-pink-500" },
+  { text: '"[STATUS] 30+ Terminals Synchronized & Ready."', color: "text-emerald-400" },
+  { text: ";\n", color: "text-white" }
 ];
 
 function InteractiveTerminal() {
   const [history, setHistory] = useState<string[]>([
-    "Booting core systems...",
-    "Establishing secure connection...",
-    "Access granted. Welcome to Mujeeb's shell.",
-    "Type 'help' to see available commands."
+    "pfSense Gateway: 192.168.1.1 [ONLINE]",
+    "Samba AD DC: Kerberos & LDAP Auth Active",
+    "FOG Imaging Server: PXE Boot & NFS Mounted",
+    "Type 'help' to inspect systems, or press TAB for commands."
   ]);
   const [input, setInput] = useState("");
+  const [historyCommands, setHistoryCommands] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState<number>(-1);
   const terminalEndRef = useRef<HTMLDivElement>(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    soundManager.playKeypress();
+
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (historyCommands.length === 0) return;
+      const nextIdx = historyIndex + 1 < historyCommands.length ? historyIndex + 1 : historyIndex;
+      setHistoryIndex(nextIdx);
+      setInput(historyCommands[historyCommands.length - 1 - nextIdx] || "");
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (historyIndex > 0) {
+        const nextIdx = historyIndex - 1;
+        setHistoryIndex(nextIdx);
+        setInput(historyCommands[historyCommands.length - 1 - nextIdx] || "");
+      } else if (historyIndex === 0) {
+        setHistoryIndex(-1);
+        setInput("");
+      }
+    } else if (e.key === "Tab") {
+      e.preventDefault();
+      const allCmds = ["help", "lab", "network", "topology", "projects", "skills", "ping", "uptime", "contact", "resume", "clear"];
+      const match = allCmds.find((c) => c.startsWith(input.toLowerCase()));
+      if (match) {
+        setInput(match);
+      }
+    }
+  };
 
   const handleCommand = (e: React.FormEvent) => {
     e.preventDefault();
     const cmd = input.trim().toLowerCase();
     if (!cmd) return;
 
+    soundManager.playSuccess();
+    setHistoryCommands((prev) => [...prev, cmd]);
+    setHistoryIndex(-1);
+
     let response = "";
     switch (cmd) {
       case "help":
-        response = "Available commands:\n- help : show commands\n- projects : view projects list\n- resume : download pdf resume\n- contact : email & social links\n- skills : view core stack\n- clear : clear screen";
+        response = "Available Commands:\n- lab       : inspect hardware specs & batch automation\n- network   : pfSense firewall, RADIUS & Samba AD details\n- projects  : list production systems & web deployments\n- ping      : check live latency to gateway & edge\n- uptime    : print lab uptime & system status\n- skills    : view infrastructure & frontend stack\n- contact   : email, phone & social coordinates\n- resume    : download verified CV document\n- clear     : reset console buffer";
+        break;
+      case "lab":
+        response = "Lab Administration Fleet:\n- Terminals  : 30+ custom Intel H410 stations (NVMe SSDs)\n- Management : Veyon Master classroom sync & monitoring\n- Automation : Unattended silent batch scripts for VS Code, Python, Adobe CC";
+        break;
+      case "network":
+        response = "Enterprise Network Stack:\n- Firewall    : pfSense perimeter router with VLAN policies\n- Auth/Billing: Captive Portal integrated with FreeRADIUS\n- Directory   : Samba Active Directory Domain Controller\n- Storage     : FOG Project PXE server + NFS image repository";
+        break;
+      case "ping":
+        response = "PING 192.168.1.1 (gateway): 64 bytes, icmp_seq=1 time=0.42 ms\nPING edge.vercel.app (cdn): 64 bytes, icmp_seq=2 time=18.4 ms\n--- ping statistics --- 0% packet loss, status: OPTIMAL";
+        break;
+      case "uptime":
+        response = "System Uptime: 42 days, 14 hours, 18 min\nActive Sessions: 32 authenticated users\nMemory Usage: 4.8 GB / 16.0 GB (30%)\nStatus: ALL SERVICES HEALTHY";
         break;
       case "projects":
-        response = "Featured projects:\n01 StudyFlow AI: AI study assistant\n02 ITQAN Friends: Responsive community web\n03 Vogue Vault: High-performance E-commerce catalog";
+        response = "Live Deployments:\n01 ITQAN Friends: itqan-friends.vercel.app (Next.js + Firebase)\n02 Lab Provisioning: Unattended batch installation suite\n03 FOG & NFS: Centralized network imaging & LVM storage\n04 pfSense & RADIUS: Firewall, captive portal & Samba AD\n05 Reelagram: Media application with Firebase Auth/Firestore";
         break;
       case "resume":
-        response = "Opening resume download link: /resume.pdf";
+        response = "Opening verified resume: /resume.pdf";
         if (typeof window !== "undefined") {
           window.open("/resume.pdf", "_blank");
         }
         break;
       case "contact":
-        response = "Contact channels:\n- Email: mujee00012@gmail.com\n- GitHub: github.com/mujis-star\n- LinkedIn: linkedin.com/in/mujeeb-rahman";
+        response = "Coordinates:\n- Location: Kannur, Kerala, India\n- Email   : mujisworld09@gmail.com\n- Phone   : +91 9746613860\n- GitHub  : github.com/mujis-star\n- LinkedIn: linkedin.com/in/mujeeb-rahman";
         break;
       case "skills":
-        response = "Frontend: React, Next.js, TypeScript, Tailwind\nBackend: Node.js, Express, REST APIs, Firebase\nTools: Git, Docker, Linux, VMware";
+        response = "Systems  : Proxmox VE, TrueNAS, Ubuntu, Kali Linux, Batch Scripting\nNetwork  : pfSense, RADIUS, Samba AD, NFS, LVM, FOG, Veyon\nWeb Dev  : JavaScript, Next.js, React, Firebase Auth/Firestore, Vercel\nCreative : Adobe Creative Cloud, Filmora, A3 Tabloid Editorial Layout";
         break;
       case "clear":
         setHistory([]);
@@ -142,7 +149,8 @@ function InteractiveTerminal() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="type command here..."
+          onKeyDown={handleKeyDown}
+          placeholder="type command (or press Tab)..."
           className="flex-1 bg-transparent text-cyan-400 outline-none border-none p-0 focus:ring-0 text-[11px] sm:text-xs font-mono"
         />
       </form>
@@ -152,9 +160,16 @@ function InteractiveTerminal() {
 
 export function HeroSection() {
   const data = useContent();
+  const [activeTab, setActiveTab] = useState<"terminal" | "topology">("terminal");
+
+  const switchTab = (tab: "terminal" | "topology") => {
+    soundManager.playClick();
+    setActiveTab(tab);
+  };
+
   return (
     <section className="relative min-h-[calc(100vh-5rem)] flex items-center pt-20 md:pt-0 overflow-hidden">
-      {/* Static Gradient Glows (Animations removed) */}
+      {/* Static Gradient Glows */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[450px] h-[450px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
       
@@ -198,14 +213,18 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="mb-8 flex flex-col gap-4 text-left"
             >
-              <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-bold tracking-widest font-mono uppercase text-blue-400">
-                <span>Next.js</span>
+              <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-bold tracking-widest font-mono uppercase text-cyan-400">
+                <span>pfSense</span>
                 <span className="text-neutral-600">•</span>
-                <span>React</span>
+                <span>Proxmox VE</span>
+                <span className="text-neutral-600">•</span>
+                <span>Samba AD</span>
+                <span className="text-neutral-600">•</span>
+                <span>Next.js</span>
                 <span className="text-neutral-600">•</span>
                 <span>Firebase</span>
                 <span className="text-neutral-600">•</span>
-                <span>Node.js</span>
+                <span>FOG Server</span>
               </div>
               <p className="text-lg md:text-xl font-medium text-neutral-200 dark:text-neutral-200 max-w-xl leading-relaxed">
                 {data.personal.bio}
@@ -243,116 +262,99 @@ export function HeroSection() {
               className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-12 mt-12 border-t border-neutral-200 dark:border-white/10 w-full"
             >
               <div>
-                <div className="text-3xl md:text-4xl font-extrabold text-blue-500 font-heading">15+</div>
-                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Projects Built</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-blue-500 font-heading">30+</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Workstations Managed</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-extrabold text-cyan-400 font-heading">10+</div>
-                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Technologies</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-cyan-400 font-heading">Gigabit</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">PXE / FOG Network</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-extrabold text-purple-500 font-heading">2+</div>
-                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Years Learning</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-purple-400 font-heading">Zero-Touch</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Silent Automation</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-extrabold text-pink-500 font-heading">100%</div>
-                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Passion</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-emerald-400 font-heading">Production</div>
+                <div className="text-[10px] text-neutral-500 dark:text-neutral-400 mt-1 font-mono uppercase tracking-wider">Next.js & Vercel Live</div>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Video Container (Dashboard Interface) */}
+          {/* Right Container (Interactive Multi-Mode Engineering Dashboard) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
-            className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/5] xl:aspect-square rounded-3xl overflow-hidden bg-black/40 backdrop-blur-[2px] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] group"
+            className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/5] xl:aspect-square rounded-3xl overflow-hidden bg-black/70 backdrop-blur-md border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.6)] flex flex-col justify-between"
           >
-            {/* Profile Image with Soft Glow */}
-            <div className="absolute inset-0 w-full h-full z-0 group-hover:scale-105 transition-transform duration-700 ease-in-out">
-              <img 
-                src="/profile.jpg" 
-                alt="Mujeeb P" 
-                className="w-full h-full object-cover opacity-25 filter grayscale group-hover:grayscale-0 transition-all duration-700" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+            {/* Top Bar (Interactive Mode Tabs) */}
+            <div className="relative z-30 p-3 sm:p-4 flex justify-between items-center bg-black/90 border-b border-white/10 backdrop-blur-xl">
+              <div className="flex gap-1.5 sm:gap-2">
+                <button
+                  type="button"
+                  onClick={() => switchTab("terminal")}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold transition-all ${
+                    activeTab === "terminal"
+                      ? "bg-blue-600 text-white shadow-[0_0_12px_rgba(59,130,246,0.6)]"
+                      : "bg-white/5 text-neutral-400 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <TerminalIcon className="w-3.5 h-3.5" />
+                  <span>Terminal</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => switchTab("topology")}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold transition-all ${
+                    activeTab === "topology"
+                      ? "bg-cyan-600 text-white shadow-[0_0_12px_rgba(6,182,212,0.6)]"
+                      : "bg-white/5 text-neutral-400 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <Network className="w-3.5 h-3.5" />
+                  <span>Network Topology</span>
+                </button>
+              </div>
+
+              <div className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-cyan-300 uppercase tracking-widest hidden sm:block">
+                SYS.ACTIVE
+              </div>
             </div>
 
-            {/* Subtle Ambient Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_60%)] pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none" />
-
-            {/* Dashboard HUD Elements */}
-            
-            {/* Top Bar (Console Header) */}
-            <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-gradient-to-b from-black/40 to-transparent">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80 border border-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80 border border-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80 border border-green-500" />
-              </div>
-              <div className="px-3 py-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[10px] font-mono text-cyan-300 uppercase tracking-widest shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-                Sys.Active // {new Date().getFullYear()}
-              </div>
-            </div>
-
-            {/* Floating Cyber Terminal Widget */}
-            <div className="absolute top-12 sm:top-24 left-4 sm:left-6 rounded-xl bg-[#030712]/90 backdrop-blur-xl border border-blue-500/40 shadow-[0_0_50px_rgba(59,130,246,0.2)] opacity-95 transition-all duration-500 w-[300px] sm:w-[380px] lg:w-[420px] overflow-hidden flex flex-col group/terminal hover:opacity-100 hover:shadow-[0_0_70px_rgba(59,130,246,0.4)] z-20">
-              
-              {/* Terminal Header */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-blue-500/30 bg-black/60 backdrop-blur-md">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
-                  <span className="text-[10px] sm:text-xs font-mono text-blue-300 tracking-widest uppercase [text-shadow:0_0_8px_rgba(147,197,253,0.5)]">sys.terminal_exec</span>
+            {/* Tab 1: Terminal Mode */}
+            {activeTab === "terminal" && (
+              <div className="relative flex-1 p-4 sm:p-6 overflow-hidden flex flex-col justify-between">
+                {/* Profile background subtle layer */}
+                <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+                  <img src="/profile.jpg" alt="" className="w-full h-full object-cover object-top grayscale" />
+                  <div className="absolute inset-0 bg-[#030712]/80" />
                 </div>
-                <div className="flex gap-2">
-                  <div className="w-2 h-2 rounded-full bg-white/20" />
-                  <div className="w-2 h-2 rounded-full bg-white/20" />
-                </div>
-              </div>
-              
-              {/* Terminal Body with Effects */}
-              <div className="relative p-5 sm:p-6 h-[200px] sm:h-[250px] lg:h-[280px] overflow-hidden">
-                {/* Animated Laser Scanline */}
+                
+                {/* Laser scanline */}
                 <motion.div 
                   animate={{ top: ["0%", "100%", "0%"] }}
-                  transition={{ duration: 5, ease: "linear", repeat: Infinity }}
-                  className="absolute left-0 right-0 h-[2px] bg-blue-400/50 shadow-[0_0_15px_rgba(96,165,250,0.8)] z-10 pointer-events-none"
+                  transition={{ duration: 6, ease: "linear", repeat: Infinity }}
+                  className="absolute left-0 right-0 h-[2px] bg-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.8)] z-10 pointer-events-none"
                 />
-                
-                {/* CRT Screen Scanlines Overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.4)_50%)] bg-[length:100%_4px] pointer-events-none z-10 opacity-50 mix-blend-overlay" />
-                
-                <div className="relative z-20 h-full">
+
+                <div className="relative z-20 flex-1">
                   <InteractiveTerminal />
                 </div>
-              </div>
-            </div>
 
-            {/* Floating Performance Stats Widget */}
-            <div className="absolute top-32 right-6 p-4 rounded-xl bg-[#030712]/90 backdrop-blur-xl border border-white/10 flex flex-col gap-3 opacity-95 transition-all duration-500 hover:opacity-100 z-20 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
-                <span className="text-[10px] font-mono text-white/90">FPS: 144</span>
-              </div>
-              <div className="w-24 h-1 bg-white/10 rounded-full overflow-hidden">
-                <div className="w-[85%] h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                <span className="text-[10px] font-mono text-white/90">MEM: 32%</span>
-              </div>
-            </div>
-            
-            {/* Bottom Glassmorphism Info Card */}
-            <div className="absolute bottom-6 left-6 right-6 p-5 sm:p-6 rounded-2xl bg-[#030712]/90 backdrop-blur-xl border border-white/20 opacity-95 transition-all duration-500 shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:bg-black/95 z-20">
-              <div className="flex justify-between items-end">
-                <div>
-                  <h3 className="text-sm sm:text-base font-bold text-white mb-1 tracking-wide">Currently Building</h3>
-                  <p className="text-xs sm:text-sm text-blue-300 font-mono">Modern web experiences</p>
+                <div className="relative z-20 mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-neutral-400">
+                  <span className="text-emerald-400">● 30 Stations Online</span>
+                  <span className="text-cyan-400">Latency: 0.42ms</span>
+                  <span>Port: 192.168.1.1</span>
                 </div>
               </div>
-            </div>
+            )}
+
+            {/* Tab 2: Interactive Network Topology Mode */}
+            {activeTab === "topology" && (
+              <div className="relative flex-1 p-3 sm:p-4 overflow-hidden flex flex-col justify-center">
+                <InteractiveTopology />
+              </div>
+            )}
           </motion.div>
           
         </div>
